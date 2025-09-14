@@ -13,14 +13,14 @@
   transition: all 0.6s ease-in-out;
 }
 
-#module-badges div {
+#mission-badges div {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-#module-badges div:hover {
+#mission-badges div:hover {
   transform: translateY(-2px);
 }
 
-#module-badges div.bg-purple-100 {
+#mission-badges div.bg-purple-100 {
   box-shadow: 0 0 8px rgba(128, 90, 213, 0.3); /* subtle glow for unlocked badges */
 }

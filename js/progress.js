@@ -1,6 +1,6 @@
 /* ==========
    Progress System for Financial Literacy Course
-   Works across all modules
+   Works across all misiones
    ========== */
 
 function loadProgress() {
@@ -17,11 +17,11 @@ function addPoints(amount) {
   saveProgress(progress);
 }
 
-function markModuleComplete(moduleId) {
+function markMissionComplete(missionId) {
   const progress = loadProgress();
-  progress.modulesCompleted = progress.modulesCompleted || [];
-  if (!progress.modulesCompleted.includes(moduleId)) {
-    progress.modulesCompleted.push(moduleId);
+  progress.missionsCompleted = progress.missionsCompleted || [];
+  if (!progress.missionsCompleted.includes(missionId)) {
+    progress.missionsCompleted.push(missionId);
     saveProgress(progress);
   }
 }
@@ -84,22 +84,22 @@ const BADGES = {
 /* ==========
    RENDER BADGES
    ========== */
-function renderModuleBadges(moduleId) {
+function renderMissionBadges(missionId) {
   const progress = loadProgress();
-  const container = document.getElementById("module-badges");
+  const container = document.getElementById("mission-badges");
   if (!container) return;
 
   container.innerHTML = "";
 
-  // Define which badges belong to which module
-  const moduleBadgeMap = {
-    "modulo-3": ["detective_gastos", "ant_killer", "debit_defender"],
-    "modulo-4": ["ahorro_aventurero", "inversion_explorador"],
-    "modulo-5": ["seguridad_guardian"],
-    "modulo-6": ["deuda_domador"],
+  // Define which badges belong to which misión
+  const missionBadgeMap = {
+    "mision-3": ["detective_gastos", "ant_killer", "debit_defender"],
+    "mision-4": ["ahorro_aventurero", "inversion_explorador"],
+    "mision-5": ["seguridad_guardian"],
+    "mision-6": ["deuda_domador"],
   };
 
-  const relevantBadges = moduleBadgeMap[moduleId] || [];
+  const relevantBadges = missionBadgeMap[missionId] || [];
   const earnedBadges = (progress.badges || []);
 
   relevantBadges.forEach(badgeId => {
@@ -128,4 +128,4 @@ function renderModuleBadges(moduleId) {
 }
 
 
-document.addEventListener("DOMContentLoaded", renderModuleBadges);
+document.addEventListener("DOMContentLoaded", renderMissionBadges);

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const quizContainers = document.querySelectorAll('.space-y-10 > div');
-  const QUIZ_STORAGE_KEY = 'quizProgress-module3';
+  const QUIZ_STORAGE_KEY = 'quizProgress-mision3';
 
   // Load saved progress or default to empty object
   const savedProgress = JSON.parse(localStorage.getItem(QUIZ_STORAGE_KEY) || '{}');
