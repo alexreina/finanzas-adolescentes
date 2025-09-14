@@ -43,6 +43,7 @@ function unlockBadge(badgeId) {
     saveProgress(progress);
     
     // Trigger badge unlock animation
+    
     animateBadgeUnlock(badgeId);
     
     return true; // Badge was newly unlocked
