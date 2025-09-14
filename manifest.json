@@ -1,0 +1,21 @@
+{
+  "name": "Finanzas Personales para Adolescentes",
+  "short_name": "Finanzas Teens",
+  "description": "Aprende a ganar, gastar y ahorrar sin caer en trampas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf5ff",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "finance"],
+  "lang": "es",
+  "scope": "/"
+}

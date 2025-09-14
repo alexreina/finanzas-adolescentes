@@ -3,7 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const QUIZ_STORAGE_KEY = 'quizProgress-mision3';
 
   // Load saved progress or default to empty object
-  const savedProgress = JSON.parse(localStorage.getItem(QUIZ_STORAGE_KEY) || '{}');
+  let savedProgress = {};
+  try {
+    savedProgress = JSON.parse(localStorage.getItem(QUIZ_STORAGE_KEY) || '{}');
+  } catch (error) {
+    console.error("Error loading quiz progress:", error);
+  }
 
   quizContainers.forEach((container, index) => {
     const buttons = container.querySelectorAll('.quiz-btn');
@@ -59,9 +64,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
 
-          // Save progress to localStorage
-          savedProgress[questionId] = { answered: true };
-          localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(savedProgress));
+          // Check if all quiz questions are answered to unlock mission badge
+          if (!savedProgress[questionId]?.answered) {
+            savedProgress[questionId] = { answered: true };
+            
+            // Check if all questions are answered
+            const allQuestionsAnswered = Object.keys(savedProgress).every(key => savedProgress[key].answered);
+            if (allQuestionsAnswered) {
+              unlockBadge("mision_3");
+            }
+            
+            // Save progress to localStorage (only once)
+            try {
+              localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(savedProgress));
+            } catch (error) {
+              console.error("Error saving quiz progress:", error);
+            }
+          }
 
           // Disable all buttons after animation
           setTimeout(() => {

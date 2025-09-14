@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (retoButton) {
     retoButton.addEventListener("click", () => {
       markMissionComplete(3); // Mission ID for "el dinero que se va"
-      unlockBadge("ant_killer");
+      unlockBadge("mision_3");
 
       const final = document.getElementById("final-section");
       const nextBtn = document.getElementById("next-btn");

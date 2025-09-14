@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>finanzas personales para adolescentes</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Finanzas Personales para Adolescentes",
+  "description": "Aprende a ganar, gastar y ahorrar sin caer en trampas. Retos rápidos, ejemplos reales y un lenguaje que sí entiendes.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Finanzas Personales para Adolescentes"
+  },
+  "courseMode": "online",
+  "educationalLevel": "beginner",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student",
+    "audienceType": "teenager"
+  },
+  "inLanguage": "es",
+  "teaches": [
+    "Gestión de dinero personal",
+    "Ahorro e inversión",
+    "Educación financiera",
+    "Presupuesto personal"
+  ]
+}
+</script>
 
 <!-- SEO básico -->
 <meta name="description" content="Convierte tu dinero en un superpoder: aprende a ganar, gastar y ahorrar sin caer en trampas. Retos rápidos, ejemplos reales y un lenguaje que sí entiendes." />
@@ -14,18 +43,22 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Convierte tu dinero en un superpoder · Finanzas personales para adolescentes" />
 <meta property="og:description" content="Aprende a ganar, gastar y ahorrar sin caer en trampas. Retos rápidos y ejemplos reales que sí conectan contigo." />
-<meta property="og:image" content="https://tudominio.com/preview.jpg" />
-<meta property="og:url" content="https://tudominio.com" />
+<meta property="og:image" content="https://finanzas-adolescentes.com/preview.jpg" />
+<meta property="og:url" content="https://finanzas-adolescentes.com" />
 <meta property="og:type" content="website" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Convierte tu dinero en un superpoder · Finanzas personales para adolescentes" />
 <meta name="twitter:description" content="Aprende a ganar, gastar y ahorrar sin caer en trampas. Retos rápidos y ejemplos reales que sí conectan contigo." />
-<meta name="twitter:image" content="https://tudominio.com/preview.jpg" />
+<meta name="twitter:image" content="https://finanzas-adolescentes.com/preview.jpg" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/config.js"></script>
+  <script>
+    tailwind.config = window.tailwindConfig;
+  </script>
   <script>
     function toggleModal() {
       const modal = document.getElementById('modal');
@@ -49,7 +82,7 @@
 
   <!-- HERO -->
   <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-20 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/5/59/Euro_coins.png')] bg-cover"></div>
+    <div class="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/5/59/Euro_coins.png')] bg-cover" loading="lazy"></div>
     
     <div class="relative max-w-4xl mx-auto text-center">
       <p class="uppercase tracking-wider text-sm mb-3">convierte tu dinero en un superpoder</p>
@@ -181,8 +214,8 @@
       <div>
         <h4 class="font-bold mb-3">síguenos</h4>
         <div class="flex gap-4">
-          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="instagram"></a>
-          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="tiktok"></a>
+          <a href="#" aria-label="Síguenos en Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="Instagram" loading="lazy"></a>
+          <a href="#" aria-label="Síguenos en TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="TikTok" loading="lazy"></a>
         </div>
       </div>
     </div>
