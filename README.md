@@ -1,209 +1,203 @@
-# Finanzas adolescentes – curso interactivo
+# 💰 Finanzas Personales para Adolescentes
 
-Una plataforma educativa web diseñada para enseñar **educación financiera a adolescentes** mediante módulos interactivos, gamificación y ejemplos prácticos.
-Cada módulo combina **teoría, quizzes, retos prácticos y un sistema de insignias**, motivando a los usuarios a aprender sobre dinero de forma divertida y estructurada.
+Un curso interactivo de educación financiera diseñado específicamente para adolescentes. Aprende a ganar, gastar y ahorrar dinero de forma inteligente sin aburrirte.
 
----
+## 🎯 ¿Qué es esto?
 
-## ✨ Características principales
+Una plataforma web moderna que convierte la educación financiera en una experiencia gamificada y divertida. Los adolescentes pueden aprender conceptos financieros importantes a través de:
 
-* **Curso dividido en módulos temáticos**:
+- **6 misiones interactivas** de 10-20 minutos cada una
+- **Sistema de badges** para motivar el progreso
+- **Ejemplos reales** y lenguaje que conecta con los jóvenes
+- **Quizzes y retos prácticos** para reforzar el aprendizaje
 
-  1. **¿Por qué hablar de dinero?**
-  2. **El dinero que entra** – ingresos, paga, primeros trabajos.
-  3. **El dinero que se va** – gastos, presupuesto y control financiero.
-  4. **Ahorro e inversión** – interés compuesto y primeros pasos en inversión.
-  5. **Compras seguras y seguridad digital** – proteger tu dinero en línea.
-  6. **Deudas** – entender créditos, préstamos y sus riesgos.
+## 🚀 Características
 
-* **Gamificación**:
+### ✨ Experiencia de Usuario
+- **Diseño responsive** - Funciona perfectamente en móvil y desktop
+- **PWA ready** - Instalable como app en dispositivos móviles
+- **Navegación intuitiva** - Fácil de usar para adolescentes
+- **Animaciones suaves** - Interfaz moderna y atractiva
 
-  * Sistema de puntos por completar actividades.
-  * Desbloqueo de **insignias** al superar retos y quizzes.
-  * Progreso guardado automáticamente en `localStorage`.
+### 🏆 Sistema de Gamificación
+- **6 badges únicos** - Uno por cada misión completada
+- **Progreso persistente** - Se guarda en localStorage
+- **Animaciones de celebración** - Confetti y efectos visuales
+- **Estados claros** - Completado, en progreso, pendiente
 
-* **Interactividad**:
+### 📚 Contenido Educativo
+- **Misión 1**: ¿Por qué hablar de dinero? (💸 Dinero consciente)
+- **Misión 2**: El que entra (👛 Cazador de ingresos)
+- **Misión 3**: El que se va (💳 Defensor del débito) - **¡Completamente funcional!**
+- **Misión 4**: ¿Cómo consigo que crezca? (🌱 Ahorro aventurero)
+- **Misión 5**: Compras seguras (🛡️ Guardián de seguridad)
+- **Misión 6**: Deudas (📉 Domador de deudas)
 
-  * Quizzes con feedback instantáneo y animaciones.
-  * Retos prácticos que desbloquean contenido adicional.
-  * Uso de confeti 🎉 y microinteracciones para celebrar logros.
+## 🛠️ Tecnologías
 
-* **100% cliente (no backend)**:
+- **HTML5** - Estructura semántica
+- **Tailwind CSS** - Estilos modernos y responsive
+- **JavaScript Vanilla** - Funcionalidad interactiva
+- **PWA** - Progressive Web App capabilities
+- **localStorage** - Persistencia de datos del usuario
 
-  * El estado se guarda en el navegador, sin necesidad de servidor.
-  * Perfecto para uso offline o integración sencilla en otras plataformas.
-
----
-
-## 🗂 Estructura del proyecto
+## 📁 Estructura del Proyecto
 
 ```
-.
+finanzas-adolescentes/
+├── index.html                          # Página principal con todas las misiones
+├── el-dinero-que-se-va.html           # Misión 3 (completamente funcional)
+├── [otras misiones].html              # Misiones 1,2,4,5,6 (placeholders)
+├── favicon.svg                        # Icono personalizado (euro banknote)
+├── manifest.json                      # Configuración PWA
 ├── css/
-│   └── styles.css          # Estilos personalizados y reutilizables
-│
-├── js/
-│   ├── page-helpers.js     # Funciones utilitarias genéricas
-│   ├── progress.js         # Sistema de progreso, puntos e insignias
-│   ├── quiz.js             # Lógica de los quizzes
-│   └── reto.js             # Lógica para los retos prácticos
-│
-├── index.html               # Página principal con resumen de progreso
-├── el-dinero-que-entra.html # Módulo 2
-├── el-dinero-que-se-va.html # Módulo 3 (gastos y presupuesto)
-├── ahorrar-con-objetivos-la-magia-del-interes-compuesto-y-empezar-a-invertir.html # Módulo 4
-├── publicidad-redes-sociales-y-seguridad-digital-para-proteger-tu-dinero.html     # Módulo 5
-├── prestamos-y-creditos-entiende-por-que-el-dinero-prestado-nunca-sale-gratis.html # Módulo 6
-│
-└── README.md                # Documentación del proyecto
+│   └── styles.css                     # Estilos personalizados
+└── js/
+    ├── config.js                      # Configuración compartida de Tailwind
+    ├── progress.js                    # Sistema de badges y progreso
+    ├── quiz.js                        # Lógica de quizzes interactivos
+    ├── reto.js                        # Sistema de retos prácticos
+    └── page-helpers.js                # Utilidades de página
 ```
 
----
+## 🎮 Cómo Funciona
 
-## 🚀 Cómo ejecutar el proyecto
+### Sistema de Badges
+Cada misión tiene un badge único que se desbloquea al completar las actividades:
 
-Este proyecto no requiere instalación ni backend. Solo necesitas un navegador web.
+```javascript
+// Ejemplo de desbloqueo de badge
+unlockBadge("mision_3"); // Desbloquea "Defensor del débito"
+```
 
-### Opción 1: Abrir directamente
+### Persistencia de Datos
+El progreso se guarda automáticamente en localStorage:
 
-1. Descarga o clona el repositorio:
+```javascript
+{
+  "badges": ["mision_3"],
+  "missionsCompleted": [3],
+  "points": 150
+}
+```
 
-   ```bash
-   git clone https://github.com/<tu-usuario>/<nombre-repo>.git
-   cd <nombre-repo>
-   ```
-2. Abre `index.html` en tu navegador.
+### Estados de Badges
+- **✅ Completado**: Badge dorado con checkmark verde
+- **⚠️ En progreso**: Badge con borde amarillo y "!"
+- **❓ Pendiente**: Badge gris con "?"
 
----
+## 🚀 Instalación y Uso
 
-### Opción 2: Servidor local (opcional pero recomendado)
-
-Para evitar problemas con rutas relativas y `localStorage`, puedes servir el proyecto con un servidor local:
-
-* **Python 3:**
-
-  ```bash
-  python3 -m http.server
-  ```
-
-  Luego abre en el navegador:
-  [http://localhost:8000](http://localhost:8000)
-
-* **Node.js (con `http-server`):**
-
-  ```bash
-  npm install -g http-server
-  http-server
-  ```
-
----
-
-## 🏆 Sistema de insignias
-
-Cada acción importante desbloquea una insignia. El objetivo final es **coleccionarlas todas**.
-
-| Badge ID               | Emoji | Descripción                                              |
-| ---------------------- | ----- | -------------------------------------------------------- |
-| `detective_gastos`     | 🔍    | Identifica en qué se te va el dinero por primera vez.    |
-| `ant_killer`           | 🐜    | Controla tus pequeños gastos diarios durante una semana. |
-| `debit_defender`       | 💳    | Aprende a usar la tarjeta de débito correctamente.       |
-| `ahorro_aventurero`    | 🐷    | Completa tu primer objetivo de ahorro.                   |
-| `inversion_explorador` | 📈    | Descubre cómo funciona la magia del interés compuesto.   |
-| `seguridad_guardian`   | 🛡️   | Realiza compras seguras y protege tu dinero online.      |
-| `deuda_domador`        | 🪤    | Comprende por qué el dinero prestado nunca es gratis.    |
-| `curso_completado`     | 🏆    | Completa todos los módulos del curso.                    |
-
----
-
-## 🧑‍💻 Flujo de desarrollo
-
-### 1. Actualizar desde el repositorio remoto
-
-Antes de empezar a trabajar, asegúrate de tener la última versión:
-
+### Opción 1: Servidor Local
 ```bash
-git pull origin main
+# Clonar el repositorio
+git clone [tu-repo-url]
+cd finanzas-adolescentes
+
+# Servir con Python (opción 1)
+python -m http.server 8000
+
+# Servir con Node.js (opción 2)
+npx serve .
+
+# Servir con PHP (opción 3)
+php -S localhost:8000
 ```
 
-### 2. Guardar cambios locales
+### Opción 2: GitHub Pages
+1. Sube el código a GitHub
+2. Ve a Settings → Pages
+3. Selecciona "Deploy from a branch"
+4. Elige "main" branch
+5. ¡Tu sitio estará disponible en `https://tu-usuario.github.io/finanzas-adolescentes`
 
-```bash
-git add .
-git commit -m "Descripción breve de los cambios realizados"
-git push origin main
+### Opción 3: Netlify/Vercel
+1. Conecta tu repositorio GitHub
+2. Deploy automático en cada push
+3. URL personalizada incluida
+
+## 🎨 Personalización
+
+### Colores del Tema
+Edita `js/config.js` para cambiar los colores:
+
+```javascript
+window.tailwindConfig = {
+  theme: {
+    extend: {
+      colors: {
+        purple: {
+          600: '#9333ea', // Color principal
+          700: '#7c3aed', // Hover states
+        },
+        teal: {
+          500: '#14b8a6', // Color secundario
+        }
+      }
+    }
+  }
+};
 ```
 
-### 3. Crear una rama para nuevas características
+### Agregar Nuevas Misiones
+1. Crea un nuevo archivo HTML siguiendo la estructura existente
+2. Agrega el badge en `js/progress.js`
+3. Actualiza la navegación en todas las páginas
 
-```bash
-git checkout -b feature/nueva-funcionalidad
-```
+## 📱 PWA Features
 
----
+- **Instalable**: Los usuarios pueden "instalar" la app en sus dispositivos
+- **Offline**: Funciona sin conexión a internet
+- **App-like**: Se comporta como una app nativa
+- **Notificaciones**: Preparado para notificaciones push (futuro)
 
-## 🛠 Tecnologías utilizadas
+## 🔧 Desarrollo
 
-* **HTML5 + CSS3 + TailwindCSS** – estructura y diseño moderno y responsive.
-* **JavaScript puro (Vanilla JS)** – interactividad y lógica de negocio.
-* **localStorage** – persistencia de datos sin backend.
-* **AOS (Animate On Scroll)** – animaciones de entrada.
-* **Canvas Confetti** – celebraciones visuales al desbloquear logros.
+### Agregar Contenido a una Misión
+1. Edita el archivo HTML correspondiente
+2. Agrega secciones usando las clases de Tailwind existentes
+3. Incluye quizzes usando la estructura existente
+4. Agrega retos prácticos con el sistema de badges
 
----
+### Debugging
+- Abre DevTools → Console para ver logs
+- Revisa localStorage para verificar el progreso guardado
+- Usa `refreshBadges()` en la consola para actualizar badges manualmente
 
-## 🔒 Estado y progreso
+## 📈 Métricas y Analytics
 
-El progreso de cada usuario se guarda automáticamente en `localStorage`.
-Esto incluye:
+El proyecto está preparado para integrar:
+- Google Analytics
+- Eventos personalizados
+- Métricas de completación de misiones
+- Tiempo de permanencia por sección
 
-* Puntos acumulados.
-* Insignias desbloqueadas.
-* Módulos completados.
+## 🤝 Contribuir
 
-Esto significa que **cada usuario tiene su propio progreso** en su navegador, pero si borran caché, también se borrarán los datos.
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-mision`)
+3. Commit tus cambios (`git commit -m 'feat: agregar nueva misión'`)
+4. Push a la rama (`git push origin feature/nueva-mision`)
+5. Abre un Pull Request
 
----
+## 📄 Licencia
 
-## 🌱 Próximos pasos
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
-* [ ] Añadir un sistema de **rankings globales** con backend opcional.
-* [ ] Mejorar la accesibilidad (etiquetas ARIA, contraste, teclado).
-* [ ] Agregar más quizzes y retos a cada módulo.
-* [ ] Implementar exportación/importación de progreso en JSON.
-* [ ] Traducciones automáticas a otros idiomas.
+## 🎯 Roadmap
 
----
+- [ ] Completar contenido de misiones 1, 2, 4, 5, 6
+- [ ] Agregar más tipos de quizzes
+- [ ] Sistema de puntos y leaderboards
+- [ ] Notificaciones push
+- [ ] Modo offline completo
+- [ ] Integración con redes sociales
+- [ ] Certificados de completación
 
-## 👥 Contribuir
+## 📞 Contacto
 
-1. Haz un fork de este repositorio.
-2. Crea una nueva rama:
-
-   ```bash
-   git checkout -b feature/nueva-funcionalidad
-   ```
-3. Realiza tus cambios y haz commit:
-
-   ```bash
-   git commit -m "Descripción de los cambios"
-   ```
-4. Sube tu rama:
-
-   ```bash
-   git push origin feature/nueva-funcionalidad
-   ```
-5. Abre un Pull Request y descríbenos qué has hecho.
+¿Tienes preguntas o sugerencias? ¡Nos encantaría escucharte!
 
 ---
 
-## 📜 Licencia
-
-Este proyecto está bajo la licencia MIT.
-Eres libre de usarlo, modificarlo y distribuirlo, siempre que se incluya el aviso de copyright y la licencia original.
-
----
-
-## 🌟 Inspiración
-
-El proyecto nace con la misión de que los adolescentes **aprendan a manejar su dinero**, evitando errores comunes y fomentando la **independencia financiera** desde una edad temprana.
-Se inspira en ejemplos reales y busca ser **divertido, interactivo y visualmente atractivo**.
+**¡Convierte tu dinero en un superpoder! 💪💰**

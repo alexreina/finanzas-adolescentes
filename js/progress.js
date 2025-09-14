@@ -88,32 +88,32 @@ const BADGES = {
   // Un badge por misión completada con nombres descriptivos
   mision_1: {
     emoji: "💸",
-    label: "Dinero consciente",
+    label: "dinero consciente",
     description: "¿por qué hablar de dinero?"
   },
   mision_2: {
     emoji: "👛",
-    label: "Cazador de ingresos", 
+    label: "cazador de ingresos", 
     description: "el que entra"
   },
   mision_3: {
     emoji: "💳",
-    label: "Defensor del débito",
+    label: "maestro del gasto",
     description: "el que se va"
   },
   mision_4: {
     emoji: "🌱",
-    label: "Ahorro aventurero",
+    label: "constructor de riqueza",
     description: "¿cómo consigo que crezca?"
   },
   mision_5: {
     emoji: "🛡️",
-    label: "Guardián de seguridad",
+    label: "guardián de seguridad",
     description: "compras seguras"
   },
   mision_6: {
     emoji: "📉",
-    label: "Domador de deudas",
+    label: "domador de deudas",
     description: "deudas"
   }
 };
@@ -171,19 +171,56 @@ function renderMissionBadges(missionId) {
       }
     `;
 
-    // Add tooltip on hover
+    // Add interactive behavior and tooltips
     if (isUnlocked) {
-      div.title = `Completado: ${badge.description}`;
+      // Unlocked badges link to their mission page
+      div.onclick = () => window.location.href = getMissionUrl(i);
+      div.style.cursor = 'pointer';
+      div.title = `Ir a ${badge.description}`;
+      
+      // Add hover effect for clickable badges
+      div.addEventListener('mouseenter', () => {
+        div.style.transform = 'scale(1.05)';
+        div.style.transition = 'transform 0.2s ease';
+      });
+      div.addEventListener('mouseleave', () => {
+        div.style.transform = 'scale(1)';
+      });
     } else if (isCurrentMission) {
+      // Current mission badge links to current page (subtle feedback)
+      div.onclick = () => window.location.href = window.location.href;
+      div.style.cursor = 'pointer';
       div.title = `Misión actual: ${badge.description}`;
+      
+      // Add hover effect for current mission
+      div.addEventListener('mouseenter', () => {
+        div.style.transform = 'scale(1.05)';
+        div.style.transition = 'transform 0.2s ease';
+      });
+      div.addEventListener('mouseleave', () => {
+        div.style.transform = 'scale(1)';
+      });
     } else {
-      div.title = `Misión futura: ${badge.description}`;
+      // Locked badges show helpful tooltip
+      div.title = `Completa misiones anteriores para desbloquear: ${badge.description}`;
     }
 
     badgesContainer.appendChild(div);
   }
   
   container.appendChild(badgesContainer);
+}
+
+function getMissionUrl(missionNumber) {
+  const missionUrlMap = {
+    1: "usar-bien-el-dinero-importa-tanto-como-ganarlo-bien.html",
+    2: "el-dinero-que-entra.html", 
+    3: "el-dinero-que-se-va.html",
+    4: "ahorrar-con-objetivos-la-magia-del-interes-compuesto-y-empezar-a-invertir.html",
+    5: "publicidad-redes-sociales-y-seguridad-digital-para-proteger-tu-dinero.html",
+    6: "prestamos-y-creditos-entiende-por-que-el-dinero-prestado-nunca-sale-gratis.html"
+  };
+  return missionUrlMap[missionNumber] || "index.html";
 }
 
 function getBadgesForMission(missionNumber) {
