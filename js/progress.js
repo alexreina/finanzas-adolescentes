@@ -8,7 +8,7 @@ function loadProgress() {
     return JSON.parse(localStorage.getItem("progress") || "{}");
   } catch (error) {
     console.error("Error loading progress:", error);
-    return {};
+    return { badges: [], missionsCompleted: [], userName: null };
   }
 }
 
@@ -47,6 +47,11 @@ function unlockBadge(badgeId) {
     
     // Update navigation to reflect new unlocks
     updateNavigation();
+    
+    // Check if this is Mission 1 completion and trigger name collection
+    if (badgeId === 'mision_1' && !progress.userName) {
+      setTimeout(() => showNameCollectionModal(), 2000); // Show after badge animation
+    }
     
     return true; // Badge was newly unlocked
   }
@@ -158,12 +163,17 @@ function renderMissionBadges(missionId) {
       }
     `;
     
+    // Personalize badge message if user has provided name
+    const userName = getUserName();
+    const truncatedUserName = userName ? truncateName(userName) : null;
+    const personalizedLabel = truncatedUserName && isUnlocked ? `${badge.label}, ${truncatedUserName}` : badge.label;
+    
     div.innerHTML = `
       <div class="text-2xl mb-2">
         ${badge.emoji}
       </div>
       <p class="font-semibold text-xs leading-tight">
-        ${isUnlocked ? badge.label : (isCurrentMission ? "En progreso" : "Pendiente")}
+        ${isUnlocked ? personalizedLabel : (isCurrentMission ? "En progreso" : "Pendiente")}
       </p>
       ${isUnlocked ? 
         '<div class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white flex items-center justify-center"><span class="text-white text-xs">✓</span></div>' : 
@@ -285,6 +295,136 @@ function getCurrentMission() {
     return parseInt(missionId.replace('mision-', ''));
   }
   return null;
+}
+
+/* ==========
+   NAME COLLECTION & PERSONALIZATION
+   ========== */
+function showNameCollectionModal() {
+  // Create modal HTML
+  const modalHTML = `
+    <div id="nameModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full p-8 text-center mx-4">
+        <div class="text-6xl mb-4">🎉</div>
+        <h3 class="text-2xl font-bold mb-4 text-purple-700">¡Increíble trabajo!</h3>
+        <p class="mb-6 text-gray-600">Has completado tu primera misión. ¿Cómo te llamas para personalizar tu experiencia?</p>
+        <form id="nameForm">
+          <input type="text" id="userNameInput" placeholder="tu nombre" class="w-full border border-gray-300 p-3 rounded-lg mb-4 focus:border-purple-500 focus:outline-none" required maxlength="15" pattern="[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ0-9 .-]{2,15}" title="Solo letras, números, espacios y puntos. Mínimo 2 caracteres, máximo 15." />
+          <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition w-full">
+            ¡Personalizar mi experiencia!
+          </button>
+        </form>
+        <button onclick="closeNameModal()" class="mt-4 text-sm text-gray-500 hover:text-gray-700">
+          Más tarde
+        </button>
+      </div>
+    </div>
+  `;
+  
+  // Add modal to page
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+  
+  // Handle form submission
+  document.getElementById('nameForm').addEventListener('submit', handleNameSubmission);
+  
+  // Focus on input
+  setTimeout(() => {
+    document.getElementById('userNameInput').focus();
+  }, 100);
+}
+
+function handleNameSubmission(e) {
+  e.preventDefault();
+  const userName = document.getElementById('userNameInput').value.trim();
+  
+  if (userName) {
+    // Sanitize user input to prevent XSS
+    const sanitizedUserName = sanitizeInput(userName);
+    
+    if (sanitizedUserName) {
+      // Save user name
+      const progress = loadProgress();
+      progress.userName = sanitizedUserName;
+      saveProgress(progress);
+      
+      // Close modal and show personalized message
+      closeNameModal();
+      showPersonalizedWelcome(sanitizedUserName);
+      
+      // Refresh badges to show personalized messages
+      refreshBadges();
+    } else {
+      // Show error for invalid input
+      alert('Por favor, introduce un nombre válido (solo letras, números y espacios)');
+    }
+  }
+}
+
+function sanitizeInput(input) {
+  // Remove any HTML tags and script content
+  let sanitized = input
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/javascript:/gi, '') // Remove javascript: protocol
+    .replace(/on\w+\s*=/gi, '') // Remove event handlers (onclick, onload, etc.)
+    .replace(/[<>'"&]/g, '') // Remove potentially dangerous characters
+    .trim();
+  
+  // Only allow letters, numbers, spaces, and basic punctuation
+  sanitized = sanitized.replace(/[^a-zA-ZáéíóúüñÁÉÍÓÚÜÑ0-9\s\.\-]/g, '');
+  
+  // Must have at least 2 characters and not be empty after sanitization
+  return sanitized.length >= 2 ? sanitized : null;
+}
+
+function truncateName(name, maxLength = 15) {
+  if (name.length > maxLength) {
+    return name.slice(0, maxLength - 1) + '*';
+  }
+  return name;
+}
+
+function closeNameModal() {
+  const modal = document.getElementById('nameModal');
+  if (modal) {
+    modal.remove();
+  }
+}
+
+function showPersonalizedWelcome(userName) {
+  // Truncate name for display
+  const truncatedUserName = truncateName(userName);
+  
+  // Create welcome message positioned below navigation
+  const welcomeHTML = `
+    <div id="welcomeMessage" class="fixed top-20 right-4 bg-gradient-to-r from-purple-600 to-teal-500 text-white p-4 rounded-lg shadow-lg z-40 max-w-sm">
+      <div class="flex items-center gap-3">
+        <div class="text-2xl">👋</div>
+        <div>
+          <p class="font-semibold">¡Hola ${truncatedUserName}!</p>
+          <p class="text-sm opacity-90">Tu experiencia personalizada está lista</p>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Add welcome message
+  document.body.insertAdjacentHTML('beforeend', welcomeHTML);
+  
+  // Auto-remove after 4 seconds
+  setTimeout(() => {
+    const welcome = document.getElementById('welcomeMessage');
+    if (welcome) {
+      welcome.style.opacity = '0';
+      welcome.style.transform = 'translateX(100%)';
+      welcome.style.transition = 'all 0.3s ease';
+      setTimeout(() => welcome.remove(), 300);
+    }
+  }, 4000);
+}
+
+function getUserName() {
+  const progress = loadProgress();
+  return progress.userName || null;
 }
 
 function getBadgesForMission(missionNumber) {

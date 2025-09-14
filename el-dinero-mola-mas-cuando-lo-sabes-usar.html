@@ -10,6 +10,7 @@
   <script>
     tailwind.config = window.tailwindConfig;
   </script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="08ddbcc8-43fa-4dd3-8a0c-21b6fc88c56d"></script>
 </head>
 <body class="bg-purple-50 text-gray-800" data-mission-id="mision-1">
 
@@ -43,21 +44,74 @@
     </div>
   </section>
 
-  <!-- COMING SOON -->
-  <section class="max-w-4xl mx-auto px-6 py-16 text-center">
-    <div class="bg-white rounded-xl shadow-lg p-12">
-      <div class="text-6xl mb-6">🚧</div>
-      <h2 class="text-3xl font-bold mb-4 text-purple-700">¡Próximamente!</h2>
-      <p class="text-lg text-gray-600 mb-8">
-        Esta misión está en desarrollo. Mientras tanto, puedes explorar la 
-        <a href="el-dinero-que-se-va.html" class="text-purple-600 hover:underline font-semibold">Misión 3: el que se va</a> 
-        que ya está disponible.
-      </p>
-      <a href="index.html" class="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition">
-        ← volver al inicio
-      </a>
+  <!-- MISSION CONTENT -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold mb-6 text-purple-700">¿Por qué el dinero mola más cuando lo sabes usar?</h2>
+      
+      <div class="prose max-w-none mb-8">
+        <p class="text-lg text-gray-700 mb-4">
+          El dinero no es solo papel y monedas. Es <strong>libertad</strong>, <strong>opciones</strong> y <strong>control sobre tu vida</strong>.
+        </p>
+        
+        <p class="text-gray-600 mb-6">
+          Cuando sabes usarlo bien, el dinero se convierte en tu aliado para conseguir lo que realmente quieres: 
+          esa consola que tanto deseas, viajes con amigos, o incluso ayudar a tu familia.
+        </p>
+        
+        <div class="bg-purple-50 p-6 rounded-lg mb-6">
+          <h3 class="text-lg font-semibold text-purple-800 mb-3">💡 La diferencia clave:</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• <strong>Sin conocimiento:</strong> El dinero se escapa como agua</li>
+            <li>• <strong>Con conocimiento:</strong> El dinero trabaja para ti</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Test completion button -->
+      <div class="text-center space-y-4">
+        <button onclick="completeMission1()" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-700 hover:to-teal-600 transition shadow-lg">
+          ¡Completar Misión 1! 🎯
+        </button>
+        
+        <!-- Debug: Reset button (remove in production) -->
+        <div class="mt-6 p-4 bg-gray-100 rounded-lg">
+          <p class="text-sm text-gray-600 mb-2">🧪 Debug tools:</p>
+          <button onclick="resetProgress()" class="bg-red-500 text-white px-4 py-2 rounded text-sm hover:bg-red-600 transition">
+            Reset Progress & Name
+          </button>
+        </div>
+      </div>
     </div>
   </section>
+
+  <script>
+    function completeMission1() {
+      // Unlock Mission 1 badge
+      unlockBadge('mision_1');
+      
+      // Show success message
+      const button = event.target;
+      button.innerHTML = '¡Completado! 🎉';
+      button.classList.add('bg-green-500', 'hover:bg-green-600');
+      button.classList.remove('bg-gradient-to-r', 'from-purple-600', 'to-teal-500', 'hover:from-purple-700', 'hover:to-teal-600');
+      button.disabled = true;
+      
+      // Add success message
+      const successMsg = document.createElement('div');
+      successMsg.className = 'mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800';
+      successMsg.innerHTML = '<strong>¡Excelente!</strong> Has completado tu primera misión. ¡Mira tu badge arriba!';
+      button.parentNode.appendChild(successMsg);
+    }
+    
+    function resetProgress() {
+      // Clear all localStorage
+      localStorage.clear();
+      
+      // Reload page to reset everything
+      location.reload();
+    }
+  </script>
 
   <script src="js/progress.js"></script>
 </body>
