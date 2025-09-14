@@ -1,0 +1,13 @@
+
+# AI-specific access policy for Finanzas Adolescentes
+
+# Default: block all AI agents from using this site's content
+AI-agent: *
+Disallow: /
+
+# Example of selectively allowing a trusted research AI agent
+# Uncomment and replace 'EduResearchBot' with actual agent name if needed
+# AI-agent: EduResearchBot
+# Allow: /public/
+
+# This file complements robots.txt but is focused specifically on AI model usage and training.
