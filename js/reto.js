@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (retoButton) {
     retoButton.addEventListener("click", () => {
-      markModuleComplete(3); // Module ID for "el dinero que se va"
+      markMissionComplete(3); // Mission ID for "el dinero que se va"
       unlockBadge("ant_killer");
 
       const final = document.getElementById("final-section");
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Toast notification
       const toast = document.createElement("div");
-      toast.textContent = "🎉 ¡Reto completado! Ahora puedes continuar al siguiente módulo.";
+      toast.textContent = "🎉 ¡Reto completado! Ahora puedes continuar a la siguiente misión.";
       toast.className = "fixed bottom-5 right-5 bg-purple-600 text-white px-4 py-2 rounded shadow-lg";
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3000);
