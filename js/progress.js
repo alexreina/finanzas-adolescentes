@@ -43,8 +43,10 @@ function unlockBadge(badgeId) {
     saveProgress(progress);
     
     // Trigger badge unlock animation
-    
     animateBadgeUnlock(badgeId);
+    
+    // Update navigation to reflect new unlocks
+    updateNavigation();
     
     return true; // Badge was newly unlocked
   }
@@ -109,7 +111,7 @@ const BADGES = {
   mision_5: {
     emoji: "🛡️",
     label: "guardián de seguridad",
-    description: "compras seguras"
+    description: "comprar evitando las trampas y los timos"
   },
   mision_6: {
     emoji: "📉",
@@ -213,14 +215,76 @@ function renderMissionBadges(missionId) {
 
 function getMissionUrl(missionNumber) {
   const missionUrlMap = {
-    1: "usar-bien-el-dinero-importa-tanto-como-ganarlo-bien.html",
-    2: "el-dinero-que-entra.html", 
-    3: "el-dinero-que-se-va.html",
-    4: "ahorrar-con-objetivos-la-magia-del-interes-compuesto-y-empezar-a-invertir.html",
-    5: "publicidad-redes-sociales-y-seguridad-digital-para-proteger-tu-dinero.html",
-    6: "prestamos-y-creditos-entiende-por-que-el-dinero-prestado-nunca-sale-gratis.html"
+    1: "el-dinero-mola-mas-cuando-lo-sabes-usar.html",
+    2: "que-hacer-para-que-entre-mas-dinero-en-tu-bolsillo.html", 
+    3: "controlar-tu-dinero-antes-de-que-desaparezca.html",
+    4: "el-truco-para-que-tu-dinero-se-multiplique-solo.html",
+    5: "comprar-sin-que-te-timen.html",
+    6: "las-deudas-son-el-enemigo-numero-1.html"
   };
   return missionUrlMap[missionNumber] || "index.html";
+}
+
+/* ==========
+   SMART NAVIGATION
+   ========== */
+function updateNavigation() {
+  const progress = loadProgress();
+  const currentMission = getCurrentMission();
+  
+  // Get all navigation links
+  const navLinks = document.querySelectorAll('nav a[href*=".html"]');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    const missionNumber = getMissionNumberFromUrl(href);
+    
+    if (missionNumber) {
+      const badgeKey = `mision_${missionNumber}`;
+      const isUnlocked = progress.badges && progress.badges.includes(badgeKey);
+      const isCurrent = missionNumber === currentMission;
+      
+      // Remove existing classes
+      link.classList.remove('text-purple-700', 'font-bold', 'underline', 'text-gray-400', 'cursor-not-allowed');
+      
+      if (isCurrent) {
+        // Current mission - highlight but don't link
+        link.classList.add('text-purple-700', 'font-bold', 'underline');
+        link.removeAttribute('href');
+        link.style.cursor = 'default';
+      } else if (isUnlocked) {
+        // Unlocked mission - normal link
+        link.classList.add('hover:text-purple-600');
+        link.style.cursor = 'pointer';
+      } else {
+        // Locked mission - disabled state
+        link.classList.add('text-gray-400', 'cursor-not-allowed');
+        link.removeAttribute('href');
+        link.style.cursor = 'not-allowed';
+      }
+    }
+  });
+}
+
+function getMissionNumberFromUrl(url) {
+  const urlMap = {
+    "el-dinero-mola-mas-cuando-lo-sabes-usar.html": 1,
+    "que-hacer-para-que-entre-mas-dinero-en-tu-bolsillo.html": 2,
+    "controlar-tu-dinero-antes-de-que-desaparezca.html": 3,
+    "el-truco-para-que-tu-dinero-se-multiplique-solo.html": 4,
+    "comprar-sin-que-te-timen.html": 5,
+    "las-deudas-son-el-enemigo-numero-1.html": 6
+  };
+  return urlMap[url] || null;
+}
+
+function getCurrentMission() {
+  const body = document.body;
+  const missionId = body.getAttribute('data-mission-id');
+  if (missionId) {
+    return parseInt(missionId.replace('mision-', ''));
+  }
+  return null;
 }
 
 function getBadgesForMission(missionNumber) {
@@ -262,10 +326,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentMission = document.body.dataset.missionId || "mision-3";
   renderMissionBadges(currentMission);
   
+  // Update navigation based on progress
+  updateNavigation();
+  
   // Also refresh badges when localStorage changes (for debugging)
   window.addEventListener('storage', (e) => {
     if (e.key === 'progress') {
       renderMissionBadges(currentMission);
+      updateNavigation(); // Also update navigation on progress changes
     }
   });
 });

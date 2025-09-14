@@ -37,3 +37,14 @@
 #mission-badges div[style*="cursor: pointer"]:active {
   transform: scale(0.98);
 }
+
+/* Smart navigation styles */
+nav a.cursor-not-allowed {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+nav a.cursor-not-allowed:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
