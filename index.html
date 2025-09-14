@@ -55,6 +55,11 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Suppress CDN warning for development
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = window.tailwind.config || {};
+  </script>
   <script src="js/config.js"></script>
   <script>
     tailwind.config = window.tailwindConfig;
