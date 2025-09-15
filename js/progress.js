@@ -5,10 +5,10 @@
 
 function loadProgress() {
   try {
-    return JSON.parse(localStorage.getItem("progress") || "{}");
+  return JSON.parse(localStorage.getItem("progress") || "{}");
   } catch (error) {
     console.error("Error loading progress:", error);
-    return { badges: [], missionsCompleted: [], userName: null };
+    return { pins: [], missionsCompleted: [], userName: null };
   }
 }
 
@@ -37,9 +37,9 @@ function markMissionComplete(missionId) {
 
 function unlockBadge(badgeId) {
   const progress = loadProgress();
-  progress.badges = progress.badges || [];
-  if (!progress.badges.includes(badgeId)) {
-    progress.badges.push(badgeId);
+  progress.pins = progress.pins || [];
+  if (!progress.pins.includes(badgeId)) {
+    progress.pins.push(badgeId);
     saveProgress(progress);
     
     // Trigger badge unlock animation
@@ -48,26 +48,33 @@ function unlockBadge(badgeId) {
     // Update navigation to reflect new unlocks
     updateNavigation();
     
-    // Check if this is Mission 1 completion and trigger name collection
-    if (badgeId === 'mision_1' && !progress.userName) {
-      setTimeout(() => showNameCollectionModal(), 2000); // Show after badge animation
-    }
-    
     return true; // Badge was newly unlocked
   }
   return false; // Badge was already unlocked
 }
 
+// Alias for compatibility with existing code
+function unlockPin(pinId) {
+  return unlockBadge(pinId);
+}
+
 function animateBadgeUnlock(badgeId) {
-  const badge = BADGES[badgeId];
+  const badge = PINS[badgeId];
   if (!badge) return;
+
+  // Get personalized name for the badge
+  const userName = getUserName();
+  const truncatedUserName = userName ? truncateName(userName) : null;
+  const personalizedLabel = truncatedUserName ? `${badge.name}, ${truncatedUserName}` : badge.name;
+  
+  
 
   // Create floating badge animation
   const floatingBadge = document.createElement('div');
   floatingBadge.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-gradient-to-br from-yellow-400 to-orange-500 text-white p-4 rounded-full shadow-2xl animate-pulse';
   floatingBadge.innerHTML = `
-    <div class="text-4xl mb-2">${badge.emoji}</div>
-    <div class="text-sm font-bold text-center">${badge.label}</div>
+    <div class="text-4xl mb-2">${badge.icon}</div>
+    <div class="text-sm font-bold text-center">${personalizedLabel}</div>
     <div class="text-xs text-center opacity-90 mt-1">¡Desbloqueado!</div>
   `;
   
@@ -83,7 +90,7 @@ function animateBadgeUnlock(badgeId) {
       document.body.removeChild(floatingBadge);
       // Re-render badges to show the new unlock
       const currentMission = document.querySelector('[data-mission-id]')?.dataset.missionId || "mision-3";
-      renderMissionBadges(currentMission);
+      renderMissionPins(currentMission);
     }, 500);
   }, 2000);
 }
@@ -91,36 +98,36 @@ function animateBadgeUnlock(badgeId) {
 /* ==========
    BADGE DEFINITIONS
    ========== */
-const BADGES = {
+const PINS = {
   // Un badge por misión completada con nombres descriptivos
   mision_1: {
-    emoji: "💸",
-    label: "dinero consciente",
+    icon: "💸",
+    name: "dinero consciente",
     description: "¿por qué hablar de dinero?"
   },
   mision_2: {
-    emoji: "👛",
-    label: "cazador de ingresos", 
+    icon: "👛",
+    name: "cazador de ingresos", 
     description: "el que entra"
   },
   mision_3: {
-    emoji: "💳",
-    label: "maestro del gasto",
+    icon: "💳",
+    name: "maestro del gasto",
     description: "el que se va"
   },
   mision_4: {
-    emoji: "🌱",
-    label: "constructor de riqueza",
+    icon: "🌱",
+    name: "constructor de riqueza",
     description: "¿cómo consigo que crezca?"
   },
   mision_5: {
-    emoji: "🛡️",
-    label: "guardián de seguridad",
+    icon: "🛡️",
+    name: "guardián de seguridad",
     description: "comprar evitando las trampas y los timos"
   },
   mision_6: {
-    emoji: "📉",
-    label: "domador de deudas",
+    icon: "📉",
+    name: "domador de deudas",
     description: "deudas"
   }
 };
@@ -128,90 +135,54 @@ const BADGES = {
 /* ==========
    RENDER BADGES - GAMIFIED VERSION
    ========== */
-function renderMissionBadges(missionId) {
+function renderMissionPins(missionId) {
   const progress = loadProgress();
-  const container = document.getElementById("mission-badges");
+  const container = document.getElementById("mission-pins");
   if (!container) return;
 
   container.innerHTML = "";
 
-  const earnedBadges = (progress.badges || []);
-  const currentMission = parseInt(missionId?.replace('mision-', '') || '3');
-
+  const earnedBadges = (progress.pins || []);
+  const currentMission = typeof missionId === 'number' ? missionId : parseInt(missionId?.replace('mision-', '') || '3');
 
   // Show all mission badges (1-6)
   const badgesContainer = document.createElement("div");
-  badgesContainer.className = "flex flex-wrap justify-center gap-3";
+  badgesContainer.className = "badge-container";
   
   // Show badges for all 6 missions
   for (let i = 1; i <= 6; i++) {
     const badgeId = `mision_${i}`;
-    const badge = BADGES[badgeId];
+    const badge = PINS[badgeId];
     if (!badge) continue;
 
     const isUnlocked = earnedBadges.includes(badgeId);
     const isCurrentMission = i === currentMission;
 
     const div = document.createElement("div");
-    div.className = `
-      relative p-3 rounded-xl shadow-lg text-center transition-all duration-300 min-w-[80px]
-      ${isUnlocked ? 
-        'bg-gradient-to-br from-yellow-400 to-orange-500 text-white transform hover:scale-105 shadow-xl' : 
-        isCurrentMission ?
-          'bg-white bg-opacity-30 text-purple-100 border-2 border-yellow-400' :
-          'bg-white bg-opacity-20 text-purple-200 border border-purple-300'
-      }
-    `;
+    div.className = `badge-item ${isUnlocked ? 'unlocked' : isCurrentMission ? 'current' : 'locked'}`;
     
     // Personalize badge message if user has provided name
     const userName = getUserName();
     const truncatedUserName = userName ? truncateName(userName) : null;
-    const personalizedLabel = truncatedUserName && isUnlocked ? `${badge.label}, ${truncatedUserName}` : badge.label;
+    const personalizedLabel = truncatedUserName && isUnlocked ? `${badge.name}, ${truncatedUserName}` : badge.name;
+    
+    
     
     div.innerHTML = `
-      <div class="text-2xl mb-2">
-        ${badge.emoji}
-      </div>
-      <p class="font-semibold text-xs leading-tight">
-        ${isUnlocked ? personalizedLabel : (isCurrentMission ? "En progreso" : "Pendiente")}
-      </p>
-      ${isUnlocked ? 
-        '<div class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white flex items-center justify-center"><span class="text-white text-xs">✓</span></div>' : 
-        isCurrentMission ?
-          '<div class="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full border-2 border-white flex items-center justify-center"><span class="text-white text-xs">!</span></div>' :
-          '<div class="absolute -top-1 -right-1 w-4 h-4 bg-purple-400 rounded-full border-2 border-white flex items-center justify-center"><span class="text-white text-xs">?</span></div>'
-      }
+      <div class="badge-icon">${badge.icon}</div>
+      <div class="badge-label">${isUnlocked ? personalizedLabel : (isCurrentMission ? "En progreso" : "Pendiente")}</div>
+      <div class="badge-status">${isUnlocked ? '✓' : isCurrentMission ? '!' : '?'}</div>
     `;
 
     // Add interactive behavior and tooltips
     if (isUnlocked) {
       // Unlocked badges link to their mission page
       div.onclick = () => window.location.href = getMissionUrl(i);
-      div.style.cursor = 'pointer';
       div.title = `Ir a ${badge.description}`;
-      
-      // Add hover effect for clickable badges
-      div.addEventListener('mouseenter', () => {
-        div.style.transform = 'scale(1.05)';
-        div.style.transition = 'transform 0.2s ease';
-      });
-      div.addEventListener('mouseleave', () => {
-        div.style.transform = 'scale(1)';
-      });
     } else if (isCurrentMission) {
       // Current mission badge links to current page (subtle feedback)
       div.onclick = () => window.location.href = window.location.href;
-      div.style.cursor = 'pointer';
       div.title = `Misión actual: ${badge.description}`;
-      
-      // Add hover effect for current mission
-      div.addEventListener('mouseenter', () => {
-        div.style.transform = 'scale(1.05)';
-        div.style.transition = 'transform 0.2s ease';
-      });
-      div.addEventListener('mouseleave', () => {
-        div.style.transform = 'scale(1)';
-      });
     } else {
       // Locked badges show helpful tooltip
       div.title = `Completa misiones anteriores para desbloquear: ${badge.description}`;
@@ -309,7 +280,7 @@ function showNameCollectionModal() {
         <h3 class="text-2xl font-bold mb-4 text-purple-700">¡Increíble trabajo!</h3>
         <p class="mb-6 text-gray-600">Has completado tu primera misión. ¿Cómo te llamas para personalizar tu experiencia?</p>
         <form id="nameForm">
-          <input type="text" id="userNameInput" placeholder="tu nombre" class="w-full border border-gray-300 p-3 rounded-lg mb-4 focus:border-purple-500 focus:outline-none" required maxlength="15" pattern="[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ0-9 .-]{2,15}" title="Solo letras, números, espacios y puntos. Mínimo 2 caracteres, máximo 15." />
+          <input type="text" id="userNameInput" placeholder="tu nombre" class="w-full border border-gray-300 p-3 rounded-lg mb-4 focus:border-purple-500 focus:outline-none" required maxlength="15" title="Solo letras, números, espacios y puntos. Mínimo 2 caracteres, máximo 15." />
           <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition w-full">
             ¡Personalizar mi experiencia!
           </button>
@@ -350,6 +321,13 @@ function handleNameSubmission(e) {
       // Close modal and show personalized message
       closeNameModal();
       showPersonalizedWelcome(sanitizedUserName);
+      
+      // Unlock the current mission badge now that we have a name
+      const currentMission = getCurrentMission();
+      if (currentMission) {
+        const badgeId = `mision_${currentMission}`;
+        unlockBadge(badgeId);
+      }
       
       // Refresh badges to show personalized messages
       refreshBadges();
@@ -459,12 +437,39 @@ function getBadgeMission(badgeId) {
 // Function to refresh badge display (useful for debugging or manual refresh)
 function refreshBadges() {
   const currentMission = document.body.dataset.missionId || "mision-3";
-  renderMissionBadges(currentMission);
+  renderMissionPins(currentMission);
+}
+
+// Debug function to check current progress data
+function debugProgress() {
+  const progress = loadProgress();
+  console.log('Current progress data:', progress);
+  console.log('User name:', progress.userName);
+  console.log('Pins:', progress.pins);
+  return progress;
+}
+
+// Manual function to trigger name collection modal (for testing)
+function triggerNameModal() {
+  if (typeof showNameCollectionModal === 'function') {
+    showNameCollectionModal();
+  } else {
+    console.log('showNameCollectionModal function not available');
+  }
+}
+
+// Manual function to save a test name (for debugging)
+function saveTestName(name) {
+  const progress = loadProgress();
+  progress.userName = name;
+  saveProgress(progress);
+  console.log('Test name saved:', name);
+  refreshBadges();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const currentMission = document.body.dataset.missionId || "mision-3";
-  renderMissionBadges(currentMission);
+  const currentMission = getCurrentMission();
+  renderMissionPins(currentMission);
   
   // Update navigation based on progress
   updateNavigation();
@@ -472,7 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Also refresh badges when localStorage changes (for debugging)
   window.addEventListener('storage', (e) => {
     if (e.key === 'progress') {
-      renderMissionBadges(currentMission);
+      renderMissionPins(currentMission);
       updateNavigation(); // Also update navigation on progress changes
     }
   });

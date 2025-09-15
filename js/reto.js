@@ -1,23 +1,72 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const retoButton = document.getElementById("reto-button");
+  const retoButton = document.getElementById("reto-btn") || document.getElementById("reto-button");
 
   if (retoButton) {
     retoButton.addEventListener("click", () => {
-      markMissionComplete(3); // Mission ID for "el dinero que se va"
-      unlockBadge("mision_3");
+      // Determine mission ID based on current page
+      const currentPage = window.location.pathname;
+      let missionId, pinId;
+      
+      if (currentPage.includes("domina-tu-dinero-desde-el-primer-euro")) {
+        missionId = 1;
+        pinId = "mision_1";
+      } else if (currentPage.includes("haz-que-entre-mas-dinero-sin-magia-ni-suerte")) {
+        missionId = 2;
+        pinId = "mision_2";
+      } else if (currentPage.includes("tu-dinero-se-esfuma-y-ni-te-das-cuenta")) {
+        missionId = 3;
+        pinId = "mision_3";
+      } else if (currentPage.includes("haz-que-tu-dinero-crezca-mientras-haces-otra-cosa")) {
+        missionId = 4;
+        pinId = "mision_4";
+      } else if (currentPage.includes("aprende-a-comprar-sin-que-te-vendan-la-moto")) {
+        missionId = 5;
+        pinId = "mision_5";
+      } else if (currentPage.includes("lo-barato-sale-caro-cuando-pagas-con-deuda")) {
+        missionId = 6;
+        pinId = "mision_6";
+      } else {
+        missionId = 1; // default
+        pinId = "mision_1";
+      }
+      
+      markMissionComplete(missionId);
+      
+      // trigger name collection for any mission completion if no name exists
+      if (typeof loadProgress === 'function') {
+        const progress = loadProgress();
+        if (!progress.userName && typeof showNameCollectionModal === 'function') {
+          // Show name collection modal first, then unlock badge after name is entered
+          showNameCollectionModal();
+          return; // Exit early, badge will be unlocked after name is submitted
+        }
+      }
+      
+      // If user already has a name, unlock the badge immediately
+      unlockPin(pinId);
 
-      const final = document.getElementById("final-section");
-      const nextBtn = document.getElementById("next-btn");
-      const hint = document.getElementById("unlock-hint");
+      const hint = document.getElementById("reto-hint");
 
-      // Unlock the section visually
-      final.classList.remove("bg-gray-300", "text-gray-500");
-      final.classList.add("bg-gradient-to-r", "from-purple-600", "to-teal-500", "text-white", "fade-unlock");
+      // Get user name for personalized message
+      let userName = '';
+      if (typeof loadProgress === 'function') {
+        const progress = loadProgress();
+        userName = progress.userName ? `, ${progress.userName}` : '';
+      }
 
-      nextBtn.classList.remove("opacity-50", "pointer-events-none");
-      nextBtn.classList.add("hover:bg-gray-100", "transition");
+      // Update button
+      retoButton.innerHTML = '¡completado! 🎉';
+      retoButton.classList.add('bg-green-500', 'hover:bg-green-600');
+      retoButton.classList.remove('bg-white', 'text-purple-600');
+      retoButton.classList.add('text-white');
+      retoButton.disabled = true;
 
-      hint.classList.add("hidden");
+      // Update hint
+      if (hint) {
+        hint.innerHTML = `✅ ¡misión completada${userName}! tu pin está desbloqueado arriba.`;
+        hint.classList.remove('text-purple-200');
+        hint.classList.add('text-green-200');
+      }
 
       confetti({
         particleCount: 150,
@@ -25,12 +74,60 @@ document.addEventListener("DOMContentLoaded", () => {
         origin: { y: 0.7 }
       });
 
+      // Enable footer section
+      const footerContent = document.getElementById("footer-content");
+      const completionNotification = document.getElementById("completion-notification");
+      
+      if (footerContent) {
+        footerContent.classList.remove("opacity-50", "pointer-events-none");
+        footerContent.classList.add("opacity-100");
+      }
+      
+      if (completionNotification) {
+        completionNotification.classList.remove("hidden");
+      }
+
+      // Refresh badges to show personalized names
+      if (typeof refreshBadges === 'function') {
+        setTimeout(() => refreshBadges(), 1000);
+      }
+
       // Toast notification
       const toast = document.createElement("div");
-      toast.textContent = "🎉 ¡Reto completado! Ahora puedes continuar a la siguiente misión.";
+      toast.textContent = `🎉 ¡reto completado${userName}! ahora puedes continuar a la siguiente misión.`;
       toast.className = "fixed bottom-5 right-5 bg-purple-600 text-white px-4 py-2 rounded shadow-lg";
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3000);
     });
   }
 });
+
+// Enable reto button when all quiz questions are answered
+function enableRetoButton() {
+  const retoButton = document.getElementById("reto-btn");
+  const retoHint = document.getElementById("reto-hint");
+  
+  if (retoButton) {
+    retoButton.disabled = false;
+    retoButton.classList.remove('opacity-50', 'cursor-not-allowed');
+  }
+  
+  if (retoHint) {
+    retoHint.classList.add('hidden');
+  }
+}
+
+// Disable reto button initially
+function disableRetoButton() {
+  const retoButton = document.getElementById("reto-btn");
+  const retoHint = document.getElementById("reto-hint");
+  
+  if (retoButton) {
+    retoButton.disabled = true;
+    retoButton.classList.add('opacity-50', 'cursor-not-allowed');
+  }
+  
+  if (retoHint) {
+    retoHint.classList.remove('hidden');
+  }
+}

@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const quizContainers = document.querySelectorAll('.space-y-10 > div');
-  const QUIZ_STORAGE_KEY = 'quizProgress-mision3';
+  
+  // determine mission number from current page
+  const currentPage = window.location.pathname;
+  let missionNumber = 1; // default
+  if (currentPage.includes("domina-tu-dinero-desde-el-primer-euro")) {
+    missionNumber = 1;
+  } else if (currentPage.includes("tu-dinero-se-esfuma-y-ni-te-das-cuenta")) {
+    missionNumber = 3;
+  }
+  
+  const QUIZ_STORAGE_KEY = `quizProgress-mision${missionNumber}`;
 
-  // Load saved progress or default to empty object
+  // load saved progress or default to empty object
   let savedProgress = {};
   try {
     savedProgress = JSON.parse(localStorage.getItem(QUIZ_STORAGE_KEY) || '{}');
@@ -14,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = container.querySelectorAll('.quiz-btn');
     const questionId = `question-${index}`;
 
-    // Create or reuse feedback element
+    // create or reuse feedback element
     let feedback = container.querySelector('.quiz-feedback');
     if (!feedback) {
       feedback = document.createElement('p');
@@ -22,40 +32,47 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(feedback);
     }
 
-    // --- Restore previous state ---
+    // --- restore previous state ---
     if (savedProgress[questionId]?.answered) {
-      // Show saved correct message
-      feedback.textContent = '¡Correcto! 🎉';
+      // show saved correct message
+      feedback.textContent = '¡correcto! 🎉';
       feedback.classList.add('text-green-600');
 
-      // Disable all buttons
+      // disable all buttons
       buttons.forEach(btn => {
         btn.disabled = true;
-        btn.classList.add('opacity-50', 'cursor-not-allowed');
+        btn.classList.add('cursor-not-allowed');
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.5';
 
-        // Highlight the correct button
+        // highlight the correct button
         if (btn.dataset.correct === "true") {
           btn.classList.add('bg-green-500');
         }
       });
     }
 
-    // --- Set up click handling ---
+    // --- set up click handling ---
     buttons.forEach(button => {
       button.addEventListener('click', () => {
-        // Clear old feedback
+        // if question already answered, don't do anything
+        if (savedProgress[questionId]?.answered) {
+          return;
+        }
+
+        // clear old feedback
         feedback.textContent = '';
         feedback.classList.remove('text-green-600', 'text-red-600', 'animate-bounce');
 
         if (button.dataset.correct === "true") {
-          // Show success message
+          // show success message
           feedback.textContent = '¡correcto! 🎉';
           feedback.classList.add('text-green-600', 'animate-bounce');
 
-          // Animate correct button
+          // animate correct button
           button.classList.add('bg-green-500', 'scale-110', 'transition', 'duration-300');
 
-          // Confetti effect
+          // confetti effect
           if (typeof confetti === 'function') {
             confetti({
               particleCount: 80,
@@ -64,29 +81,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
 
-          // Check if all quiz questions are answered to unlock mission badge
+          // Save quiz progress when answered correctly
           if (!savedProgress[questionId]?.answered) {
             savedProgress[questionId] = { answered: true };
             
-            // Check if all questions are answered
-            const allQuestionsAnswered = Object.keys(savedProgress).every(key => savedProgress[key].answered);
-            if (allQuestionsAnswered) {
-              unlockBadge("mision_3");
-            }
-            
-            // Save progress to localStorage (only once)
+            // Save progress to localStorage
             try {
               localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(savedProgress));
             } catch (error) {
               console.error("Error saving quiz progress:", error);
             }
+            
+            // Check if all questions are answered to enable reto button
+            const allQuestionsAnswered = quizContainers.length === Object.keys(savedProgress).length && 
+                                       Object.keys(savedProgress).every(key => savedProgress[key].answered);
+            if (allQuestionsAnswered && typeof enableRetoButton === 'function') {
+              enableRetoButton();
+            }
           }
 
-          // Disable all buttons after animation
+          // disable all buttons after animation
           setTimeout(() => {
             buttons.forEach(btn => {
               btn.disabled = true;
-              btn.classList.add('opacity-50', 'cursor-not-allowed');
+              btn.classList.add('cursor-not-allowed');
+              btn.style.pointerEvents = 'none';
+              btn.style.opacity = '0.5';
             });
           }, 400);
 

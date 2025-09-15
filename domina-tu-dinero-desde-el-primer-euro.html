@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>domina tu dinero desde el primer euro - Misión 1</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>domina tu dinero desde el primer euro - misión 1</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/config.js"></script>
   <script>
     tailwind.config = window.tailwindConfig;
   </script>
+  <link rel="stylesheet" href="css/styles.css">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="08ddbcc8-43fa-4dd3-8a0c-21b6fc88c56d"></script>
 </head>
 <body class="bg-purple-50 text-gray-800" data-mission-id="mision-1">
@@ -18,13 +22,16 @@
   <header class="bg-white shadow sticky top-0 z-50">
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <a href="index.html" class="font-bold text-purple-700">finanzas adolescentes</a>
-      <div class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="el-dinero-mola-mas-cuando-lo-sabes-usar.html" class="text-purple-700 font-bold underline">1 · el dinero mola</a>
-        <a href="que-hacer-para-que-entre-mas-dinero-en-tu-bolsillo.html" class="hover:text-purple-600">2 · hacer que entre más dinero</a>
-        <a href="controlar-tu-dinero-antes-de-que-desaparezca.html" class="hover:text-purple-600">3 · controlar tu dinero</a>
-        <a href="el-truco-para-que-tu-dinero-se-multiplique-solo.html" class="hover:text-purple-600">4 · el truco del dinero</a>
-        <a href="comprar-sin-que-te-timen.html" class="hover:text-purple-600">5 · comprar evitando las trampas y los timos</a>
-        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · lo barato sale caro cuando pagas con deuda</a>
+      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <a href="domina-tu-dinero-desde-el-primer-euro.html" class="text-purple-700 font-bold underline">1 · domina tu dinero</a>
+        <a href="haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" class="hover:text-purple-600">2 · hacer que entre más dinero</a>
+        <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="hover:text-purple-600">3 · gestiona tu dinero</a>
+        <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600">4 · hacer crecer tu dinero</a>
+        <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600">5 · compras inteligentes</a>
+        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · evita las deudas</a>
+        <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
+          🗑️ clear
+        </button>
       </div>
     </nav>
   </header>
@@ -38,9 +45,50 @@
       <div class="mt-12 text-sm flex flex-col items-center space-y-2">
         <div class="mt-4">
           <p class="font-medium mb-4">misión 1 de 6 · 10 min</p>
-          <div id="mission-badges" class="flex flex-wrap justify-center gap-2"></div>
+          <div id="mission-pins" class="flex flex-wrap justify-center gap-2"></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- STORY ROTATION SECTION -->
+  <section class="max-w-6xl mx-auto px-6 py-8">
+    <div class="bg-gradient-to-r from-purple-100 to-teal-100 rounded-xl p-8 text-center">
+      <h3 class="text-2xl font-bold text-purple-800 mb-6">💸 historias reales</h3>
+      <div id="story-container" class="mb-6">
+        <div class="story-slide active">
+          <h4 class="text-xl font-semibold text-gray-800 mb-3">José José - "el príncipe de la canción"</h4>
+          <p class="text-sm text-purple-800 font-semibold uppercase mb-2">error: gastar sin plan</p>
+          <p class="text-gray-700 mb-4">
+            a pesar de su enorme éxito, terminó sus días con limitaciones económicas debido a <strong>malas inversiones</strong> y problemas de salud. 
+            <strong class="text-purple-700">aprende a evitar sus errores.</strong>
+          </p>
+        </div>
+        <div class="story-slide hidden">
+          <h4 class="text-xl font-semibold text-gray-800 mb-3">Mike Tyson - exboxeador</h4>
+          <p class="text-sm text-purple-800 font-semibold uppercase mb-2">error: gastar en lujos innecesarios</p>
+          <p class="text-gray-700 mb-4">
+            ganó <strong>400 millones de dólares</strong> pero se declaró en bancarrota con deudas de 23 millones. 
+            gastó en tigres, mansiones y una flota de coches de lujo.
+            <strong class="text-purple-700">aprende a controlar tus gastos.</strong>
+          </p>
+        </div>
+        <div class="story-slide hidden">
+          <h4 class="text-xl font-semibold text-gray-800 mb-3">50 Cent - rapero y empresario</h4>
+          <p class="text-sm text-purple-800 font-semibold uppercase mb-2">error: confiar en la gente equivocada</p>
+          <p class="text-gray-700 mb-4">
+            se declaró en bancarrota con deudas de <strong>36 millones de dólares</strong> debido a malos asesores 
+            y demandas legales costosas. después se recuperó con inversiones inteligentes.
+            <strong class="text-purple-700">elige bien a quién confías tu dinero.</strong>
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-center space-x-2 mb-4">
+        <button class="story-dot w-3 h-3 rounded-full bg-purple-400 active" data-slide="0"></button>
+        <button class="story-dot w-3 h-3 rounded-full bg-purple-300" data-slide="1"></button>
+        <button class="story-dot w-3 h-3 rounded-full bg-purple-300" data-slide="2"></button>
+      </div>
+      <p class="text-sm text-gray-600">cada historia enseña una lección importante sobre el dinero · <a href="fuentes.html" class="text-purple-600 hover:text-purple-800 underline">fuentes y referencias</a></p>
     </div>
   </section>
 
@@ -56,7 +104,6 @@
       <ul class="space-y-2 text-purple-700">
         <li>💡 <a href="#educacion" class="hover:underline">¿qué es la educación financiera?</a></li>
         <li>🎯 <a href="#impacto" class="hover:underline">cómo influye en tu día a día y futuro</a></li>
-        <li>💸 <a href="#famosos" class="hover:underline">famosos arruinados: ejemplos reales</a></li>
         <li>🧠 <a href="#decisiones" class="hover:underline">el poder de las decisiones</a></li>
         <li>👥 <a href="#ejemplos" class="hover:underline">ejemplos reales</a></li>
         <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
@@ -138,62 +185,6 @@
     </div>
   </section>
 
-  <!-- Famosos Arruinados -->
-  <section id="famosos" class="max-w-6xl mx-auto px-6 py-12">
-    <h2 class="text-3xl font-bold mb-6 text-center">famosos arruinados: ejemplos reales</h2>
-    <p class="text-center text-gray-600 mb-12">
-      tener mucho dinero no garantiza nada si no sabes gestionarlo
-    </p>
-    
-    <div class="space-y-8">
-      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="text-center">
-            <div class="text-6xl mb-4">🎵</div>
-            <h3 class="text-xl font-bold text-purple-700 mb-2">MC Hammer</h3>
-            <p class="text-gray-600">Rapero que ganó 33 millones de dólares en los 90</p>
-          </div>
-          <div>
-            <h4 class="font-bold text-red-600 mb-3">❌ qué pasó:</h4>
-            <ul class="space-y-2 text-gray-600">
-              <li>• Gastó en mansiones, coches de lujo, fiestas</li>
-              <li>• Contrató a 200 personas para su casa</li>
-              <li>• No ahorró ni invirtió nada</li>
-              <li>• <strong>Resultado: bancarrota en 1996</strong></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="text-center">
-            <div class="text-6xl mb-4">🎬</div>
-            <h3 class="text-xl font-bold text-purple-700 mb-2">Nicolas Cage</h3>
-            <p class="text-gray-600">Actor que ganó 150 millones de dólares</p>
-          </div>
-          <div>
-            <h4 class="font-bold text-red-600 mb-3">❌ qué pasó:</h4>
-            <ul class="space-y-2 text-gray-600">
-              <li>• Compró mansiones, dinosaurios, islas</li>
-              <li>• Gastó 30 millones solo en casas</li>
-              <li>• No pagó impuestos correctamente</li>
-              <li>• <strong>Resultado: debía 13 millones al fisco</strong></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gradient-to-r from-purple-100 to-teal-100 p-6 rounded-xl">
-        <h3 class="text-xl font-bold text-center mb-4">💡 la lección</h3>
-        <p class="text-center text-gray-700">
-          <strong>Dinero sin conocimiento = desastre.</strong> 
-          No importa cuánto ganes si no sabes qué hacer con él. 
-          <span class="text-purple-700">Por eso es tan importante aprender ahora.</span>
-        </p>
-      </div>
-    </div>
-  </section>
 
   <!-- Poder de las Decisiones -->
   <section id="decisiones" class="max-w-6xl mx-auto px-6 py-12">
@@ -285,21 +276,54 @@
       <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
         acepto el reto 💪
       </button>
-      <p id="unlock-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear el siguiente paso</p>
+      <p id="unlock-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
     </div>
   </section>
 
-  <!-- Debug: Reset button (remove in production) -->
-  <section class="max-w-4xl mx-auto px-6 py-8">
-    <div class="text-center p-4 bg-gray-100 rounded-lg">
-      <p class="text-sm text-gray-600 mb-2">🧪 Debug tools:</p>
-      <button onclick="resetProgress()" class="bg-red-500 text-white px-4 py-2 rounded text-sm hover:bg-red-600 transition">
-        Reset Progress & Name
-      </button>
+  <!-- Frase final bloqueada -->
+  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">tu dinero puede esfumarse... o ayudarte a conseguir lo que sueñas</h2>
+      <p class="text-xl mb-8">para conseguir lo que quieres —desde un viaje con amigos hasta tu primer ordenador— necesitas aprender a decidir qué cosas valen la pena y cuáles solo te alejan de tus metas.</p>
+      <a href="haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
+        quiero poner en orden mis gastos ➡
+      </a>
     </div>
   </section>
 
   <script>
+    // Story rotation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.story-slide');
+      const dots = document.querySelectorAll('.story-dot');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+          slide.classList.toggle('hidden', i !== index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+          dot.classList.toggle('bg-purple-400', i === index);
+          dot.classList.toggle('bg-purple-300', i !== index);
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+
+      // Auto-rotate every 5 seconds
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
+    });
+
     // TOC functionality
     document.addEventListener('DOMContentLoaded', function() {
       const tocButton = document.querySelector('[data-toc-button]');
@@ -313,56 +337,6 @@
         });
       }
 
-      // Quiz functionality
-      const quizButtons = document.querySelectorAll('.quiz-btn');
-      quizButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const isCorrect = this.getAttribute('data-correct') === 'true';
-          const allButtons = this.parentNode.querySelectorAll('.quiz-btn');
-          
-          // Disable all buttons in this question
-          allButtons.forEach(btn => btn.disabled = true);
-          
-          // Show results
-          allButtons.forEach(btn => {
-            const correct = btn.getAttribute('data-correct') === 'true';
-            if (correct) {
-              btn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
-              btn.classList.add('bg-green-500');
-              btn.innerHTML += ' ✅';
-            } else if (btn === this && !isCorrect) {
-              btn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
-              btn.classList.add('bg-red-500');
-              btn.innerHTML += ' ❌';
-            } else {
-              btn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
-              btn.classList.add('bg-gray-400');
-            }
-          });
-        });
-      });
-
-      // Reto functionality
-      const retoButton = document.getElementById('reto-button');
-      const unlockHint = document.getElementById('unlock-hint');
-      
-      if (retoButton) {
-        retoButton.addEventListener('click', function() {
-          // Unlock Mission 1 badge
-          unlockBadge('mision_1');
-          
-          // Update button
-          this.innerHTML = '¡Completado! 🎉';
-          this.classList.add('bg-green-500', 'hover:bg-green-600');
-          this.classList.remove('bg-purple-600', 'hover:bg-purple-700');
-          this.disabled = true;
-          
-          // Update hint
-          unlockHint.innerHTML = '✅ ¡Misión completada! Tu badge está desbloqueado arriba.';
-          unlockHint.classList.remove('text-gray-600');
-          unlockHint.classList.add('text-green-600');
-        });
-      }
     });
     
     function resetProgress() {
@@ -372,8 +346,20 @@
       // Reload page to reset everything
       location.reload();
     }
+
+    function clearLocalStorage() {
+      if (confirm('¿Estás seguro de que quieres limpiar todos los datos guardados? Esto reseteará tu progreso.')) {
+        localStorage.clear();
+        alert('✅ localStorage limpiado. La página se recargará.');
+        location.reload();
+      }
+    }
   </script>
 
-  <script src="js/progress.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+  <script src="js/page-helpers.js" defer></script>
+  <script src="js/progress.js?v=28" defer></script>
+  <script src="js/quiz.js?v=7" defer></script>
+  <script src="js/reto.js" defer></script>
 </body>
 </html>
