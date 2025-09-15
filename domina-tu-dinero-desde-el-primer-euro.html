@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>domina tu dinero desde el primer euro - Misión 1</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/config.js"></script>
+  <script>
+    tailwind.config = window.tailwindConfig;
+  </script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="08ddbcc8-43fa-4dd3-8a0c-21b6fc88c56d"></script>
+</head>
+<body class="bg-purple-50 text-gray-800" data-mission-id="mision-1">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-bold text-purple-700">finanzas adolescentes</a>
+      <div class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="el-dinero-mola-mas-cuando-lo-sabes-usar.html" class="text-purple-700 font-bold underline">1 · el dinero mola</a>
+        <a href="que-hacer-para-que-entre-mas-dinero-en-tu-bolsillo.html" class="hover:text-purple-600">2 · hacer que entre más dinero</a>
+        <a href="controlar-tu-dinero-antes-de-que-desaparezca.html" class="hover:text-purple-600">3 · controlar tu dinero</a>
+        <a href="el-truco-para-que-tu-dinero-se-multiplique-solo.html" class="hover:text-purple-600">4 · el truco del dinero</a>
+        <a href="comprar-sin-que-te-timen.html" class="hover:text-purple-600">5 · comprar evitando las trampas y los timos</a>
+        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · lo barato sale caro cuando pagas con deuda</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-6xl mb-4">💸</div>
+      <h1 class="text-4xl font-bold mb-2">domina tu dinero desde el primer euro</h1>
+      <p class="text-lg">ganar está bien. saber usarlo sin perderlo... eso ya es otro nivel.</p>
+      <div class="mt-12 text-sm flex flex-col items-center space-y-2">
+        <div class="mt-4">
+          <p class="font-medium mb-4">misión 1 de 6 · 10 min</p>
+          <div id="mission-badges" class="flex flex-wrap justify-center gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOC DESPLEGABLE -->
+  <div class="max-w-2xl mx-auto my-8 px-4">
+    <button data-toc-button 
+            class="w-full bg-purple-100 text-purple-700 font-semibold px-4 py-3 rounded-lg shadow hover:bg-purple-200 transition flex justify-between items-center">
+      en esta misión verás
+      <span id="toc-icon">▼</span>
+    </button>
+
+    <div id="toc-content" class="hidden bg-white border border-purple-200 rounded-lg mt-2 p-4">
+      <ul class="space-y-2 text-purple-700">
+        <li>💡 <a href="#educacion" class="hover:underline">¿qué es la educación financiera?</a></li>
+        <li>🎯 <a href="#impacto" class="hover:underline">cómo influye en tu día a día y futuro</a></li>
+        <li>💸 <a href="#famosos" class="hover:underline">famosos arruinados: ejemplos reales</a></li>
+        <li>🧠 <a href="#decisiones" class="hover:underline">el poder de las decisiones</a></li>
+        <li>👥 <a href="#ejemplos" class="hover:underline">ejemplos reales</a></li>
+        <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
+        <li>🐜 <a href="#reto" class="hover:underline">reto práctico</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Educación Financiera -->
+  <section id="educacion" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">¿qué es la educación financiera?</h2>
+    <p class="text-center text-gray-600 mb-12">
+      no es aburrido ni complicado: es saber usar tu dinero para conseguir lo que realmente quieres
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">❌</div>
+        <h4 class="text-xl font-bold mb-2">sin educación financiera</h4>
+        <p class="text-gray-600 mb-2">el dinero se escapa sin que te des cuenta</p>
+        <p class="text-purple-600 font-semibold">gastas, no sabes en qué, y nunca tienes para lo que quieres</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">✅</div>
+        <h4 class="text-xl font-bold mb-2">con educación financiera</h4>
+        <p class="text-gray-600 mb-2">tienes el control y sabes exactamente qué hacer</p>
+        <p class="text-purple-600 font-semibold">ahorras, inviertes y consigues tus objetivos</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">🎯</div>
+        <h4 class="text-xl font-bold mb-2">la diferencia</h4>
+        <p class="text-gray-600 mb-2">no es cuánto dinero tienes, sino qué sabes hacer con él</p>
+        <p class="text-purple-600 font-semibold">conocimiento = superpoder</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impacto -->
+  <section id="impacto" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">cómo influye en tu día a día y futuro</h2>
+    <p class="text-center text-gray-600 mb-12">
+      cada decisión que tomas con tu dinero tiene consecuencias, pequeñas ahora pero enormes en el futuro
+    </p>
+    
+    <div class="bg-gradient-to-r from-purple-50 to-teal-50 p-8 rounded-xl mb-8">
+      <h3 class="text-2xl font-bold mb-6 text-center">📅 tu día a día</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="font-bold text-purple-700 mb-3">🌅 por la mañana</h4>
+          <p class="text-gray-600">Decides: ¿desayuno en casa o compro algo en el camino?</p>
+          <p class="text-sm text-purple-600 mt-2">Ahorro: 3€/día = 1.095€/año</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="font-bold text-purple-700 mb-3">🎬 por la tarde</h4>
+          <p class="text-gray-600">Decides: ¿Netflix en casa o cine con amigos?</p>
+          <p class="text-sm text-purple-600 mt-2">Ahorro: 8€/semana = 416€/año</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-teal-50 to-pink-50 p-8 rounded-xl">
+      <h3 class="text-2xl font-bold mb-6 text-center">🚀 tu futuro</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+          <div class="text-3xl mb-3">🎓</div>
+          <h4 class="font-bold text-purple-700 mb-2">universidad</h4>
+          <p class="text-gray-600 text-sm">Dinero ahorrado = menos deuda estudiantil</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+          <div class="text-3xl mb-3">🏠</div>
+          <h4 class="font-bold text-purple-700 mb-2">independencia</h4>
+          <p class="text-gray-600 text-sm">Conocimiento = salir de casa antes</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+          <div class="text-3xl mb-3">🌍</div>
+          <h4 class="font-bold text-purple-700 mb-2">libertad</h4>
+          <p class="text-gray-600 text-sm">Opciones = elegir tu vida, no que te la elijan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Famosos Arruinados -->
+  <section id="famosos" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">famosos arruinados: ejemplos reales</h2>
+    <p class="text-center text-gray-600 mb-12">
+      tener mucho dinero no garantiza nada si no sabes gestionarlo
+    </p>
+    
+    <div class="space-y-8">
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="text-center">
+            <div class="text-6xl mb-4">🎵</div>
+            <h3 class="text-xl font-bold text-purple-700 mb-2">MC Hammer</h3>
+            <p class="text-gray-600">Rapero que ganó 33 millones de dólares en los 90</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-red-600 mb-3">❌ qué pasó:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Gastó en mansiones, coches de lujo, fiestas</li>
+              <li>• Contrató a 200 personas para su casa</li>
+              <li>• No ahorró ni invirtió nada</li>
+              <li>• <strong>Resultado: bancarrota en 1996</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="text-center">
+            <div class="text-6xl mb-4">🎬</div>
+            <h3 class="text-xl font-bold text-purple-700 mb-2">Nicolas Cage</h3>
+            <p class="text-gray-600">Actor que ganó 150 millones de dólares</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-red-600 mb-3">❌ qué pasó:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Compró mansiones, dinosaurios, islas</li>
+              <li>• Gastó 30 millones solo en casas</li>
+              <li>• No pagó impuestos correctamente</li>
+              <li>• <strong>Resultado: debía 13 millones al fisco</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-purple-100 to-teal-100 p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-center mb-4">💡 la lección</h3>
+        <p class="text-center text-gray-700">
+          <strong>Dinero sin conocimiento = desastre.</strong> 
+          No importa cuánto ganes si no sabes qué hacer con él. 
+          <span class="text-purple-700">Por eso es tan importante aprender ahora.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poder de las Decisiones -->
+  <section id="decisiones" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">el poder de las decisiones</h2>
+    <p class="text-center text-gray-600 mb-12">
+      pequeñas decisiones se convierten en grandes diferencias con el tiempo
+    </p>
+    
+    <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h3 class="text-2xl font-bold mb-6 text-center">🧮 el efecto bola de nieve</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="text-center">
+          <h4 class="font-bold text-green-600 mb-4">✅ decisión inteligente</h4>
+          <div class="space-y-3">
+            <p class="text-sm">Ahorras 5€/semana desde los 16</p>
+            <p class="text-sm">→ 5€ × 52 semanas = 260€/año</p>
+            <p class="text-sm">→ En 10 años = 2.600€</p>
+            <p class="text-sm">→ Con inversión = 3.500€</p>
+            <p class="font-bold text-green-600">¡Tu primer coche!</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <h4 class="font-bold text-red-600 mb-4">❌ decisión tonta</h4>
+          <div class="space-y-3">
+            <p class="text-sm">Gastas 5€/semana en chuches</p>
+            <p class="text-sm">→ 5€ × 52 semanas = 260€/año</p>
+            <p class="text-sm">→ En 10 años = 2.600€</p>
+            <p class="text-sm">→ Perdido para siempre</p>
+            <p class="font-bold text-red-600">¡Nada que mostrar!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejemplos Reales -->
+  <section id="ejemplos" class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold mb-2 text-center">vidas reales, decisiones reales</h2>
+    <p class="text-center text-gray-600 mb-10">
+      otros adolescentes como tú ya están tomando decisiones sobre su dinero
+    </p>
+    <div class="bg-pink-50 border-l-4 border-pink-400 p-6 rounded-lg hover:shadow-lg transition space-y-4">
+      <div>
+        <h3 class="font-semibold">❌ ejemplo negativo</h3>
+        <p>Un chico de 17 años recibía 50€ de paga cada semana. Se lo gastaba todo en ropa de marca y salidas para impresionar en Instagram. Después de 6 meses, cuando sus amigos se iban de viaje de fin de curso, él no tenía dinero y tuvo que quedarse en casa.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">✅ ejemplo positivo</h3>
+        <p>Una chica de 16 años empezó a apuntar cada gasto en su móvil. Descubrió que gastaba 4€ diarios en refrescos y chuches. Al reducirlo a 1€, en un año ahorró 1.095€ y se compró la consola que quería + un viaje con sus amigas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-2xl font-bold mb-2">demuestra que entiendes el poder del dinero</h2>
+    <p class="text-gray-600 mb-10">comprueba si sabes por qué es importante la educación financiera</p>
+
+    <div class="space-y-10">
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-4">¿qué es más importante para tener éxito con el dinero?</h3>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">ganar mucho dinero</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">saber usar el dinero que tienes</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">tener suerte</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-4">si ahorras 10€ cada semana durante 2 años, ¿cuánto tendrás?</h3>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">520€</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">1.040€</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">200€</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reto -->
+  <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
+      <h2 class="text-3xl font-bold mb-4 text-purple-700">el reto: descubre tus gastos invisibles 💰</h2>
+      <p class="mb-6 text-gray-700">
+        durante 3 días apunta TODO lo que gastas, por pequeño que sea. 
+        Al final, suma: <em>¿cuánto se te fue en "cositas pequeñas"? 
+        ¿Qué podrías haber hecho con ese dinero si lo hubieras ahorrado?</em>
+      </p>
+      <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
+        acepto el reto 💪
+      </button>
+      <p id="unlock-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear el siguiente paso</p>
+    </div>
+  </section>
+
+  <!-- Debug: Reset button (remove in production) -->
+  <section class="max-w-4xl mx-auto px-6 py-8">
+    <div class="text-center p-4 bg-gray-100 rounded-lg">
+      <p class="text-sm text-gray-600 mb-2">🧪 Debug tools:</p>
+      <button onclick="resetProgress()" class="bg-red-500 text-white px-4 py-2 rounded text-sm hover:bg-red-600 transition">
+        Reset Progress & Name
+      </button>
+    </div>
+  </section>
+
+  <script>
+    // TOC functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocButton = document.querySelector('[data-toc-button]');
+      const tocContent = document.getElementById('toc-content');
+      const tocIcon = document.getElementById('toc-icon');
+      
+      if (tocButton && tocContent) {
+        tocButton.addEventListener('click', function() {
+          tocContent.classList.toggle('hidden');
+          tocIcon.textContent = tocContent.classList.contains('hidden') ? '▼' : '▲';
+        });
+      }
+
+      // Quiz functionality
+      const quizButtons = document.querySelectorAll('.quiz-btn');
+      quizButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const isCorrect = this.getAttribute('data-correct') === 'true';
+          const allButtons = this.parentNode.querySelectorAll('.quiz-btn');
+          
+          // Disable all buttons in this question
+          allButtons.forEach(btn => btn.disabled = true);
+          
+          // Show results
+          allButtons.forEach(btn => {
+            const correct = btn.getAttribute('data-correct') === 'true';
+            if (correct) {
+              btn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
+              btn.classList.add('bg-green-500');
+              btn.innerHTML += ' ✅';
+            } else if (btn === this && !isCorrect) {
+              btn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
+              btn.classList.add('bg-red-500');
+              btn.innerHTML += ' ❌';
+            } else {
+              btn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
+              btn.classList.add('bg-gray-400');
+            }
+          });
+        });
+      });
+
+      // Reto functionality
+      const retoButton = document.getElementById('reto-button');
+      const unlockHint = document.getElementById('unlock-hint');
+      
+      if (retoButton) {
+        retoButton.addEventListener('click', function() {
+          // Unlock Mission 1 badge
+          unlockBadge('mision_1');
+          
+          // Update button
+          this.innerHTML = '¡Completado! 🎉';
+          this.classList.add('bg-green-500', 'hover:bg-green-600');
+          this.classList.remove('bg-purple-600', 'hover:bg-purple-700');
+          this.disabled = true;
+          
+          // Update hint
+          unlockHint.innerHTML = '✅ ¡Misión completada! Tu badge está desbloqueado arriba.';
+          unlockHint.classList.remove('text-gray-600');
+          unlockHint.classList.add('text-green-600');
+        });
+      }
+    });
+    
+    function resetProgress() {
+      // Clear all localStorage
+      localStorage.clear();
+      
+      // Reload page to reset everything
+      location.reload();
+    }
+  </script>
+
+  <script src="js/progress.js"></script>
+</body>
+</html>

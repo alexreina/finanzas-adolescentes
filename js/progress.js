@@ -225,12 +225,12 @@ function renderMissionBadges(missionId) {
 
 function getMissionUrl(missionNumber) {
   const missionUrlMap = {
-    1: "el-dinero-mola-mas-cuando-lo-sabes-usar.html",
-    2: "que-hacer-para-que-entre-mas-dinero-en-tu-bolsillo.html", 
-    3: "controlar-tu-dinero-antes-de-que-desaparezca.html",
-    4: "el-truco-para-que-tu-dinero-se-multiplique-solo.html",
-    5: "comprar-sin-que-te-timen.html",
-    6: "las-deudas-son-el-enemigo-numero-1.html"
+    1: "domina-tu-dinero-desde-el-primer-euro.html",
+    2: "haz-que-entre-mas-dinero-sin-magia-ni-suerte.html", 
+    3: "tu-dinero-se-esfuma-y-ni-te-das-cuenta.html",
+    4: "haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html",
+    5: "aprende-a-comprar-sin-que-te-vendan-la-moto.html",
+             6: "lo-barato-sale-caro-cuando-pagas-con-deuda.html"
   };
   return missionUrlMap[missionNumber] || "index.html";
 }
