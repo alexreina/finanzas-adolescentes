@@ -6,8 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let missionNumber = 1; // default
   if (currentPage.includes("domina-tu-dinero-desde-el-primer-euro")) {
     missionNumber = 1;
+  } else if (currentPage.includes("haz-que-entre-mas-dinero-sin-magia-ni-suerte")) {
+    missionNumber = 2;
   } else if (currentPage.includes("tu-dinero-se-esfuma-y-ni-te-das-cuenta")) {
     missionNumber = 3;
+  } else if (currentPage.includes("haz-que-tu-dinero-crezca-mientras-haces-otra-cosa")) {
+    missionNumber = 4;
+  } else if (currentPage.includes("aprende-a-comprar-sin-que-te-vendan-la-moto")) {
+    missionNumber = 5;
+  } else if (currentPage.includes("lo-barato-sale-caro-cuando-pagas-con-deuda")) {
+    missionNumber = 6;
   }
   
   const QUIZ_STORAGE_KEY = `quizProgress-mision${missionNumber}`;

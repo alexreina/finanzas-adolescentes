@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const retoButton = document.getElementById("reto-btn") || document.getElementById("reto-button");
 
   if (retoButton) {
+    // Ensure reto button starts disabled (quiz system will enable it)
+    disableRetoButton();
+    
     retoButton.addEventListener("click", () => {
       // Determine mission ID based on current page
       const currentPage = window.location.pathname;
@@ -31,6 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       markMissionComplete(missionId);
+      
+      // Enable final CTA section FIRST (before name collection check)
+      const finalCTA = document.getElementById("takeaway");
+      if (finalCTA) {
+        finalCTA.classList.remove("opacity-50", "pointer-events-none");
+        finalCTA.classList.add("opacity-100");
+      } else {
+        // Fallback: try again after a short delay
+        setTimeout(() => {
+          const retryCTA = document.getElementById("takeaway");
+          if (retryCTA) {
+            retryCTA.classList.remove("opacity-50", "pointer-events-none");
+            retryCTA.classList.add("opacity-100");
+          }
+        }, 100);
+      }
       
       // trigger name collection for any mission completion if no name exists
       if (typeof loadProgress === 'function') {
@@ -74,19 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
         origin: { y: 0.7 }
       });
 
-      // Enable footer section
-      const footerContent = document.getElementById("footer-content");
-      const completionNotification = document.getElementById("completion-notification");
-      
-      if (footerContent) {
-        footerContent.classList.remove("opacity-50", "pointer-events-none");
-        footerContent.classList.add("opacity-100");
-      }
-      
-      if (completionNotification) {
-        completionNotification.classList.remove("hidden");
-      }
-
       // Refresh badges to show personalized names
       if (typeof refreshBadges === 'function') {
         setTimeout(() => refreshBadges(), 1000);
@@ -104,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Enable reto button when all quiz questions are answered
 function enableRetoButton() {
-  const retoButton = document.getElementById("reto-btn");
+  const retoButton = document.getElementById("reto-btn") || document.getElementById("reto-button");
   const retoHint = document.getElementById("reto-hint");
   
   if (retoButton) {
@@ -119,7 +125,7 @@ function enableRetoButton() {
 
 // Disable reto button initially
 function disableRetoButton() {
-  const retoButton = document.getElementById("reto-btn");
+  const retoButton = document.getElementById("reto-btn") || document.getElementById("reto-button");
   const retoHint = document.getElementById("reto-hint");
   
   if (retoButton) {

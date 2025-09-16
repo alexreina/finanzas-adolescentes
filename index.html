@@ -93,11 +93,17 @@
       // Mission preview hover effects
       document.querySelectorAll('.mission-preview').forEach(mission => {
         mission.addEventListener('mouseenter', function() {
-          this.querySelector('.mission-hint').style.opacity = '1';
+          const hint = this.querySelector('.mission-hint');
+          if (hint) {
+            hint.style.opacity = '1';
+          }
         });
         
         mission.addEventListener('mouseleave', function() {
-          this.querySelector('.mission-hint').style.opacity = '0';
+          const hint = this.querySelector('.mission-hint');
+          if (hint) {
+            hint.style.opacity = '0';
+          }
         });
       });
 
@@ -204,13 +210,13 @@
 
   <!-- MISIONES EN GRID -->
   <section id="misiones" class="pt-8 pb-12 max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-4 text-center">completa 6 misiones divertidas y consigue que tu dinero trabaje para ti</h2>
-    <p class="text-center text-gray-600 mb-10">cada misión te lleva menos de 20 min y te renta porque acabas teniendo más para lo que te importa</p>
+    <h2 class="text-3xl font-bold mb-4 text-center">completa 6 misiones divertidas y fáciles para dominar tu dinero</h2>
+    <p class="text-center text-gray-600 mb-10">duran menos de 20 min y te renta porque acabarás teniendo más dinero para lo que de verdad te importa</p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 <!-- Misión 1 -->
-<div class="block transform hover:scale-105 transition cursor-pointer mission-preview" data-mission="1">
+<a href="domina-tu-dinero-desde-el-primer-euro.html" class="block transform hover:scale-105 transition cursor-pointer mission-preview" data-mission="1">
   <div class="bg-white shadow-lg rounded-xl p-6 relative hover:shadow-2xl text-center flex flex-col">
     <div class="absolute top-4 left-4 w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded-full font-bold">1</div>
     <div class="absolute top-4 right-4 text-sm text-gray-500">⏱️ 10 min</div>
@@ -218,10 +224,10 @@
     <h3 class="text-xl font-bold mb-2">domina tu dinero desde el primer euro</h3>
     <p class="text-gray-600">ganar está bien. saber usarlo sin perderlo... eso ya es otro nivel</p>
     <div class="mission-hint mt-4 text-sm text-purple-600 font-semibold opacity-0 transition-opacity duration-300">
-      click 'comenzar gratis' para acceder
+      ¡pincha aquí para comenzar! 🚀
     </div>
   </div>
-</div>
+</a>
 
 <!-- Misión 2 -->
 <div class="block transform hover:scale-105 transition cursor-pointer mission-preview" data-mission="2">
@@ -232,7 +238,7 @@
     <h3 class="text-xl font-bold mb-2">haz que entre más dinero sin magia ni suerte</h3>
     <p class="text-gray-600">de la paga a los mini-trabajos: formas reales de tener más</p>
     <div class="mission-hint mt-4 text-sm text-purple-600 font-semibold opacity-0 transition-opacity duration-300">
-      click 'comenzar gratis' para acceder
+      empieza por la misión 1 👈
     </div>
   </div>
 </div>
@@ -246,7 +252,7 @@
     <h3 class="text-xl font-bold mb-2">tu dinero se esfuma… y ni te das cuenta</h3>
     <p class="text-gray-600">aprende a seguirle la pista antes de que desaparezca</p>
     <div class="mission-hint mt-4 text-sm text-purple-600 font-semibold opacity-0 transition-opacity duration-300">
-      click 'comenzar gratis' para acceder
+      empieza por la misión 1 👈
     </div>
   </div>
 </div>
@@ -260,7 +266,7 @@
     <h3 class="text-xl font-bold mb-2">haz que tu dinero crezca mientras haces otra cosa</h3>
     <p class="text-gray-600">ahorrar está bien. invertir sin miedo está mejor</p>
     <div class="mission-hint mt-4 text-sm text-purple-600 font-semibold opacity-0 transition-opacity duration-300">
-      click 'comenzar gratis' para acceder
+      empieza por la misión 1 👈
     </div>
   </div>
 </div>
@@ -274,7 +280,7 @@
     <h3 class="text-xl font-bold mb-2">aprende a comprar sin que te vendan la moto</h3>
     <p class="text-gray-600">publicidad, timos e influencers: cómo no caer en la trampa</p>
     <div class="mission-hint mt-4 text-sm text-purple-600 font-semibold opacity-0 transition-opacity duration-300">
-      click 'comenzar gratis' para acceder
+      empieza por la misión 1 👈
     </div>
   </div>
 </div>
@@ -288,7 +294,7 @@
     <h3 class="text-xl font-bold mb-2">lo barato sale caro cuando pagas con deuda</h3>
     <p class="text-gray-600">créditos, compras a plazos y por qué decir "no, gracias" es clave</p>
     <div class="mission-hint mt-4 text-sm text-purple-600 font-semibold opacity-0 transition-opacity duration-300">
-      click 'comenzar gratis' para acceder
+      empieza por la misión 1 👈
     </div>
   </div>
 </div>
@@ -296,11 +302,9 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section class="bg-gradient-to-r from-teal-500 to-purple-600 text-white py-16 text-center">
-    <h2 class="text-3xl font-bold mb-6">¿te animas a entrenar tu mente financiera?</h2>
-      <a href="domina-tu-dinero-desde-el-primer-euro.html" class="inline-flex items-center gap-2 bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
-        activar mi primera misión 🚀
-      </a>
+  <section class="bg-gradient-to-r from-teal-500 to-purple-600 text-white py-12 text-center">
+    <h2 class="text-2xl font-bold mb-4">¿te animas a entrenar tu mente financiera?</h2>
+    <p class="text-lg mb-6 opacity-90">empieza en la misión 1 arriba 🚀</p>
   </section>
 
   <!-- MODAL REGISTRO -->
@@ -323,8 +327,8 @@
   <footer class="bg-purple-900 text-white py-10">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
       <div class="text-center">
-        <h4 class="font-bold mb-3">sobre el curso</h4>
-        <p class="text-sm text-gray-300">un curso hecho para que entiendas tu dinero sin aburrirte: rápido, útil y con ejemplos reales</p>
+        <h4 class="font-bold mb-3">sobre este curso</h4>
+        <p class="text-sm text-gray-300">lo hemos hecho personas como tú para que entiendas todo sobre tu dinero sin aburrirte</p>
       </div>
       <div class="text-center">
         <h4 class="font-bold mb-3">enlaces</h4>

@@ -65,7 +65,7 @@ function animateBadgeUnlock(badgeId) {
   // Get personalized name for the badge
   const userName = getUserName();
   const truncatedUserName = userName ? truncateName(userName) : null;
-  const personalizedLabel = truncatedUserName ? `${badge.name}, ${truncatedUserName}` : badge.name;
+  const personalizedLabel = truncatedUserName ? `${badge.name}<br>${truncatedUserName}` : badge.name;
   
   
 
@@ -102,32 +102,32 @@ const PINS = {
   // Un badge por misión completada con nombres descriptivos
   mision_1: {
     icon: "💸",
-    name: "dinero consciente",
+    name: "dinero-consciente",
     description: "¿por qué hablar de dinero?"
   },
   mision_2: {
     icon: "👛",
-    name: "cazador de ingresos", 
+    name: "genera-ingresos", 
     description: "el que entra"
   },
   mision_3: {
     icon: "💳",
-    name: "maestro del gasto",
+    name: "caza-fugas",
     description: "el que se va"
   },
   mision_4: {
     icon: "🌱",
-    name: "constructor de riqueza",
+    name: "multi-x-ingresos",
     description: "¿cómo consigo que crezca?"
   },
   mision_5: {
     icon: "🛡️",
-    name: "guardián de seguridad",
+    name: "rompe-trampas",
     description: "comprar evitando las trampas y los timos"
   },
   mision_6: {
     icon: "📉",
-    name: "domador de deudas",
+    name: "anti-deudas",
     description: "deudas"
   }
 };
@@ -164,7 +164,7 @@ function renderMissionPins(missionId) {
     // Personalize badge message if user has provided name
     const userName = getUserName();
     const truncatedUserName = userName ? truncateName(userName) : null;
-    const personalizedLabel = truncatedUserName && isUnlocked ? `${badge.name}, ${truncatedUserName}` : badge.name;
+    const personalizedLabel = truncatedUserName && isUnlocked ? `${badge.name}<br>${truncatedUserName}` : badge.name;
     
     
     
@@ -222,8 +222,9 @@ function updateNavigation() {
     
     if (missionNumber) {
       const badgeKey = `mision_${missionNumber}`;
-      const isUnlocked = progress.badges && progress.badges.includes(badgeKey);
+      const isUnlocked = progress.pins && progress.pins.includes(badgeKey);
       const isCurrent = missionNumber === currentMission;
+      const isPrevious = missionNumber < currentMission;
       
       // Remove existing classes
       link.classList.remove('text-purple-700', 'font-bold', 'underline', 'text-gray-400', 'cursor-not-allowed');
@@ -233,12 +234,12 @@ function updateNavigation() {
         link.classList.add('text-purple-700', 'font-bold', 'underline');
         link.removeAttribute('href');
         link.style.cursor = 'default';
-      } else if (isUnlocked) {
-        // Unlocked mission - normal link
+      } else if (isUnlocked || isPrevious) {
+        // Unlocked mission or previous mission - normal link
         link.classList.add('hover:text-purple-600');
         link.style.cursor = 'pointer';
       } else {
-        // Locked mission - disabled state
+        // Future locked mission - disabled state
         link.classList.add('text-gray-400', 'cursor-not-allowed');
         link.removeAttribute('href');
         link.style.cursor = 'not-allowed';
@@ -249,12 +250,12 @@ function updateNavigation() {
 
 function getMissionNumberFromUrl(url) {
   const urlMap = {
-    "el-dinero-mola-mas-cuando-lo-sabes-usar.html": 1,
-    "que-hacer-para-que-entre-mas-dinero-en-tu-bolsillo.html": 2,
-    "controlar-tu-dinero-antes-de-que-desaparezca.html": 3,
-    "el-truco-para-que-tu-dinero-se-multiplique-solo.html": 4,
-    "comprar-sin-que-te-timen.html": 5,
-    "las-deudas-son-el-enemigo-numero-1.html": 6
+    "domina-tu-dinero-desde-el-primer-euro.html": 1,
+    "haz-que-entre-mas-dinero-sin-magia-ni-suerte.html": 2,
+    "tu-dinero-se-esfuma-y-ni-te-das-cuenta.html": 3,
+    "haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html": 4,
+    "aprende-a-comprar-sin-que-te-vendan-la-moto.html": 5,
+    "lo-barato-sale-caro-cuando-pagas-con-deuda.html": 6
   };
   return urlMap[url] || null;
 }
