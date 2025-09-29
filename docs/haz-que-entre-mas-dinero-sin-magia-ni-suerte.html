@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>el que entra - misión 2</title>
+  <meta name="description" content="Descubre habilidades, mini-trabajos y estrategias reales para que entre más dinero sin depender de la suerte." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" />
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/sw-register.js" defer></script>
+</head>
+<body class="bg-purple-50 text-gray-800" data-mission-id="mision-2">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-bold text-purple-700">finanzas adolescentes</a>
+      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <a href="domina-tu-dinero-desde-el-primer-euro.html" class="hover:text-purple-600">1 · domina tu dinero</a>
+        <a href="haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" class="hover:text-purple-600 text-purple-700 font-bold underline">2 · hacer que entre más dinero</a>
+        <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="hover:text-purple-600">3 · gestiona tu dinero</a>
+        <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600">4 · hacer crecer tu dinero</a>
+        <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600">5 · compras inteligentes</a>
+        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · evita las deudas</a>
+        <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
+          🗑️ clear
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-6xl mb-4">👛</div>
+      <h1 class="text-4xl font-bold mb-2">haz que entre más dinero sin magia ni suerte</h1>
+      <p class="text-lg">de la paga a los mini-trabajos: formas reales de tener más</p>
+      <div class="mt-12 text-sm flex flex-col items-center space-y-2">
+        <div class="mt-4">
+          <p class="font-medium mb-4">misión 2 de 6 · 15 min</p>
+          <div id="mission-pins" class="flex flex-wrap justify-center gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="max-w-6xl mx-auto px-6 py-8">
+  <div class="bg-gradient-to-r from-purple-100 to-teal-100 rounded-xl p-8 text-center">
+    <h3 class="text-2xl font-bold text-purple-800 mb-6">💸 historias reales</h3>
+    <div id="story-container" class="mb-6">
+      <div class="story-slide active">
+        <h4 class="text-xl font-semibold text-gray-800 mb-3">José José - "el príncipe de la canción"</h4>
+        <p class="text-sm text-purple-800 font-semibold uppercase mb-2">error: gastar sin plan</p>
+        <p class="text-gray-700 mb-4">
+          a pesar de su enorme éxito, terminó sus días con limitaciones económicas debido a <strong>malas inversiones</strong> y problemas de salud. 
+          <strong class="text-purple-700">aprende a evitar sus errores.</strong>
+        </p>
+      </div>
+      <div class="story-slide hidden">
+        <h4 class="text-xl font-semibold text-gray-800 mb-3">Mike Tyson - exboxeador</h4>
+        <p class="text-sm text-purple-800 font-semibold uppercase mb-2">error: gastar en lujos innecesarios</p>
+        <p class="text-gray-700 mb-4">
+          ganó <strong>400 millones de dólares</strong> pero se declaró en bancarrota con deudas de 23 millones. 
+          gastó en tigres, mansiones y una flota de coches de lujo.
+          <strong class="text-purple-700">aprende a controlar tus gastos.</strong>
+        </p>
+      </div>
+      <div class="story-slide hidden">
+        <h4 class="text-xl font-semibold text-gray-800 mb-3">50 Cent - rapero y empresario</h4>
+        <p class="text-sm text-purple-800 font-semibold uppercase mb-2">error: confiar en la gente equivocada</p>
+        <p class="text-gray-700 mb-4">
+          se declaró en bancarrota con deudas de <strong>36 millones de dólares</strong> debido a malos asesores 
+          y demandas legales costosas. después se recuperó con inversiones inteligentes.
+          <strong class="text-purple-700">elige bien a quién confías tu dinero.</strong>
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-center space-x-2 mb-4">
+      <button class="story-dot w-3 h-3 rounded-full bg-purple-400 active" data-slide="0"></button>
+      <button class="story-dot w-3 h-3 rounded-full bg-purple-300" data-slide="1"></button>
+      <button class="story-dot w-3 h-3 rounded-full bg-purple-300" data-slide="2"></button>
+    </div>
+    <p class="text-sm text-gray-600">cada historia enseña una lección importante sobre el dinero · <a href="fuentes.html" class="text-purple-600 hover:text-purple-800 underline">fuentes y referencias</a></p>
+  </div>
+</section>
+
+
+  <!-- TOC DESPLEGABLE -->
+  <div class="max-w-2xl mx-auto my-8 px-4">
+    <button data-toc-button 
+            class="w-full bg-purple-100 text-purple-700 font-semibold px-4 py-3 rounded-lg shadow hover:bg-purple-200 transition flex justify-between items-center">
+      en esta misión verás
+      <span id="toc-icon">▼</span>
+    </button>
+
+    <div id="toc-content" class="hidden bg-white border border-purple-200 rounded-lg mt-2 p-4">
+      <ul class="space-y-2 text-purple-700">
+        <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
+        <li>🐜 <a href="#reto" class="hover:underline">reto práctico</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-2xl font-bold mb-2">demuestra que sabes hacer que entre más dinero</h2>
+    <p class="text-gray-600 mb-10">comprueba si entiendes las mejores estrategias para aumentar tus ingresos</p>
+    <div class="space-y-10">
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h4 class="text-xl font-bold mb-4">¿cuál es la forma más efectiva de aumentar tus ingresos?</h4>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">esperar a que te suban el sueldo</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">desarrollar habilidades valiosas</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">pedir dinero prestado</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h4 class="text-xl font-bold mb-4">¿qué característica es más importante en un mentor financiero?</h4>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">que tenga mucho dinero</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">que tenga experiencia real</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">que prometa resultados rápidos</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
+      <div class="text-5xl mb-6">💪</div>
+      <h2 class="text-3xl font-bold mb-4">el reto: identifica una habilidad que puedas monetizar</h2>
+      <p class="text-gray-600 mb-8">piensa en algo que sepas hacer bien y que otras personas necesiten. ¿qué habilidad podrías ofrecer y quién pagaría por ella?</p>
+      <div class="text-left space-y-4 mb-8">
+
+      </div>
+      <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
+        acepto el reto 💪
+      </button>
+      <p id="reto-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">hacer que entre más dinero sin magia ni suerte es la clave del crecimiento</h2>
+      <p class="text-xl mb-8">ahora sabes que hay formas reales de aumentar tus ingresos. no necesitas suerte, solo estrategia y constancia.</p>
+      <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
+        quiero poner en orden mis gastos ➡
+      </a>
+    </div>
+  </section>
+
+  <script>
+    function clearLocalStorage() {
+      if (confirm('¿Estás seguro de que quieres limpiar todos los datos guardados? Esto reseteará tu progreso.')) {
+        localStorage.clear();
+        alert('✅ localStorage limpiado. La página se recargará.');
+        location.reload();
+      }
+    }
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.story-slide');
+  const dots = document.querySelectorAll('.story-dot');
+  let currentSlide = 0;
+
+  const showSlide = (index) => {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      slide.classList.toggle('hidden', i !== index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+      dot.classList.toggle('bg-purple-400', i === index);
+      dot.classList.toggle('bg-purple-300', i !== index);
+    });
+  };
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentSlide = index;
+      showSlide(currentSlide);
+    });
+  });
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 5000);
+});
+
+  </script>
+  <script src="js/vendor/canvas-confetti.min.js" defer></script>
+  <script src="js/page-helpers.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/reto.js" defer></script>
+</body>
+</html>

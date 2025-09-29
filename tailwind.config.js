@@ -1,5 +1,9 @@
-// Shared Tailwind CSS configuration
-window.tailwindConfig = {
+module.exports = {
+  content: [
+    './*.html',
+    './js/**/*.js',
+    './data/**/*.json'
+  ],
   theme: {
     extend: {
       colors: {
@@ -15,5 +19,6 @@ window.tailwindConfig = {
         }
       }
     }
-  }
+  },
+  plugins: []
 };

@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>compras seguras - Misión 5</title>
+  <title>compras seguras - misión 5</title>
+  <meta name="description" content="Aprende a comprar con cabeza, detectar publicidad engañosa y evitar estafas que vacían tu cartera." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/aprende-a-comprar-sin-que-te-vendan-la-moto.html" />
   <link rel="stylesheet" href="css/tailwind.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/sw-register.js" defer></script>
-  <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/aprende-a-comprar-sin-que-te-vendan-la-moto.html" />
 </head>
 <body class="bg-purple-50 text-gray-800" data-mission-id="mision-5">
 
@@ -22,7 +23,7 @@
         <a href="haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" class="hover:text-purple-600">2 · hacer que entre más dinero</a>
         <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="hover:text-purple-600">3 · gestiona tu dinero</a>
         <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600">4 · hacer crecer tu dinero</a>
-        <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="text-purple-700 font-bold underline">5 · compras inteligentes</a>
+        <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600 text-purple-700 font-bold underline">5 · compras inteligentes</a>
         <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · evita las deudas</a>
         <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
           🗑️ clear
@@ -46,50 +47,64 @@
     </div>
   </section>
 
-  <!-- Quiz -->
+  <!-- TOC DESPLEGABLE -->
+  <div class="max-w-2xl mx-auto my-8 px-4">
+    <button data-toc-button 
+            class="w-full bg-purple-100 text-purple-700 font-semibold px-4 py-3 rounded-lg shadow hover:bg-purple-200 transition flex justify-between items-center">
+      en esta misión verás
+      <span id="toc-icon">▼</span>
+    </button>
+
+    <div id="toc-content" class="hidden bg-white border border-purple-200 rounded-lg mt-2 p-4">
+      <ul class="space-y-2 text-purple-700">
+        <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
+        <li>🐜 <a href="#reto" class="hover:underline">reto práctico</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
   <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
     <h2 class="text-2xl font-bold mb-2">demuestra que sabes comprar inteligente</h2>
     <p class="text-gray-600 mb-10">comprueba si sabes identificar publicidad y evitar estafas</p>
-
     <div class="space-y-10">
       <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <h3 class="text-xl font-bold mb-4">¿qué es lo más importante al ver publicidad?</h3>
+        <h4 class="text-xl font-bold mb-4">¿qué es lo más importante al ver publicidad?</h4>
         <div class="flex justify-center gap-4">
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">creer todo lo que dice</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">preguntarte si lo necesitas</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">comprar rápido</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">creer todo lo que dice</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">preguntarte si lo necesitas</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">comprar rápido</button>
         </div>
       </div>
 
       <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <h3 class="text-xl font-bold mb-4">¿cómo puedes identificar una estafa online?</h3>
+        <h4 class="text-xl font-bold mb-4">¿cómo puedes identificar una estafa online?</h4>
         <div class="flex justify-center gap-4">
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">si promete dinero fácil</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">si pide datos personales</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">todas las anteriores</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">si promete dinero fácil</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">si pide datos personales</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">todas las anteriores</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Reto -->
   <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
     <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
-      <h2 class="text-3xl font-bold mb-4 text-purple-700">el reto: analiza una compra que quieras hacer 💰</h2>
-      <p class="mb-6 text-gray-700">
-        antes de comprar algo, haz este análisis para asegurarte de que es una buena decisión. 
-        <em>¿realmente lo necesitas o solo lo quieres? 
-        ¿puedes permitírtelo sin afectar tus ahorros? 
-        ¿has comparado precios?</em>
-      </p>
+      <div class="text-5xl mb-6">🛒</div>
+      <h2 class="text-3xl font-bold mb-4">el reto: analiza una compra que quieras hacer</h2>
+      <p class="text-gray-600 mb-8">antes de comprar algo, haz este análisis. ¿lo necesitas? ¿puedes pagarlo sin tocar tus ahorros? ¿ya comparaste precios?</p>
+      <div class="text-left space-y-4 mb-8">
+
+      </div>
       <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
         acepto el reto 💪
       </button>
-      <p id="unlock-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
+      <p id="reto-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
     </div>
   </section>
 
-  <!-- Frase final bloqueada -->
+  <!-- Final CTA -->
   <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-6">aprender a comprar sin que te vendan la moto es la clave del ahorro inteligente</h2>

@@ -1,0 +1,122 @@
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-shake { animation: shake 0.3s; }
+
+/* Fade for unlock transition */
+.fade-unlock {
+  transition: all 0.6s ease-in-out;
+}
+
+/* Legacy styles removed - using new badge-item classes instead */
+
+/* Badge styling - matching reference design */
+#mission-pins {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+#mission-pins .badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+#mission-pins .badge-item {
+  min-width: 110px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+#mission-pins .badge-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#mission-pins .badge-item.unlocked {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#mission-pins .badge-item.current {
+  background: rgba(255, 255, 255, 0.3);
+  color: #e0e7ff;
+  border: 2px solid #fbbf24;
+}
+
+#mission-pins .badge-item.locked {
+  background: rgba(255, 255, 255, 0.2);
+  color: #c4b5fd;
+  border: 1px solid #a78bfa;
+}
+
+#mission-pins .badge-item .badge-icon {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+#mission-pins .badge-item .badge-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+
+#mission-pins .badge-item .badge-status {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+#mission-pins .badge-item.unlocked .badge-status {
+  background: #10b981;
+  color: white;
+}
+
+#mission-pins .badge-item.current .badge-status {
+  background: #fbbf24;
+  color: white;
+}
+
+#mission-pins .badge-item.locked .badge-status {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* Smart navigation styles */
+nav a.cursor-not-allowed {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+nav a.cursor-not-allowed:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}

@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lo barato sale caro cuando pagas con deuda - Misión 6</title>
+  <title>lo barato sale caro cuando pagas con deuda - misión 6</title>
+  <meta name="description" content="Aprende por qué las deudas te atan, cómo evitarlas y diseña tu plan para mantener tu libertad financiera." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/lo-barato-sale-caro-cuando-pagas-con-deuda.html" />
   <link rel="stylesheet" href="css/tailwind.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/sw-register.js" defer></script>
-  <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/lo-barato-sale-caro-cuando-pagas-con-deuda.html" />
 </head>
 <body class="bg-purple-50 text-gray-800" data-mission-id="mision-6">
 
@@ -23,7 +24,7 @@
         <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="hover:text-purple-600">3 · gestiona tu dinero</a>
         <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600">4 · hacer crecer tu dinero</a>
         <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600">5 · compras inteligentes</a>
-        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="text-purple-700 font-bold underline">6 · evita las deudas</a>
+        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600 text-purple-700 font-bold underline">6 · evita las deudas</a>
         <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
           🗑️ clear
         </button>
@@ -46,54 +47,68 @@
     </div>
   </section>
 
-  <!-- Quiz -->
+  <!-- TOC DESPLEGABLE -->
+  <div class="max-w-2xl mx-auto my-8 px-4">
+    <button data-toc-button 
+            class="w-full bg-purple-100 text-purple-700 font-semibold px-4 py-3 rounded-lg shadow hover:bg-purple-200 transition flex justify-between items-center">
+      en esta misión verás
+      <span id="toc-icon">▼</span>
+    </button>
+
+    <div id="toc-content" class="hidden bg-white border border-purple-200 rounded-lg mt-2 p-4">
+      <ul class="space-y-2 text-purple-700">
+        <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
+        <li>🐜 <a href="#reto" class="hover:underline">reto práctico</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
   <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
     <h2 class="text-2xl font-bold mb-2">demuestra que sabes evitar las deudas</h2>
     <p class="text-gray-600 mb-10">comprueba si entiendes por qué las deudas son peligrosas y cómo evitarlas</p>
-
     <div class="space-y-10">
       <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <h3 class="text-xl font-bold mb-4">¿por qué las deudas son peligrosas?</h3>
+        <h4 class="text-xl font-bold mb-4">¿por qué las deudas son peligrosas?</h4>
         <div class="flex justify-center gap-4">
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">porque tienes que devolver más dinero</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">porque limitan tu libertad</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">todas las anteriores</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">porque tienes que devolver más dinero</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">porque limitan tu libertad</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">todas las anteriores</button>
         </div>
       </div>
 
       <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <h3 class="text-xl font-bold mb-4">¿cuál es la mejor estrategia con las deudas?</h3>
+        <h4 class="text-xl font-bold mb-4">¿cuál es la mejor estrategia con las deudas?</h4>
         <div class="flex justify-center gap-4">
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">pedir más dinero</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">evitar las deudas</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">pagar solo el mínimo</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">pedir más dinero</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">evitar las deudas</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">pagar solo el mínimo</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Reto -->
   <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
     <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
-      <h2 class="text-3xl font-bold mb-4 text-purple-700">el reto: crea tu plan anti-deudas 💰</h2>
-      <p class="mb-6 text-gray-700">
-        desarrolla una estrategia personal para evitar las deudas y mantener tu libertad financiera. 
-        <em>¿qué compras sueles hacer a crédito? 
-        ¿cuánto ahorrarías si compraras al contado? 
-        ¿puedes establecer la regla: "si no tengo el dinero, no lo compro"?</em>
-      </p>
+      <div class="text-5xl mb-6">🛑</div>
+      <h2 class="text-3xl font-bold mb-4">el reto: crea tu plan anti-deudas</h2>
+      <p class="text-gray-600 mb-8">desarrolla una estrategia personal para evitar las deudas y mantener tu libertad financiera. define reglas claras para tus compras.</p>
+      <div class="text-left space-y-4 mb-8">
+
+      </div>
       <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
         acepto el reto 💪
       </button>
-      <p id="unlock-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
+      <p id="reto-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
     </div>
   </section>
 
-  <!-- Frase final bloqueada -->
+  <!-- Final CTA -->
   <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-6">lo barato sale caro cuando pagas con deuda</h2>
-      <p class="text-xl mb-8">ahora sabes que las deudas son el enemigo más caro. créditos, compras a plazos y por qué decir "no, gracias" es clave para mantener tu libertad financiera.</p>
+      <p class="text-xl mb-8">ahora sabes que las deudas son el enemigo más caro. decir 'no, gracias' te mantiene en control de tu dinero y tu futuro.</p>
       <a href="index.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
         ¡curso completado! 🎉
       </a>

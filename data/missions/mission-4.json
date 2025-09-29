@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "¿cómo consigo que crezca? - misión 4",
+    "description": "Aprende a usar el interés compuesto, diferenciar entre ahorrar e invertir y da tus primeros pasos para multiplicar tu dinero.",
+    "canonical": "https://alex.github.io/finanzas-adolescentes/haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html"
+  },
+  "hero": {
+    "emoji": "🌱",
+    "title": "haz que tu dinero crezca mientras haces otra cosa",
+    "subtitle": "ahorrar está bien. invertir sin miedo está mejor"
+  },
+  "toc": [
+    { "id": "quiz", "label": "quiz rápido", "icon": "🎯" },
+    { "id": "reto", "label": "reto práctico", "icon": "🐜" }
+  ],
+  "sections": [],
+  "quiz": {
+    "title": "demuestra que sabes hacer crecer tu dinero",
+    "lead": "comprueba si entiendes la magia del interés compuesto y la inversión",
+    "questions": [
+      {
+        "prompt": "¿qué es el interés compuesto?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "el dinero que ganas por trabajar", "correct": false },
+          { "label": "cuando tus ganancias generan más ganancias", "correct": true },
+          { "label": "el dinero que te prestan", "correct": false }
+        ]
+      },
+      {
+        "prompt": "¿cuál es la diferencia entre ahorrar e invertir?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "no hay diferencia, es lo mismo", "correct": false },
+          { "label": "ahorrar guarda, invertir hace crecer", "correct": true },
+          { "label": "invertir es más arriesgado", "correct": false }
+        ]
+      }
+    ]
+  },
+  "reto": {
+    "emoji": "📈",
+    "title": "el reto: calcula tu futuro financiero",
+    "lead": "usa la regla del 72 para ver cuánto tardará tu dinero en duplicarse. calcula cuánto tendrías en 5, 10 y 20 años.",
+    "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
+    "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
+    "cta": "acepto el reto 💪",
+    "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
+    "hint": "👉 completa el reto para desbloquear la siguiente misión",
+    "hintId": "reto-hint",
+    "hintClass": "mt-4 text-sm text-gray-600 italic"
+  },
+  "takeaway": {
+    "title": "hacer que tu dinero crezca mientras haces otra cosa es la clave del futuro",
+    "subtitle": "ahora sabes que ahorrar está bien, pero invertir sin miedo es lo que realmente hace la diferencia. tu dinero puede trabajar para ti las 24 horas del día.",
+    "cta": {
+      "href": "aprende-a-comprar-sin-que-te-vendan-la-moto.html",
+      "label": "quiero aprender a comprar inteligente ➡"
+    }
+  }
+}

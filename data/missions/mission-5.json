@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "compras seguras - misión 5",
+    "description": "Aprende a comprar con cabeza, detectar publicidad engañosa y evitar estafas que vacían tu cartera.",
+    "canonical": "https://alex.github.io/finanzas-adolescentes/aprende-a-comprar-sin-que-te-vendan-la-moto.html"
+  },
+  "hero": {
+    "emoji": "🛡️",
+    "title": "aprende a comprar sin que te vendan la moto",
+    "subtitle": "publicidad, timos e influencers: cómo no caer en la trampa"
+  },
+  "toc": [
+    { "id": "quiz", "label": "quiz rápido", "icon": "🎯" },
+    { "id": "reto", "label": "reto práctico", "icon": "🐜" }
+  ],
+  "sections": [],
+  "quiz": {
+    "title": "demuestra que sabes comprar inteligente",
+    "lead": "comprueba si sabes identificar publicidad y evitar estafas",
+    "questions": [
+      {
+        "prompt": "¿qué es lo más importante al ver publicidad?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "creer todo lo que dice", "correct": false },
+          { "label": "preguntarte si lo necesitas", "correct": true },
+          { "label": "comprar rápido", "correct": false }
+        ]
+      },
+      {
+        "prompt": "¿cómo puedes identificar una estafa online?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "si promete dinero fácil", "correct": false },
+          { "label": "si pide datos personales", "correct": false },
+          { "label": "todas las anteriores", "correct": true }
+        ]
+      }
+    ]
+  },
+  "reto": {
+    "emoji": "🛒",
+    "title": "el reto: analiza una compra que quieras hacer",
+    "lead": "antes de comprar algo, haz este análisis. ¿lo necesitas? ¿puedes pagarlo sin tocar tus ahorros? ¿ya comparaste precios?",
+    "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
+    "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
+    "cta": "acepto el reto 💪",
+    "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
+    "hint": "👉 completa el reto para desbloquear la siguiente misión",
+    "hintId": "reto-hint",
+    "hintClass": "mt-4 text-sm text-gray-600 italic"
+  },
+  "takeaway": {
+    "title": "aprender a comprar sin que te vendan la moto es la clave del ahorro inteligente",
+    "subtitle": "ahora sabes cómo identificar la publicidad, los timos y los influencers que solo quieren tu dinero. compras inteligentes = más dinero para lo que realmente importa.",
+    "cta": {
+      "href": "lo-barato-sale-caro-cuando-pagas-con-deuda.html",
+      "label": "quiero evitar las deudas ➡"
+    }
+  }
+}

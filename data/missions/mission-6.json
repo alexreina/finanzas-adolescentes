@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "lo barato sale caro cuando pagas con deuda - misión 6",
+    "description": "Aprende por qué las deudas te atan, cómo evitarlas y diseña tu plan para mantener tu libertad financiera.",
+    "canonical": "https://alex.github.io/finanzas-adolescentes/lo-barato-sale-caro-cuando-pagas-con-deuda.html"
+  },
+  "hero": {
+    "emoji": "📉",
+    "title": "lo barato sale caro cuando pagas con deuda",
+    "subtitle": "créditos, compras a plazos y por qué decir \"no, gracias\" es clave"
+  },
+  "toc": [
+    { "id": "quiz", "label": "quiz rápido", "icon": "🎯" },
+    { "id": "reto", "label": "reto práctico", "icon": "🐜" }
+  ],
+  "sections": [],
+  "quiz": {
+    "title": "demuestra que sabes evitar las deudas",
+    "lead": "comprueba si entiendes por qué las deudas son peligrosas y cómo evitarlas",
+    "questions": [
+      {
+        "prompt": "¿por qué las deudas son peligrosas?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "porque tienes que devolver más dinero", "correct": false },
+          { "label": "porque limitan tu libertad", "correct": false },
+          { "label": "todas las anteriores", "correct": true }
+        ]
+      },
+      {
+        "prompt": "¿cuál es la mejor estrategia con las deudas?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "pedir más dinero", "correct": false },
+          { "label": "evitar las deudas", "correct": true },
+          { "label": "pagar solo el mínimo", "correct": false }
+        ]
+      }
+    ]
+  },
+  "reto": {
+    "emoji": "🛑",
+    "title": "el reto: crea tu plan anti-deudas",
+    "lead": "desarrolla una estrategia personal para evitar las deudas y mantener tu libertad financiera. define reglas claras para tus compras.",
+    "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
+    "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
+    "cta": "acepto el reto 💪",
+    "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
+    "hint": "👉 completa el reto para desbloquear la siguiente misión",
+    "hintId": "reto-hint",
+    "hintClass": "mt-4 text-sm text-gray-600 italic"
+  },
+  "takeaway": {
+    "title": "lo barato sale caro cuando pagas con deuda",
+    "subtitle": "ahora sabes que las deudas son el enemigo más caro. decir 'no, gracias' te mantiene en control de tu dinero y tu futuro.",
+    "cta": {
+      "href": "index.html",
+      "label": "¡curso completado! 🎉"
+    }
+  }
+}

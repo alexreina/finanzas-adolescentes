@@ -1,0 +1,10 @@
+{
+  "name": "finanzas-adolescentes",
+  "version": "0.1.0",
+  "description": "Static build for Finanzas Adolescentes course",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:css": "npx tailwindcss@3.4.13 -c tailwind.config.js -i css/tailwind-input.css -o css/tailwind.css --minify"
+  }
+}

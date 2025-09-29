@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "controlar tu dinero antes de que desaparezca - misión 3",
+    "description": "Aprende a seguirle la pista a tus gastos, distinguir tipos de tarjetas y atrapar a las hormigas financieras antes de que se lleven tu dinero.",
+    "canonical": "https://alex.github.io/finanzas-adolescentes/tu-dinero-se-esfuma-y-ni-te-das-cuenta.html"
+  },
+  "hero": {
+    "emoji": "💳",
+    "title": "tu dinero se esfuma… y ni te das cuenta",
+    "subtitle": "aprende a seguirle la pista antes de que desaparezca"
+  },
+  "toc": [
+    { "id": "gastos", "label": "¿a dónde se va tu dinero?", "icon": "🧐" },
+    { "id": "gestion", "label": "tu dinero en acción: cuentas y tarjetas", "icon": "💳" },
+    { "id": "ejemplo", "label": "vidas reales, decisiones reales", "icon": "👥" },
+    { "id": "quiz", "label": "quiz rápido", "icon": "🎯" },
+    { "id": "reto", "label": "reto práctico", "icon": "🐜" }
+  ],
+  "sections": [
+    {
+      "id": "gastos",
+      "title": "¿a dónde se va tu dinero?",
+      "lead": "antes de pensar en cómo ahorrar, tienes que saber en qué lo gastas y cómo repartirlo mejor",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-3 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center",
+              "emoji": "📆",
+              "title": "gastos fijos",
+              "body": "los que se repiten cada mes y casi nunca cambian",
+              "highlight": "netflix, abono transporte, gimnasio, Spotify"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center",
+              "emoji": "🛍️",
+              "title": "gastos variables",
+              "body": "los que cambian según lo que hagas",
+              "highlight": "ropa, comida, salir al cine"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center",
+              "emoji": "🐜",
+              "title": "gastos hormiga",
+              "body": "parecen pequeños, pero pueden sumar mucho",
+              "highlight": "2€ al día = 720€ al año = un iPhone"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-center max-w-4xl mx-auto\">\n      <h4 class=\"text-2xl font-bold mb-4\">👉 céntrate con un presupuesto básico 50/30/20</h4>\n      <div class=\"w-full h-4 flex rounded-full overflow-hidden mb-6\">\n        <div class=\"h-full\" style=\"width: 50%; background-color: #c4a5f9;\"></div>\n        <div class=\"h-full\" style=\"width: 30%; background-color: #9ae6b4;\"></div>\n        <div class=\"h-full\" style=\"width: 20%; background-color: #fbb6ce;\"></div>\n      </div>\n      <div class=\"space-y-2 text-left max-w-md mx-auto mb-6\">\n        <div class=\"flex items-center gap-2\"><span class=\"px-2 py-1 rounded bg-purple-100 text-purple-700 font-bold\">50%</span><span>necesidades → transporte, material escolar</span></div>\n        <div class=\"flex items-center gap-2\"><span class=\"px-2 py-1 rounded bg-teal-100 text-teal-700 font-bold\">30%</span><span>ocio → salidas, hobbies, videojuegos</span></div>\n        <div class=\"flex items-center gap-2\"><span class=\"px-2 py-1 rounded bg-pink-100 text-pink-700 font-bold\">20%</span><span>ahorro → viaje, móvil, consola</span></div>\n      </div>\n      <p class=\"mt-6 text-sm text-gray-600 italic\">ejemplo: si tu paga semanal es de 20€ → 10€ necesidades, 6€ ocio, 4€ ahorro</p>\n    </div>"
+        }
+      ]
+    },
+    {
+      "id": "gestion",
+      "title": "tu dinero en acción: cuentas y tarjetas",
+      "lead": "ya sabes en qué gastas y cómo repartir mejor los gastos, ahora vamos a ver las herramientas que tienes para usar tu dinero",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-2 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500 hover:shadow-xl transition text-center",
+              "emoji": "🏦",
+              "title": "cuenta corriente",
+              "body": "la cuenta básica donde entra tu dinero y desde la que pagas el día a día",
+              "highlight": "sirve para bizum, transferencias, recibos"
+            },
+            {
+              "class": "bg-white rounded-xl shadow-md p-8 border-t-4 border-teal-500 hover:shadow-xl transition text-center",
+              "emoji": "🐷",
+              "title": "cuenta de ahorro",
+              "body": "pensada para guardar dinero que no gastas inmediatamente; a veces puede ser parte de la cuenta corriente",
+              "highlight": "en muchas de ellas ganas un (pequeño) interés"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <h3 class=\"text-2xl font-bold mb-4 text-center\">tarjetas: débito o crédito</h3>\n    <p class=\"text-center text-gray-600 mb-8\">no son lo mismo: una te protege de gastar de más y la otra puede meterte en deudas</p>"
+        },
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-2 gap-6",
+          "items": [
+            {
+              "class": "bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500 hover:shadow-xl transition text-center transform hover:scale-105",
+              "emoji": "💳",
+              "title": "tarjeta de débito",
+              "body": "gastas solo el dinero que ya tienes en tu cuenta",
+              "highlight": "si tienes 50€, solo podrás gastar hasta ahí"
+            },
+            {
+              "class": "bg-white rounded-xl shadow-md p-8 border-t-4 border-red-500 hover:shadow-xl transition text-center transform hover:scale-105",
+              "emoji": "💳",
+              "title": "tarjeta de crédito",
+              "body": "parece cómodo, pero si no pagas a tiempo te cobran intereses",
+              "highlight": "compras 100€ → si no pagas cuando toca, terminas pagando 120€"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ejemplo",
+      "title": "vidas reales, decisiones reales",
+      "leadClass": "text-center text-gray-600 mb-10",
+      "wrapperClass": "max-w-4xl mx-auto px-6 py-12",
+      "lead": "entender la teoría está bien, pero ver qué hacen otros con su dinero te hace verlo más claro",
+      "headingClass": "text-2xl font-bold mb-2 text-center",
+      "cards": [
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-pink-50 border-l-4 border-pink-400 p-6 rounded-lg hover:shadow-lg transition space-y-4\">\n      <div>\n        <h3 class=\"font-semibold\">❌ ejemplo negativo</h3>\n        <p>un chico de 17 años gastaba casi toda su paga en ropa de marca y salidas para aparentar en su Insta → en unos meses tuvo que pedir dinero prestado a sus padres y se perdió el viaje que había planeado con sus amigos</p>\n      </div>\n      <div>\n        <h3 class=\"font-semibold\">✅ ejemplo positivo</h3>\n        <p>una chica de 16 años empezó a apuntar cada gasto que tenía en una app → descubrió que gastaba al menos 3€ diarios en chuches y refrescos → al reducirlo a la mitad, en 6 meses ahorró más de 250€ y se los gastó en un festival de música (y le sobró para unos cascos 🎧)</p>\n      </div>\n    </div>"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "demuestra que mandas sobre tu dinero",
+    "lead": "comprueba si sabes distinguir gastos y elegir la tarjeta correcta",
+    "questions": [
+      {
+        "prompt": "¿qué tipo de gasto es <span class=\"font-semibold\">ir al cine</span>?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+            { "label": "hormiga", "correct": false },
+          { "label": "fijo", "correct": false },
+          { "label": "variable", "correct": true }
+        ]
+      },
+      {
+        "prompt": "quieres comprar un videojuego de 40€ → ¿qué usarías?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "tarjeta de débito", "correct": true },
+          { "label": "tarjeta de crédito", "correct": false }
+        ]
+      }
+    ]
+  },
+  "reto": {
+    "emoji": "🐜",
+    "title": "el reto: atrapa a las hormigas",
+    "lead": "durante una semana apunta todos tus gastos. clasifícalos en fijos, variables y hormiga. cuando lo tengas, calcula: ¿cuánto se fue en hormigas? y pregúntate: ¿qué podrías haber hecho con ese dinero si lo hubieras ahorrado?",
+    "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
+    "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
+    "steps": [
+      { "icon": "1️⃣", "text": "anota todo lo que gastes durante 7 días" },
+      { "icon": "2️⃣", "text": "marca cada gasto como fijo, variable o hormiga" },
+      { "icon": "3️⃣", "text": "suma cuánto se fue en hormigas y decide qué vas a cambiar" }
+    ],
+    "cta": "acepto el reto 💪",
+    "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
+    "hint": "👉 completa el reto para desbloquear la siguiente misión",
+    "hintClass": "mt-4 text-sm text-gray-600 italic"
+  },
+  "takeaway": {
+    "title": "tu dinero puede esfumarse... o ayudarte a conseguir lo que sueñas",
+    "subtitle": "para conseguir lo que quieres —desde un viaje con amigos hasta tu primer ordenador— necesitas aprender a decidir qué cosas valen la pena y cuáles solo te alejan de tus metas.",
+    "cta": {
+      "href": "haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html",
+      "label": "quiero poner en orden mis gastos ➡"
+    }
+  }
+}
