@@ -63,7 +63,6 @@ function copyStaticAssets() {
     'manifest.json',
     'favicon.svg',
     'robots.txt',
-    'ai.txt',
     'img/preview.png'
   ];
 
