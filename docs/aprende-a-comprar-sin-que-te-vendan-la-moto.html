@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>compras seguras - misión 5</title>
-  <meta name="description" content="Aprende a comprar con cabeza, detectar publicidad engañosa y evitar estafas que vacían tu cartera." />
+  <meta name="description" content="Aprende a comprar con cabeza, detectar publicidad engañosa y evitar estafas que vacían tu cartera" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="manifest" href="manifest.json" />
   <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/aprende-a-comprar-sin-que-te-vendan-la-moto.html" />
@@ -25,6 +25,8 @@
         <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600">4 · hacer crecer tu dinero</a>
         <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600 text-purple-700 font-bold underline">5 · compras inteligentes</a>
         <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · evita las deudas</a>
+        <a href="por-que-esta-web.html" class="hover:text-purple-600">por qué hacemos esto</a>
+        <a href="fuentes.html" class="hover:text-purple-600">fuentes y referencias</a>
         <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
           🗑️ clear
         </button>
@@ -35,9 +37,9 @@
   <!-- HERO -->
   <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center">
     <div class="max-w-3xl mx-auto">
-      <div class="text-6xl mb-4">🛡️</div>
+      <div class="text-6xl mb-4">🛒</div>
       <h1 class="text-4xl font-bold mb-2">aprende a comprar sin que te vendan la moto</h1>
-      <p class="text-lg">publicidad, timos e influencers: cómo no caer en la trampa</p>
+      <p class="text-lg">evita trampas y elige lo que realmente vale la pena</p>
       <div class="mt-12 text-sm flex flex-col items-center space-y-2">
         <div class="mt-4">
           <p class="font-medium mb-4">misión 5 de 6 · 15 min</p>
@@ -57,33 +59,190 @@
 
     <div id="toc-content" class="hidden bg-white border border-purple-200 rounded-lg mt-2 p-4">
       <ul class="space-y-2 text-purple-700">
+        <li>📝 <a href="#mapa-deseos" class="hover:underline">mapa de deseos</a></li>
+        <li>🧠 <a href="#tacticas-tiendas" class="hover:underline">tácticas de tiendas</a></li>
+        <li>✅ <a href="#checklist" class="hover:underline">checklist compra</a></li>
+        <li>♻️ <a href="#alternativas" class="hover:underline">alternativas inteligentes</a></li>
         <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
         <li>🐜 <a href="#reto" class="hover:underline">reto práctico</a></li>
       </ul>
     </div>
   </div>
 
+  <section id="mapa-deseos" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">mapea lo que deseas antes de sacar la cartera</h2>
+    <p class="text-center text-gray-600 mb-12">
+      antes de comprar, diferencia capricho de necesidad y descubre qué estás dejando pasar
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🤔</div>
+        <h4 class="text-xl font-bold mb-2">deseo real vs impulso</h4>
+        <p class="text-gray-600 mb-2">pregúntate si lo usarás al menos 10 veces durante el primer mes</p>
+        <p class="text-purple-600 font-semibold">si la respuesta es no, espera 48 horas</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">⚖️</div>
+        <h4 class="text-xl font-bold mb-2">coste de oportunidad</h4>
+        <p class="text-gray-600 mb-2">cada euro gastado aquí no irá a tu meta grande: viaje, portátil, proyecto</p>
+        <p class="text-purple-600 font-semibold">anota qué dejarías de hacer si compras</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">⏱️</div>
+        <h4 class="text-xl font-bold mb-2">valor por hora de uso</h4>
+        <p class="text-gray-600 mb-2">divide el precio entre las horas reales que lo usarás</p>
+        <p class="text-purple-600 font-semibold">si sale a más de 1€ por hora, busca otra opción</p>
+      </div>
+    </div>
+    <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg max-w-3xl mx-auto space-y-4">
+      <h4 class="text-xl font-bold text-purple-700">mini comparativa</h4>
+      <p>consola nueva de 400€ vs viaje de fin de curso de 400€</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-700">
+        <li>consola → 5 juegos pendientes + 200 horas al año</li>
+        <li>viaje → recuerdos con tu grupo + fotos para toda la vida</li>
+      </ul>
+      <p class="text-sm text-gray-500">elige qué historia quieres contar dentro de 6 meses</p>
+    </div>
+  </section>
 
+  <section id="tacticas-tiendas" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">las tácticas de las tiendas para que compres sin pensar</h2>
+    <p class="text-center text-gray-600 mb-12">
+      saber cómo te empujan a decir sí te devuelve el control
+    </p>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">⏳</div>
+        <h4 class="text-xl font-bold mb-2">urgencia falsa</h4>
+        <p class="text-gray-600 mb-2">contador regresivo, unidades limitadas o solo hoy</p>
+        <p class="text-purple-600 font-semibold">si lo necesitabas, ya lo sabías antes del aviso</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-teal-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🎯</div>
+        <h4 class="text-xl font-bold mb-2">precio ancla</h4>
+        <p class="text-gray-600 mb-2">te muestran primero el precio inflado para que el descuento parezca gigante</p>
+        <p class="text-purple-600 font-semibold">compara en otra web antes de decidir</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-pink-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🎁</div>
+        <h4 class="text-xl font-bold mb-2">pack irresistible</h4>
+        <p class="text-gray-600 mb-2">incluyen extras que no necesitas para justificar pagar más</p>
+        <p class="text-purple-600 font-semibold">descompón el pack y compra solo lo que usarás</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-yellow-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">📸</div>
+        <h4 class="text-xl font-bold mb-2">influencer de confianza</h4>
+        <p class="text-gray-600 mb-2">parece recomendación sincera pero es publicidad pagada</p>
+        <p class="text-purple-600 font-semibold">busca experiencias reales de usuarios antes de creer</p>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-3">
+      <h4 class="text-xl font-bold text-gray-800">cuando detectes una táctica</h4>
+      <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+        <li>pausa y respira 10 segundos</li>
+        <li>repite en voz baja: "si era tan bueno, aún estará mañana"</li>
+        <li>sal de la app o de la tienda y vuelve solo si superó tu checklist</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="checklist" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">tu checklist express antes de pagar</h2>
+    <p class="text-center text-gray-600 mb-12">
+      tres pasos rápidos para filtrar compras y quedarte solo con las que suman
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">🔍</div>
+        <h4 class="text-xl font-bold mb-2">investiga</h4>
+        <p class="text-gray-600 mb-2">mira 2 reseñas positivas y 1 negativa real</p>
+        <p class="text-purple-600 font-semibold">si no las encuentras, aléjate</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">💸</div>
+        <h4 class="text-xl font-bold mb-2">compara</h4>
+        <p class="text-gray-600 mb-2">busca al menos 3 precios distintos</p>
+        <p class="text-purple-600 font-semibold">anota el más bajo y pregunta si puedes esperar</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">⏰</div>
+        <h4 class="text-xl font-bold mb-2">espera</h4>
+        <p class="text-gray-600 mb-2">aplaza la compra 24 horas</p>
+        <p class="text-purple-600 font-semibold">si al día siguiente sigue siendo top 3 prioridades, adelante</p>
+      </div>
+    </div>
+    <div class="bg-purple-50 border-l-4 border-teal-400 p-6 rounded-lg max-w-3xl mx-auto space-y-3">
+      <h4 class="text-xl font-bold text-teal-700">preguntas rápidas</h4>
+      <ul class="list-disc pl-6 space-y-1 text-gray-700">
+        <li>¿lo puedo pagar sin tocar mi fondo de emergencia?</li>
+        <li>¿tengo algo que ya cumple esa función?</li>
+        <li>¿me acerca o me aleja de mi meta principal?</li>
+      </ul>
+      <p class="text-sm text-gray-500">si alguna respuesta es "no" o "no sé" vuelve al paso de espera</p>
+    </div>
+  </section>
+
+  <section id="alternativas" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">alternativas inteligentes cuando la compra no convence</h2>
+    <p class="text-center text-gray-600 mb-12">
+      hay más caminos que pasar la tarjeta: usa creatividad y redes
+    </p>
+    <div class="grid md:grid-cols-4 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">♻️</div>
+        <h4 class="text-xl font-bold mb-2">segunda mano</h4>
+        <p class="text-gray-600 mb-2">compra reacondicionado o a alguien de confianza</p>
+        <p class="text-purple-600 font-semibold">pide fotos, factura y prueba rápida</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🤝</div>
+        <h4 class="text-xl font-bold mb-2">compra compartida</h4>
+        <p class="text-gray-600 mb-2">divide costo con amigos o familia y crea calendario de uso</p>
+        <p class="text-purple-600 font-semibold">ideal para gadgets o herramientas puntuales</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🛠️</div>
+        <h4 class="text-xl font-bold mb-2">repara o personaliza</h4>
+        <p class="text-gray-600 mb-2">arregla lo que ya tienes o dale un upgrade</p>
+        <p class="text-purple-600 font-semibold">tutoriales gratis en YouTube o TikTok</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">📚</div>
+        <h4 class="text-xl font-bold mb-2">alquila o pide prestado</h4>
+        <p class="text-gray-600 mb-2">usa bibliotecas, apps de alquiler o tu comunidad</p>
+        <p class="text-purple-600 font-semibold">perfecto para eventos, disfraces o equipamiento caro</p>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-3">
+      <h4 class="text-xl font-bold text-gray-800">cuando sí compensa pagar más</h4>
+      <ul class="list-disc pl-6 space-y-1 text-gray-700">
+        <li>mejor calidad = dura el doble</li>
+        <li>garantía o servicio técnico incluido</li>
+        <li>cubre una necesidad diaria clave</li>
+      </ul>
+      <p class="text-sm text-gray-500">si cumple las tres, es inversión más que gasto</p>
+    </div>
+  </section>
 
   <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
     <h2 class="text-2xl font-bold mb-2">demuestra que sabes comprar inteligente</h2>
-    <p class="text-gray-600 mb-10">comprueba si sabes identificar publicidad y evitar estafas</p>
+    <p class="text-gray-600 mb-10">comprueba si tus decisiones resisten el marketing agresivo</p>
     <div class="space-y-10">
       <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <h4 class="text-xl font-bold mb-4">¿qué es lo más importante al ver publicidad?</h4>
+        <h4 class="text-xl font-bold mb-4">encuentras unas zapatillas rebajadas de 120€ a 80€ pero tu meta es ahorrar para un viaje en dos meses: ¿qué haces?</h4>
         <div class="flex justify-center gap-4">
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">creer todo lo que dice</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">preguntarte si lo necesitas</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">comprar rápido</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">las compro ya porque es una oportunidad única</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">reviso mi checklist y decido mañana</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">pido otra tarjeta para pagarlas</button>
         </div>
       </div>
 
       <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
-        <h4 class="text-xl font-bold mb-4">¿cómo puedes identificar una estafa online?</h4>
+        <h4 class="text-xl font-bold mb-4">un influencer dice que cierto curso te hará ganar 1.000€ en una semana si pagas hoy: ¿qué táctica usa?</h4>
         <div class="flex justify-center gap-4">
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">si promete dinero fácil</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">si pide datos personales</button>
-          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">todas las anteriores</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">urgencia falsa + promesa gigante</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">precio ancla</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">pack irresistible</button>
         </div>
       </div>
     </div>
@@ -92,8 +251,8 @@
   <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
     <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
       <div class="text-5xl mb-6">🛒</div>
-      <h2 class="text-3xl font-bold mb-4">el reto: analiza una compra que quieras hacer</h2>
-      <p class="text-gray-600 mb-8">antes de comprar algo, haz este análisis. ¿lo necesitas? ¿puedes pagarlo sin tocar tus ahorros? ¿ya comparaste precios?</p>
+      <h2 class="text-3xl font-bold mb-4">el reto: 72 horas sin compras impulsivas</h2>
+      <p class="text-gray-600 mb-8">haz una lista de todo lo que quieras comprar esta semana, aplica la checklist y espera 72 horas antes de decir sí o no</p>
       <div class="text-left space-y-4 mb-8">
 
       </div>
@@ -107,13 +266,39 @@
   <!-- Final CTA -->
   <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">aprender a comprar sin que te vendan la moto es la clave del ahorro inteligente</h2>
-      <p class="text-xl mb-8">ahora sabes cómo identificar la publicidad, los timos y los influencers que solo quieren tu dinero. compras inteligentes = más dinero para lo que realmente importa.</p>
+      <h2 class="text-3xl font-bold mb-6">comprar con cabeza te deja más libertad para lo que importa</h2>
+      <p class="text-xl mb-8">cada euro que proteges de la publicidad es un euro que puedes dedicar a tus metas reales</p>
       <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
         quiero evitar las deudas ➡
       </a>
     </div>
   </section>
+
+    <footer class="bg-purple-900 text-white py-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <div class="text-center">
+        <h4 class="font-bold mb-3">sobre este curso</h4>
+        <p class="text-sm text-gray-300">lo hemos hecho personas como tú para que entiendas todo sobre tu dinero sin aburrirte</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">enlaces</h4>
+        <div class="space-y-2">
+          <div><a href="por-que-esta-web.html" class="text-gray-300 hover:text-white transition text-sm">por qué hacemos esto</a></div>
+          <div><a href="fuentes.html" class="text-gray-300 hover:text-white transition text-sm">fuentes y referencias</a></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">síguenos</h4>
+        <div class="flex gap-4 justify-center">
+          <a href="#" aria-label="Síguenos en Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="Instagram" loading="lazy"></a>
+          <a href="#" aria-label="Síguenos en TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="TikTok" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-sm text-gray-400">
+      <p>&copy; 2025 finanzas personales para adolescentes · “el dinero no se aprende solo, se entrena 💪”</p>
+    </div>
+  </footer>
 
   <script>
     function clearLocalStorage() {

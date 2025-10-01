@@ -1,47 +1,260 @@
 {
   "meta": {
     "title": "compras seguras - misión 5",
-    "description": "Aprende a comprar con cabeza, detectar publicidad engañosa y evitar estafas que vacían tu cartera.",
+    "description": "Aprende a comprar con cabeza, detectar publicidad engañosa y evitar estafas que vacían tu cartera",
     "canonical": "https://alex.github.io/finanzas-adolescentes/aprende-a-comprar-sin-que-te-vendan-la-moto.html"
   },
   "hero": {
-    "emoji": "🛡️",
+    "emoji": "🛒",
     "title": "aprende a comprar sin que te vendan la moto",
-    "subtitle": "publicidad, timos e influencers: cómo no caer en la trampa"
+    "subtitle": "evita trampas y elige lo que realmente vale la pena"
   },
   "toc": [
-    { "id": "quiz", "label": "quiz rápido", "icon": "🎯" },
-    { "id": "reto", "label": "reto práctico", "icon": "🐜" }
+    {
+      "id": "mapa-deseos",
+      "label": "mapa de deseos",
+      "icon": "📝"
+    },
+    {
+      "id": "tacticas-tiendas",
+      "label": "tácticas de tiendas",
+      "icon": "🧠"
+    },
+    {
+      "id": "checklist",
+      "label": "checklist compra",
+      "icon": "✅"
+    },
+    {
+      "id": "alternativas",
+      "label": "alternativas inteligentes",
+      "icon": "♻️"
+    },
+    {
+      "id": "quiz",
+      "label": "quiz rápido",
+      "icon": "🎯"
+    },
+    {
+      "id": "reto",
+      "label": "reto práctico",
+      "icon": "🐜"
+    }
   ],
-  "sections": [],
+  "sections": [
+    {
+      "id": "mapa-deseos",
+      "title": "mapea lo que deseas antes de sacar la cartera",
+      "lead": "antes de comprar, diferencia capricho de necesidad y descubre qué estás dejando pasar",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-3 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left",
+              "emoji": "🤔",
+              "title": "deseo real vs impulso",
+              "body": "pregúntate si lo usarás al menos 10 veces durante el primer mes",
+              "highlight": "si la respuesta es no, espera 48 horas"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left",
+              "emoji": "⚖️",
+              "title": "coste de oportunidad",
+              "body": "cada euro gastado aquí no irá a tu meta grande: viaje, portátil, proyecto",
+              "highlight": "anota qué dejarías de hacer si compras"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left",
+              "emoji": "⏱️",
+              "title": "valor por hora de uso",
+              "body": "divide el precio entre las horas reales que lo usarás",
+              "highlight": "si sale a más de 1€ por hora, busca otra opción"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg max-w-3xl mx-auto space-y-4\">\n      <h4 class=\"text-xl font-bold text-purple-700\">mini comparativa</h4>\n      <p>consola nueva de 400€ vs viaje de fin de curso de 400€</p>\n      <ul class=\"list-disc pl-6 space-y-1 text-gray-700\">\n        <li>consola → 5 juegos pendientes + 200 horas al año</li>\n        <li>viaje → recuerdos con tu grupo + fotos para toda la vida</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">elige qué historia quieres contar dentro de 6 meses</p>\n    </div>"
+        }
+      ]
+    },
+    {
+      "id": "tacticas-tiendas",
+      "title": "las tácticas de las tiendas para que compres sin pensar",
+      "lead": "saber cómo te empujan a decir sí te devuelve el control",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-2 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-left",
+              "emoji": "⏳",
+              "title": "urgencia falsa",
+              "body": "contador regresivo, unidades limitadas o solo hoy",
+              "highlight": "si lo necesitabas, ya lo sabías antes del aviso"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-teal-500 hover:shadow-xl transition text-left",
+              "emoji": "🎯",
+              "title": "precio ancla",
+              "body": "te muestran primero el precio inflado para que el descuento parezca gigante",
+              "highlight": "compara en otra web antes de decidir"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-pink-500 hover:shadow-xl transition text-left",
+              "emoji": "🎁",
+              "title": "pack irresistible",
+              "body": "incluyen extras que no necesitas para justificar pagar más",
+              "highlight": "descompón el pack y compra solo lo que usarás"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-yellow-500 hover:shadow-xl transition text-left",
+              "emoji": "📸",
+              "title": "influencer de confianza",
+              "body": "parece recomendación sincera pero es publicidad pagada",
+              "highlight": "busca experiencias reales de usuarios antes de creer"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-3\">\n      <h4 class=\"text-xl font-bold text-gray-800\">cuando detectes una táctica</h4>\n      <ol class=\"list-decimal pl-6 space-y-2 text-gray-700\">\n        <li>pausa y respira 10 segundos</li>\n        <li>repite en voz baja: \"si era tan bueno, aún estará mañana\"</li>\n        <li>sal de la app o de la tienda y vuelve solo si superó tu checklist</li>\n      </ol>\n    </div>"
+        }
+      ]
+    },
+    {
+      "id": "checklist",
+      "title": "tu checklist express antes de pagar",
+      "lead": "tres pasos rápidos para filtrar compras y quedarte solo con las que suman",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-3 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center",
+              "emoji": "🔍",
+              "title": "investiga",
+              "body": "mira 2 reseñas positivas y 1 negativa real",
+              "highlight": "si no las encuentras, aléjate"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center",
+              "emoji": "💸",
+              "title": "compara",
+              "body": "busca al menos 3 precios distintos",
+              "highlight": "anota el más bajo y pregunta si puedes esperar"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center",
+              "emoji": "⏰",
+              "title": "espera",
+              "body": "aplaza la compra 24 horas",
+              "highlight": "si al día siguiente sigue siendo top 3 prioridades, adelante"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-purple-50 border-l-4 border-teal-400 p-6 rounded-lg max-w-3xl mx-auto space-y-3\">\n      <h4 class=\"text-xl font-bold text-teal-700\">preguntas rápidas</h4>\n      <ul class=\"list-disc pl-6 space-y-1 text-gray-700\">\n        <li>¿lo puedo pagar sin tocar mi fondo de emergencia?</li>\n        <li>¿tengo algo que ya cumple esa función?</li>\n        <li>¿me acerca o me aleja de mi meta principal?</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">si alguna respuesta es \"no\" o \"no sé\" vuelve al paso de espera</p>\n    </div>"
+        }
+      ]
+    },
+    {
+      "id": "alternativas",
+      "title": "alternativas inteligentes cuando la compra no convence",
+      "lead": "hay más caminos que pasar la tarjeta: usa creatividad y redes",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-4 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left",
+              "emoji": "♻️",
+              "title": "segunda mano",
+              "body": "compra reacondicionado o a alguien de confianza",
+              "highlight": "pide fotos, factura y prueba rápida"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left",
+              "emoji": "🤝",
+              "title": "compra compartida",
+              "body": "divide costo con amigos o familia y crea calendario de uso",
+              "highlight": "ideal para gadgets o herramientas puntuales"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition text-left",
+              "emoji": "🛠️",
+              "title": "repara o personaliza",
+              "body": "arregla lo que ya tienes o dale un upgrade",
+              "highlight": "tutoriales gratis en YouTube o TikTok"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left",
+              "emoji": "📚",
+              "title": "alquila o pide prestado",
+              "body": "usa bibliotecas, apps de alquiler o tu comunidad",
+              "highlight": "perfecto para eventos, disfraces o equipamiento caro"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-3\">\n      <h4 class=\"text-xl font-bold text-gray-800\">cuando sí compensa pagar más</h4>\n      <ul class=\"list-disc pl-6 space-y-1 text-gray-700\">\n        <li>mejor calidad = dura el doble</li>\n        <li>garantía o servicio técnico incluido</li>\n        <li>cubre una necesidad diaria clave</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">si cumple las tres, es inversión más que gasto</p>\n    </div>"
+        }
+      ]
+    }
+  ],
   "quiz": {
     "title": "demuestra que sabes comprar inteligente",
-    "lead": "comprueba si sabes identificar publicidad y evitar estafas",
+    "lead": "comprueba si tus decisiones resisten el marketing agresivo",
     "questions": [
       {
-        "prompt": "¿qué es lo más importante al ver publicidad?",
+        "prompt": "encuentras unas zapatillas rebajadas de 120€ a 80€ pero tu meta es ahorrar para un viaje en dos meses: ¿qué haces?",
         "answersWrapperClass": "flex justify-center gap-4",
         "answers": [
-          { "label": "creer todo lo que dice", "correct": false },
-          { "label": "preguntarte si lo necesitas", "correct": true },
-          { "label": "comprar rápido", "correct": false }
+          {
+            "label": "las compro ya porque es una oportunidad única",
+            "correct": false
+          },
+          {
+            "label": "reviso mi checklist y decido mañana",
+            "correct": true
+          },
+          {
+            "label": "pido otra tarjeta para pagarlas",
+            "correct": false
+          }
         ]
       },
       {
-        "prompt": "¿cómo puedes identificar una estafa online?",
+        "prompt": "un influencer dice que cierto curso te hará ganar 1.000€ en una semana si pagas hoy: ¿qué táctica usa?",
         "answersWrapperClass": "flex justify-center gap-4",
         "answers": [
-          { "label": "si promete dinero fácil", "correct": false },
-          { "label": "si pide datos personales", "correct": false },
-          { "label": "todas las anteriores", "correct": true }
+          {
+            "label": "urgencia falsa + promesa gigante",
+            "correct": true
+          },
+          {
+            "label": "precio ancla",
+            "correct": false
+          },
+          {
+            "label": "pack irresistible",
+            "correct": false
+          }
         ]
       }
     ]
   },
   "reto": {
     "emoji": "🛒",
-    "title": "el reto: analiza una compra que quieras hacer",
-    "lead": "antes de comprar algo, haz este análisis. ¿lo necesitas? ¿puedes pagarlo sin tocar tus ahorros? ¿ya comparaste precios?",
+    "title": "el reto: 72 horas sin compras impulsivas",
+    "lead": "haz una lista de todo lo que quieras comprar esta semana, aplica la checklist y espera 72 horas antes de decir sí o no",
     "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
     "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
     "cta": "acepto el reto 💪",
@@ -51,8 +264,8 @@
     "hintClass": "mt-4 text-sm text-gray-600 italic"
   },
   "takeaway": {
-    "title": "aprender a comprar sin que te vendan la moto es la clave del ahorro inteligente",
-    "subtitle": "ahora sabes cómo identificar la publicidad, los timos y los influencers que solo quieren tu dinero. compras inteligentes = más dinero para lo que realmente importa.",
+    "title": "comprar con cabeza te deja más libertad para lo que importa",
+    "subtitle": "cada euro que proteges de la publicidad es un euro que puedes dedicar a tus metas reales",
     "cta": {
       "href": "lo-barato-sale-caro-cuando-pagas-con-deuda.html",
       "label": "quiero evitar las deudas ➡"

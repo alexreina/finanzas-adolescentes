@@ -9,6 +9,7 @@ const PRECACHE_URLS = [
   "./aprende-a-comprar-sin-que-te-vendan-la-moto.html",
   "./lo-barato-sale-caro-cuando-pagas-con-deuda.html",
   "./fuentes.html",
+  "./por-que-esta-web.html",
   "./css/styles.css",
   "./css/tailwind.css",
   "./js/page-helpers.js",

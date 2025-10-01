@@ -6,7 +6,36 @@ const DIST_DIR = path.join(ROOT_DIR, 'docs');
 const DATA_DIR = path.join(ROOT_DIR, 'data');
 
 const missions = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'missions.json'), 'utf-8'));
-const STATIC_PAGES = ['fuentes.html'];
+const STATIC_PAGES = ['fuentes.html', 'por-que-esta-web.html'];
+const FOOTER_HTML = `  <footer class="bg-purple-900 text-white py-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <div class="text-center">
+        <h4 class="font-bold mb-3">sobre este curso</h4>
+        <p class="text-sm text-gray-300">lo hemos hecho personas como tú para que entiendas todo sobre tu dinero sin aburrirte</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">enlaces</h4>
+        <div class="space-y-2">
+          <div><a href="por-que-esta-web.html" class="text-gray-300 hover:text-white transition text-sm">por qué hacemos esto</a></div>
+          <div><a href="fuentes.html" class="text-gray-300 hover:text-white transition text-sm">fuentes y referencias</a></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">síguenos</h4>
+        <div class="flex gap-4 justify-center">
+          <a href="#" aria-label="Síguenos en Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="Instagram" loading="lazy"></a>
+          <a href="#" aria-label="Síguenos en TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="TikTok" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-sm text-gray-400">
+      <p>&copy; 2025 finanzas personales para adolescentes · “el dinero no se aprende solo, se entrena 💪”</p>
+    </div>
+  </footer>`;
+
+function renderFooter() {
+  return FOOTER_HTML;
+}
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
@@ -25,9 +54,7 @@ function copyFileSync(source, target) {
 function generateNav(currentMissionId = null) {
   const links = missions.map((mission) => {
     const href = mission.file;
-    const classes = [
-      'hover:text-purple-600'
-    ];
+    const classes = ['hover:text-purple-600'];
 
     if (currentMissionId && mission.id === currentMissionId) {
       classes.push('text-purple-700', 'font-bold', 'underline');
@@ -36,8 +63,15 @@ function generateNav(currentMissionId = null) {
     return `        <a href="${href}" class="${classes.join(' ')}">${mission.navLabel}</a>`;
   });
 
+  const extraLinks = [
+    '        <a href="por-que-esta-web.html" class="hover:text-purple-600">por qué hacemos esto</a>',
+    '        <a href="fuentes.html" class="hover:text-purple-600">fuentes y referencias</a>'
+  ];
+
+  const allLinks = links.concat(extraLinks).join('\n');
+
   return `      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
-${links.join('\n')}
+${allLinks}
         <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
           🗑️ clear
         </button>
@@ -100,6 +134,7 @@ function generateMissionPage(mission, missionData) {
   const quiz = renderQuiz(missionData.quiz);
   const reto = renderReto(missionData.reto);
   const introBlocks = (missionData.introBlocks || []).join('\n\n');
+  const footer = renderFooter();
   const inlineScripts = (missionData.inlineScripts || [])
     .map((script) => `  <script>\n${script}\n  </script>`)
     .join('\n');
@@ -174,6 +209,8 @@ ${reto}
       </a>
     </div>
   </section>
+
+  ${footer}
 
   <script>
     function clearLocalStorage() {
