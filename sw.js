@@ -1,4 +1,4 @@
-const CACHE_NAME = 'finanzas-adolescentes-v2';
+const CACHE_NAME = 'finanzas-adolescentes-v3';
 const PRECACHE_URLS = __PRECACHE_MANIFEST__;
 
 self.addEventListener('install', (event) => {

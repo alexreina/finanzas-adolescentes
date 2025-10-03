@@ -1,51 +1,51 @@
 {
   "meta": {
-    "title": "lo barato sale caro cuando pagas con deuda - misión 6",
+    "title": "lo barato sale caro cuando pagas con deuda - misi\u00f3n 6",
     "description": "Aprende a detectar deudas camufladas, evitar intereses abusivos y proteger tu libertad financiera",
     "canonical": "https://alex.github.io/finanzas-adolescentes/lo-barato-sale-caro-cuando-pagas-con-deuda.html"
   },
   "hero": {
-    "emoji": "🚫",
+    "emoji": "\ud83d\udeab",
     "title": "lo barato sale caro cuando pagas con deuda",
-    "subtitle": "créditos rápidos y pagos aplazados suenan bien hasta que te atrapan"
+    "subtitle": "cr\u00e9ditos r\u00e1pidos y pagos aplazados suenan bien hasta que te atrapan"
   },
   "toc": [
     {
       "id": "por-que-deuda",
-      "label": "por qué atrapa",
-      "icon": "⛓️"
+      "label": "por qu\u00e9 atrapa",
+      "icon": "\u26d3\ufe0f"
     },
     {
       "id": "coste-real",
       "label": "el coste real",
-      "icon": "💥"
+      "icon": "\ud83d\udca5"
     },
     {
       "id": "protegete",
-      "label": "cómo protegerte",
-      "icon": "🛡️"
+      "label": "c\u00f3mo protegerte",
+      "icon": "\ud83d\udee1\ufe0f"
     },
     {
       "id": "cuando-si",
-      "label": "¿y si toca pedir?",
-      "icon": "🧠"
+      "label": "\u00bfy si toca pedir?",
+      "icon": "\ud83e\udde0"
     },
     {
       "id": "quiz",
-      "label": "quiz rápido",
-      "icon": "🎯"
+      "label": "quiz r\u00e1pido",
+      "icon": "\ud83c\udfaf"
     },
     {
       "id": "reto",
-      "label": "reto práctico",
-      "icon": "🐜"
+      "label": "reto pr\u00e1ctico",
+      "icon": "\ud83d\udc1c"
     }
   ],
   "sections": [
     {
       "id": "por-que-deuda",
-      "title": "por qué la deuda engancha tan fácil",
-      "lead": "empieza como un favor y termina dictando qué puedes hacer con tu dinero",
+      "title": "por qu\u00e9 la deuda engancha tan f\u00e1cil",
+      "lead": "empieza como un favor y termina dictando qu\u00e9 puedes hacer con tu dinero",
       "cards": [
         {
           "type": "grid",
@@ -53,37 +53,37 @@
           "items": [
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left",
-              "emoji": "💳",
+              "emoji": "\ud83d\udcb3",
               "title": "dinero ajeno hoy",
               "body": "te permite comprar sin esperar pero cada euro prestado llega con precio extra",
-              "highlight": "lo que no pagas ahora se multiplica después"
+              "highlight": "lo que no pagas ahora se multiplica despu\u00e9s"
             },
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left",
-              "emoji": "😵",
+              "emoji": "\ud83d\ude35",
               "title": "emociones a tope",
-              "body": "urgencia, miedo a perder la oferta y presión social te empujan a decir sí",
-              "highlight": "las decisiones calientes generan deudas frías y largas"
+              "body": "urgencia, miedo a perder la oferta y presi\u00f3n social te empujan a decir s\u00ed",
+              "highlight": "las decisiones calientes generan deudas fr\u00edas y largas"
             },
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left",
-              "emoji": "🔄",
-              "title": "círculo infinito",
-              "body": "pagas la cuota mínima y la deuda parece bajar pero casi todo es interés",
-              "highlight": "sin plan puedes pagar por años algo que ya ni usas"
+              "emoji": "\ud83d\udd04",
+              "title": "c\u00edrculo infinito",
+              "body": "pagas la cuota m\u00ednima y la deuda parece bajar pero casi todo es inter\u00e9s",
+              "highlight": "sin plan puedes pagar por a\u00f1os algo que ya ni usas"
             }
           ]
         },
         {
           "type": "html",
-          "html": "    <div class=\"bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg max-w-3xl mx-auto space-y-3\">\n      <h4 class=\"text-xl font-bold text-purple-700\">historia rápida</h4>\n      <p>carla compró un móvil a plazos por 20€ al mes durante 24 meses → precio final 480€ frente a los 360€ originales</p>\n      <p class=\"text-sm text-gray-500\">pagó 120€ extra por no esperar 3 meses</p>\n    </div>"
+          "html": "    <div class=\"bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg max-w-3xl mx-auto space-y-3\">\n      <h4 class=\"text-xl font-bold text-purple-700\">historia r\u00e1pida</h4>\n      <p>carla compr\u00f3 un m\u00f3vil a plazos por 20\u20ac al mes durante 24 meses \u2192 precio final 480\u20ac frente a los 360\u20ac originales</p>\n      <p class=\"text-sm text-gray-500\">pag\u00f3 120\u20ac extra por no esperar 3 meses</p>\n    </div>"
         }
       ]
     },
     {
       "id": "coste-real",
       "title": "calcula el verdadero coste de una deuda",
-      "lead": "siempre hay números pequeños escondidos que pueden duplicar el precio",
+      "lead": "siempre hay n\u00fameros peque\u00f1os escondidos que pueden duplicar el precio",
       "cards": [
         {
           "type": "grid",
@@ -91,30 +91,30 @@
           "items": [
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-left",
-              "emoji": "📈",
-              "title": "interés compuesto en tu contra",
-              "body": "el mismo efecto mágico de invertir pero al revés: cada mes debes intereses sobre intereses",
-              "highlight": "un 25 por ciento TAE puede doblar lo que pagas en 3 años"
+              "emoji": "\ud83d\udcc8",
+              "title": "inter\u00e9s compuesto en tu contra",
+              "body": "el mismo efecto m\u00e1gico de invertir pero al rev\u00e9s: cada mes debes intereses sobre intereses",
+              "highlight": "un 25 por ciento TAE puede doblar lo que pagas en 3 a\u00f1os"
             },
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-teal-500 hover:shadow-xl transition text-left",
-              "emoji": "📅",
-              "title": "pago mínimo = trampa",
-              "body": "si pagas solo el mínimo tardas más de 5 años en liquidar una deuda mediana",
+              "emoji": "\ud83d\udcc5",
+              "title": "pago m\u00ednimo = trampa",
+              "body": "si pagas solo el m\u00ednimo tardas m\u00e1s de 5 a\u00f1os en liquidar una deuda mediana",
               "highlight": "terminas pagando hasta 3 veces el precio original"
             }
           ]
         },
         {
           "type": "html",
-          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-4\">\n      <h4 class=\"text-xl font-bold text-gray-800\">tabla relámpago</h4>\n      <div class=\"grid md:grid-cols-3 gap-4 text-center text-sm text-gray-700\">\n        <div class=\"bg-purple-50 rounded-lg p-4\">\n          <p class=\"font-semibold text-purple-700\">100€</p>\n          <p>sin interés pagas 100€</p>\n        </div>\n        <div class=\"bg-teal-50 rounded-lg p-4\">\n          <p class=\"font-semibold text-teal-700\">100€ al 20%</p>\n          <p>pagas 120€ en un año</p>\n        </div>\n        <div class=\"bg-pink-50 rounded-lg p-4\">\n          <p class=\"font-semibold text-pink-700\">100€ al 20% pagando mínimo</p>\n          <p>pagas 180€ o más</p>\n        </div>\n      </div>\n      <p class=\"text-sm text-gray-500\">los números exactos dependen del contrato pero la lógica siempre juega en tu contra</p>\n    </div>"
+          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-4\">\n      <h4 class=\"text-xl font-bold text-gray-800\">tabla rel\u00e1mpago</h4>\n      <div class=\"grid md:grid-cols-3 gap-4 text-center text-sm text-gray-700\">\n        <div class=\"bg-purple-50 rounded-lg p-4\">\n          <p class=\"font-semibold text-purple-700\">100\u20ac</p>\n          <p>sin inter\u00e9s pagas 100\u20ac</p>\n        </div>\n        <div class=\"bg-teal-50 rounded-lg p-4\">\n          <p class=\"font-semibold text-teal-700\">100\u20ac al 20%</p>\n          <p>pagas 120\u20ac en un a\u00f1o</p>\n        </div>\n        <div class=\"bg-pink-50 rounded-lg p-4\">\n          <p class=\"font-semibold text-pink-700\">100\u20ac al 20% pagando m\u00ednimo</p>\n          <p>pagas 180\u20ac o m\u00e1s</p>\n        </div>\n      </div>\n      <p class=\"text-sm text-gray-500\">los n\u00fameros exactos dependen del contrato pero la l\u00f3gica siempre juega en tu contra</p>\n    </div>"
         }
       ]
     },
     {
       "id": "protegete",
-      "title": "cómo blindarte contra la deuda",
-      "lead": "la mejor defensa es planificar antes de que aparezca la tentación",
+      "title": "c\u00f3mo blindarte contra la deuda",
+      "lead": "la mejor defensa es planificar antes de que aparezca la tentaci\u00f3n",
       "cards": [
         {
           "type": "grid",
@@ -122,24 +122,24 @@
           "items": [
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left",
-              "emoji": "🪙",
+              "emoji": "\ud83e\ude99",
               "title": "fondo de imprevistos",
-              "body": "ahorra 3 meses de gastos básicos en una cuenta segura",
+              "body": "ahorra 3 meses de gastos b\u00e1sicos en una cuenta segura",
               "highlight": "imprevisto pagado en efectivo = deuda evitada"
             },
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left",
-              "emoji": "📆",
+              "emoji": "\ud83d\udcc6",
               "title": "paga todo al contado",
-              "body": "usa tarjeta de débito o efectivo y liquida compras grandes con ahorro previo",
+              "body": "usa tarjeta de d\u00e9bito o efectivo y liquida compras grandes con ahorro previo",
               "highlight": "si no puedes pagarlo hoy mejor no comprarlo"
             },
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left",
-              "emoji": "🧾",
+              "emoji": "\ud83e\uddfe",
               "title": "reglas claras",
-              "body": "define un límite máximo de gasto y espera siempre 72 horas",
-              "highlight": "la pausa enfría la compra impulsiva"
+              "body": "define un l\u00edmite m\u00e1ximo de gasto y espera siempre 72 horas",
+              "highlight": "la pausa enfr\u00eda la compra impulsiva"
             }
           ]
         },
@@ -151,8 +151,8 @@
     },
     {
       "id": "cuando-si",
-      "title": "qué hacer si necesitas financiación de verdad",
-      "lead": "a veces estudiar o emprender requiere apoyo externo pero debe ser la excepción",
+      "title": "qu\u00e9 hacer si necesitas financiaci\u00f3n de verdad",
+      "lead": "a veces estudiar o emprender requiere apoyo externo pero debe ser la excepci\u00f3n",
       "cards": [
         {
           "type": "grid",
@@ -160,37 +160,37 @@
           "items": [
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-left",
-              "emoji": "🎓",
+              "emoji": "\ud83c\udf93",
               "title": "solo si aumenta tu valor",
-              "body": "formación con salida laboral o herramienta para generar ingresos",
-              "highlight": "elige opciones públicas o becas antes que crédito"
+              "body": "formaci\u00f3n con salida laboral o herramienta para generar ingresos",
+              "highlight": "elige opciones p\u00fablicas o becas antes que cr\u00e9dito"
             },
             {
               "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-teal-500 hover:shadow-xl transition text-left",
-              "emoji": "📊",
+              "emoji": "\ud83d\udcca",
               "title": "plan de salida",
               "body": "suma total de cuotas + tiempo exacto para pagarlo sin fallar",
-              "highlight": "cuota ≤ 20 por ciento de tus ingresos y fondo de emergencia intacto"
+              "highlight": "cuota \u2264 20 por ciento de tus ingresos y fondo de emergencia intacto"
             }
           ]
         },
         {
           "type": "html",
-          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-3xl mx-auto space-y-3\">\n      <h4 class=\"text-xl font-bold text-gray-800\">preguntas antes de firmar</h4>\n      <ul class=\"list-disc pl-6 space-y-1 text-gray-700\">\n        <li>¿cuánto pagaré en total contando intereses y comisiones?</li>\n        <li>¿qué pasa si me retraso un mes?</li>\n        <li>¿tengo un plan B para cubrir la cuota?</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">si alguna respuesta no convence busca otra ruta</p>\n    </div>"
+          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-3xl mx-auto space-y-3\">\n      <h4 class=\"text-xl font-bold text-gray-800\">preguntas antes de firmar</h4>\n      <ul class=\"list-disc pl-6 space-y-1 text-gray-700\">\n        <li>\u00bfcu\u00e1nto pagar\u00e9 en total contando intereses y comisiones?</li>\n        <li>\u00bfqu\u00e9 pasa si me retraso un mes?</li>\n        <li>\u00bftengo un plan B para cubrir la cuota?</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">si alguna respuesta no convence busca otra ruta</p>\n    </div>"
         }
       ]
     }
   ],
   "quiz": {
     "title": "demuestra que puedes decir no a la deuda",
-    "lead": "evalúa si tus reflejos financieros están listos para resistir ofertas bonitas",
+    "lead": "eval\u00faa si tus reflejos financieros est\u00e1n listos para resistir ofertas bonitas",
     "questions": [
       {
-        "prompt": "una tarjeta te ofrece pagar solo 15€ al mes por una compra de 300€: ¿qué debes revisar primero?",
+        "prompt": "una tarjeta te ofrece pagar solo 15\u20ac al mes por una compra de 300\u20ac: \u00bfqu\u00e9 debes revisar primero?",
         "answersWrapperClass": "flex justify-center gap-4",
         "answers": [
           {
-            "label": "la tasa de interés total y cuánto terminarás pagando",
+            "label": "la tasa de inter\u00e9s total y cu\u00e1nto terminar\u00e1s pagando",
             "correct": true
           },
           {
@@ -198,17 +198,17 @@
             "correct": false
           },
           {
-            "label": "si tus amigos también la tienen",
+            "label": "si tus amigos tambi\u00e9n la tienen",
             "correct": false
           }
         ]
       },
       {
-        "prompt": "necesitas un portátil para tus estudios y no puedes pagarlo al contado: ¿qué opción es más inteligente?",
+        "prompt": "necesitas un port\u00e1til para tus estudios y no puedes pagarlo al contado: \u00bfqu\u00e9 opci\u00f3n es m\u00e1s inteligente?",
         "answersWrapperClass": "flex justify-center gap-4",
         "answers": [
           {
-            "label": "pedir un crédito sin comparar",
+            "label": "pedir un cr\u00e9dito sin comparar",
             "correct": false
           },
           {
@@ -224,23 +224,24 @@
     ]
   },
   "reto": {
-    "emoji": "🧩",
-    "title": "el reto: diseña tu escudo anti deuda",
-    "lead": "crea una lista de reglas personales para decir no a créditos, BNPL o préstamos entre amigos y revisa qué fondo necesitas para sentirte seguro",
+    "emoji": "\ud83e\udde9",
+    "title": "el reto: dise\u00f1a tu escudo anti deuda",
+    "lead": "crea una lista de reglas personales para decir no a cr\u00e9ditos, BNPL o pr\u00e9stamos entre amigos y revisa qu\u00e9 fondo necesitas para sentirte seguro",
     "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
     "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
-    "cta": "acepto el reto 💪",
+    "cta": "acepto el reto \ud83d\udcaa",
     "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
-    "hint": "👉 completa el reto para cerrar tu misión final",
+    "hint": "\ud83d\udc49 completa el reto para cerrar tu misi\u00f3n final",
     "hintId": "reto-hint",
     "hintClass": "mt-4 text-sm text-gray-600 italic"
   },
   "takeaway": {
-    "title": "evitar deudas es tu súper poder para seguir libre",
-    "subtitle": "cuando eliges pagar con dinero propio escribes tu historia sin cuotas persiguiéndote",
+    "title": "evitar deudas es tu s\u00faper poder para seguir libre",
+    "subtitle": "Cuando eliges pagar con dinero propio escribes tu historia sin cuotas persigui\u00e9ndote. Cerraste la misi\u00f3n final y ya dominas tu dinero.",
     "cta": {
-      "href": "index.html",
-      "label": "curso completado ➡"
-    }
+      "href": "certificado.html",
+      "label": "ver certificado"
+    },
+    "note": "Tu certificado oficial est\u00e1 listo para presumirlo en redes o guardarlo como recuerdo. S\u00fabelo a tus stories hoy mismo."
   }
 }

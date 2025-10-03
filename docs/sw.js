@@ -1,4 +1,4 @@
-const CACHE_NAME = 'finanzas-adolescentes-v2';
+const CACHE_NAME = 'finanzas-adolescentes-v3';
 const PRECACHE_URLS = [
   "./",
   "./index.html",
@@ -10,6 +10,7 @@ const PRECACHE_URLS = [
   "./lo-barato-sale-caro-cuando-pagas-con-deuda.html",
   "./fuentes.html",
   "./por-que-esta-web.html",
+  "./certificado.html",
   "./css/styles.css",
   "./css/tailwind.css",
   "./js/page-helpers.js",

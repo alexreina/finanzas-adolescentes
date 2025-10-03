@@ -6,7 +6,7 @@ const DIST_DIR = path.join(ROOT_DIR, 'docs');
 const DATA_DIR = path.join(ROOT_DIR, 'data');
 
 const missions = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'missions.json'), 'utf-8'));
-const STATIC_PAGES = ['fuentes.html', 'por-que-esta-web.html'];
+const STATIC_PAGES = ['fuentes.html', 'por-que-esta-web.html', 'certificado.html'];
 const FOOTER_HTML = `  <footer class="bg-purple-900 text-white py-10">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
       <div class="text-center">
@@ -63,15 +63,8 @@ function generateNav(currentMissionId = null) {
     return `        <a href="${href}" class="${classes.join(' ')}">${mission.navLabel}</a>`;
   });
 
-  const extraLinks = [
-    '        <a href="por-que-esta-web.html" class="hover:text-purple-600">por qué hacemos esto</a>',
-    '        <a href="fuentes.html" class="hover:text-purple-600">fuentes y referencias</a>'
-  ];
-
-  const allLinks = links.concat(extraLinks).join('\n');
-
   return `      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
-${allLinks}
+${links.join('\n')}
         <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
           🗑️ clear
         </button>
@@ -197,18 +190,9 @@ ${sections}
 
 ${quiz}
 
-${reto}
+  ${reto}
 
-  <!-- Final CTA -->
-  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">${missionData.takeaway.title}</h2>
-      <p class="text-xl mb-8">${missionData.takeaway.subtitle}</p>
-      <a href="${missionData.takeaway.cta.href}" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
-        ${missionData.takeaway.cta.label}
-      </a>
-    </div>
-  </section>
+${renderTakeaway(mission, missionData)}
 
   ${footer}
 
@@ -228,6 +212,42 @@ ${inlineScripts ? `${inlineScripts}\n` : ''}  <script src="js/vendor/canvas-conf
   <script src="js/reto.js" defer></script>
 </body>
 </html>`;
+}
+
+function renderTakeaway(mission, missionData) {
+  if (mission.id === 6) {
+    const note = missionData.takeaway.note || '';
+    return `  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-20 transition-all duration-500 opacity-50 pointer-events-none">
+    <div class="max-w-4xl mx-auto px-6">
+      <div id="certificate-card" class="relative overflow-hidden rounded-[42px] p-12 sm:p-16 text-white shadow-[0_30px_80px_rgba(59,7,100,0.35)]">
+        <div class="absolute inset-0 bg-gradient-to-br from-yellow-300 via-pink-500 to-purple-700 opacity-90"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.35),transparent_55%)]"></div>
+        <div class="relative flex flex-col gap-7">
+          <div class="uppercase text-xs tracking-[0.5em] text-white/80">certificado desbloqueado</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight drop-shadow-[0_15px_30px_rgba(124,58,237,0.45)]">${missionData.takeaway.title}</h2>
+          <p class="text-lg sm:text-xl text-white/95 max-w-2xl">${missionData.takeaway.subtitle}</p>
+          ${note ? `<p class="text-base sm:text-lg text-white/85 max-w-2xl">${note}</p>` : ''}
+          <div class="flex flex-wrap items-center gap-6">
+            <a id="certificate-primary" href="${missionData.takeaway.cta.href}" class="group inline-flex items-center gap-4 rounded-full bg-white text-purple-800 px-9 py-4 text-lg font-extrabold uppercase tracking-[0.2em] shadow-[0_18px_45px_rgba(124,58,237,0.35)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/60">
+              <span class="text-2xl">🎓</span>
+              <span class="group-hover:tracking-[0.28em] transition-all duration-200">${missionData.takeaway.cta.label}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+  }
+
+  return `  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">${missionData.takeaway.title}</h2>
+      <p class="text-xl mb-8">${missionData.takeaway.subtitle}</p>
+      <a href="${missionData.takeaway.cta.href}" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
+        ${missionData.takeaway.cta.label}
+      </a>
+    </div>
+  </section>`;
 }
 
 function renderSection(section) {

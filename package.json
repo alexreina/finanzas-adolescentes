@@ -5,6 +5,13 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
-    "build:css": "npx tailwindcss@3.4.13 -c tailwind.config.js -i css/tailwind-input.css -o css/tailwind.css --minify"
+    "build:css": "npx tailwindcss@3.4.13 -c tailwind.config.js -i css/tailwind-input.css -o css/tailwind.css --minify",
+    "capture:certificado": "node scripts/capture-certificate.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.23.0"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001747"
   }
 }

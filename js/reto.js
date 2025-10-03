@@ -100,10 +100,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Toast notification
       const toast = document.createElement("div");
-      toast.textContent = `🎉 ¡reto completado${userName}! ahora puedes continuar a la siguiente misión.`;
-      toast.className = "fixed bottom-5 right-5 bg-purple-600 text-white px-4 py-2 rounded shadow-lg";
+      const completionMessage = missionId === 6
+        ? `🎉 ¡reto completado${userName}! tu certificado oficial ya está listo.`
+        : `🎉 ¡reto completado${userName}! ahora puedes continuar a la siguiente misión.`;
+      toast.className = "fixed bottom-5 right-5 bg-purple-600 text-white px-4 py-2 rounded shadow-lg flex items-center gap-3";
+      const toastMessage = document.createElement('span');
+      toastMessage.textContent = completionMessage;
+      toast.appendChild(toastMessage);
+
+      if (missionId === 6) {
+        const toastButton = document.createElement('button');
+        toastButton.type = 'button';
+        toastButton.textContent = 'ver certificado';
+        toastButton.className = 'underline font-semibold text-yellow-200 hover:text-yellow-100';
+        toastButton.addEventListener('click', () => {
+          window.location.href = 'certificado.html';
+        });
+        toast.appendChild(toastButton);
+      }
+
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3000);
+
+      if (missionId === 6) {
+        highlightCertificateCTA();
+      }
     });
   }
 });
@@ -120,6 +141,24 @@ function enableRetoButton() {
   
   if (retoHint) {
     retoHint.classList.add('hidden');
+  }
+}
+
+function highlightCertificateCTA() {
+  const certificateCard = document.getElementById('certificate-card');
+  const certificatePrimary = document.getElementById('certificate-primary');
+
+  if (certificateCard) {
+    certificateCard.classList.add('ring-4', 'ring-white/70', 'ring-offset-2', 'ring-offset-transparent');
+    setTimeout(() => {
+      certificateCard.classList.remove('ring-4', 'ring-white/70', 'ring-offset-2', 'ring-offset-transparent');
+    }, 4000);
+  }
+
+  if (certificatePrimary) {
+    certificatePrimary.classList.add('animate-bounce');
+    certificatePrimary.focus({ preventScroll: false });
+    setTimeout(() => certificatePrimary.classList.remove('animate-bounce'), 3200);
   }
 }
 
