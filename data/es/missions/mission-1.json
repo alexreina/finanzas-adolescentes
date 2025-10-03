@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Domina tu dinero desde el primer euro – educación financiera para adolescentes",
-    "description": "Aprende por qué la educación financiera es tu superpoder; controla tu dinero desde hoy y gana libertad para el futuro",
+    "title": "domina tu dinero desde el primer euro – educación financiera para adolescentes",
+    "description": "aprende por qué la educación financiera es tu superpoder; controla tu dinero desde hoy y gana libertad para el futuro",
     "canonical": "https://alex.github.io/finanzas-adolescentes/domina-tu-dinero-desde-el-primer-euro.html"
   },
   "hero": {
@@ -47,7 +47,7 @@
   "sections": [
     {
       "type": "raw",
-      "html": "<section id=\"educacion\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">Cómo dar el primer paso en educación financiera</h2>\n  <p class=\"text-center text-gray-600 mb-12\">\n    no es aburrido ni complicado: es saber usar tu dinero para conseguir lo que realmente quieres\n  </p>\n  <div class=\"grid md:grid-cols-3 gap-6 mb-12\">\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">❌</div>\n      <h4 class=\"text-xl font-bold mb-2\">sin educación financiera</h4>\n      <p class=\"text-gray-600 mb-2\">el dinero se escapa sin que te des cuenta</p>\n      <p class=\"text-purple-600 font-semibold\">gastas, no sabes en qué, y nunca tienes para lo que quieres</p>\n    </div>\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">✅</div>\n      <h4 class=\"text-xl font-bold mb-2\">con educación financiera</h4>\n      <p class=\"text-gray-600 mb-2\">tienes el control y sabes exactamente qué hacer</p>\n      <p class=\"text-purple-600 font-semibold\">ahorras, inviertes y consigues tus objetivos</p>\n    </div>\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">🎯</div>\n      <h4 class=\"text-xl font-bold mb-2\">la diferencia</h4>\n      <p class=\"text-gray-600 mb-2\">no es cuánto dinero tienes, sino qué sabes hacer con él</p>\n      <p class=\"text-purple-600 font-semibold\">conocimiento = superpoder</p>\n    </div>\n  </div>\n</section>\n"
+      "html": "<section id=\"educacion\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">cómo dar el primer paso en educación financiera</h2>\n  <p class=\"text-center text-gray-600 mb-12\">\n    no es aburrido ni complicado: es saber usar tu dinero para conseguir lo que realmente quieres\n  </p>\n  <div class=\"grid md:grid-cols-3 gap-6 mb-12\">\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">❌</div>\n      <h4 class=\"text-xl font-bold mb-2\">sin educación financiera</h4>\n      <p class=\"text-gray-600 mb-2\">el dinero se escapa sin que te des cuenta</p>\n      <p class=\"text-purple-600 font-semibold\">gastas, no sabes en qué, y nunca tienes para lo que quieres</p>\n    </div>\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">✅</div>\n      <h4 class=\"text-xl font-bold mb-2\">con educación financiera</h4>\n      <p class=\"text-gray-600 mb-2\">tienes el control y sabes exactamente qué hacer</p>\n      <p class=\"text-purple-600 font-semibold\">ahorras, inviertes y consigues tus objetivos</p>\n    </div>\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">🎯</div>\n      <h4 class=\"text-xl font-bold mb-2\">la diferencia</h4>\n      <p class=\"text-gray-600 mb-2\">no es cuánto dinero tienes, sino qué sabes hacer con él</p>\n      <p class=\"text-purple-600 font-semibold\">conocimiento = superpoder</p>\n    </div>\n  </div>\n</section>\n"
     },
     {
       "type": "raw",
@@ -115,7 +115,7 @@
     "hint": "👉 completa el reto para desbloquear la siguiente misión",
     "hintId": "reto-hint",
     "hintClass": "mt-4 text-sm text-gray-600 italic",
-    "closing": "Tú eres quien decide cómo se mueve tu dinero: si lo dejas escapar o si lo pones a trabajar para ti",
+    "closing": "tú eres quien decide cómo se mueve tu dinero: si lo dejas escapar o si lo pones a trabajar para ti",
     "closingClass": "mt-6 text-base text-purple-800 font-semibold"
   },
   "takeaway": {

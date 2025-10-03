@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Lo barato sale caro – aprende a evitar las trampas de la deuda",
-    "description": "La deuda parece solución rápida, pero puede salir muy cara; aprende a reconocerla y evitar quedar atrapado",
+    "title": "lo barato sale caro – aprende a evitar las trampas de la deuda",
+    "description": "la deuda parece solución rápida, pero puede salir muy cara; aprende a reconocerla y evitar quedar atrapado",
     "canonical": "https://alex.github.io/finanzas-adolescentes/lo-barato-sale-caro-cuando-pagas-con-deuda.html"
   },
   "hero": {
@@ -44,7 +44,7 @@
   "sections": [
     {
       "id": "por-que-deuda",
-      "title": "Cómo evitar que la deuda te atrape",
+      "title": "cómo evitar que la deuda te atrape",
       "lead": "empieza como un favor y termina dictando qué puedes hacer con tu dinero",
       "cards": [
         {
@@ -226,7 +226,7 @@
   "reto": {
     "emoji": "🧩",
     "title": "el reto: diseña tu escudo anti deuda",
-    "lead": "Paso 1: haz una lista de tres compras que querrías hacer ahora\nPaso 2: marca cuáles podrías pagar al contado y cuáles te meterían en deuda; esa diferencia es la clave",
+    "lead": "paso 1: haz una lista de tres compras que querrías hacer ahora\npaso 2: marca cuáles podrías pagar al contado y cuáles te meterían en deuda; esa diferencia es la clave",
     "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
     "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
     "cta": "acepto el reto 💪",
@@ -234,12 +234,12 @@
     "hint": "👉 completa el reto para cerrar tu misión final",
     "hintId": "reto-hint",
     "hintClass": "mt-4 text-sm text-gray-600 italic",
-    "closing": "Endeudarte no es solo un número en el banco: es tu decisión; entenderlo y evitarlo es parte de hacerte responsable de tu dinero",
+    "closing": "endeudarte no es solo un número en el banco: es tu decisión; entenderlo y evitarlo es parte de hacerte responsable de tu dinero",
     "closingClass": "mt-6 text-base text-purple-800 font-semibold"
   },
   "takeaway": {
     "title": "evitar deudas es tu súper poder para seguir libre",
-    "subtitle": "Ser responsable de tu dinero no es un peso; es lo que te da la libertad de decidir y no quedar atrapado en la deuda",
+    "subtitle": "ser responsable de tu dinero no es un peso; es lo que te da la libertad de decidir y no quedar atrapado en la deuda",
     "cta": {
       "href": "certificado.html",
       "label": "ver certificado"

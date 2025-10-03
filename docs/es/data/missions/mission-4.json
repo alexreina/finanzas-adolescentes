@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Haz que tu dinero crezca mientras haces otra cosa – interés compuesto explicado fácil",
-    "description": "El tiempo es tu aliado; aprende cómo el interés compuesto hace que tu dinero crezca aunque no lo mires",
+    "title": "haz que tu dinero crezca mientras haces otra cosa – interés compuesto explicado fácil",
+    "description": "el tiempo es tu aliado; aprende cómo el interés compuesto hace que tu dinero crezca aunque no lo mires",
     "canonical": "https://alex.github.io/finanzas-adolescentes/haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html"
   },
   "hero": {
@@ -44,7 +44,7 @@
   "sections": [
     {
       "type": "raw",
-      "html": "<section id=\"mindset\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">Cómo funciona el interés compuesto en tu favor</h2>\n  <p class=\"text-center text-gray-600 mb-10\">El interés compuesto es como magia matemática; hace que tu dinero crezca mientras haces otra cosa</p>\n  <div class=\"max-w-3xl mx-auto space-y-4 text-gray-700 text-lg leading-relaxed\">\n    <p>Si ahorras 10 euros cada semana y lo inviertes con un 5% de interés, al cabo de 10 años tendrás mucho más de lo que aportaste</p>\n    <p>Es como cuando en un juego guardas monedas poco a poco; al final tienes lo suficiente para desbloquear algo grande sin haberlo notado</p>\n    <p>Piensa en una bola de nieve que rueda cuesta abajo; al principio es pequeña, pero cada vuelta la hace más grande</p>\n    <p>El tiempo está de tu lado; cuanto antes empieces, más trabajará tu dinero por ti</p>\n  </div>\n</section>\n"
+      "html": "<section id=\"mindset\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">cómo funciona el interés compuesto en tu favor</h2>\n  <p class=\"text-center text-gray-600 mb-10\">El interés compuesto es como magia matemática; hace que tu dinero crezca mientras haces otra cosa</p>\n  <div class=\"max-w-3xl mx-auto space-y-4 text-gray-700 text-lg leading-relaxed\">\n    <p>Si ahorras 10 euros cada semana y lo inviertes con un 5% de interés, al cabo de 10 años tendrás mucho más de lo que aportaste</p>\n    <p>Es como cuando en un juego guardas monedas poco a poco; al final tienes lo suficiente para desbloquear algo grande sin haberlo notado</p>\n    <p>Piensa en una bola de nieve que rueda cuesta abajo; al principio es pequeña, pero cada vuelta la hace más grande</p>\n    <p>El tiempo está de tu lado; cuanto antes empieces, más trabajará tu dinero por ti</p>\n  </div>\n</section>\n"
     },
     {
       "id": "vehiculos",
@@ -228,7 +228,7 @@
     "hint": "👉 completa el reto para desbloquear la siguiente misión",
     "hintId": "reto-hint",
     "hintClass": "mt-4 text-sm text-gray-600 italic",
-    "closing": "El tiempo está de tu lado: cuanto antes empieces, más trabajará tu dinero por ti",
+    "closing": "el tiempo está de tu lado: cuanto antes empieces, más trabajará tu dinero por ti",
     "closingClass": "mt-6 text-base text-purple-800 font-semibold"
   },
   "takeaway": {

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Tu dinero se esfuma sin que lo notes – aprende a controlarlo",
-    "description": "El dinero desaparece si no lo controlas; descubre cómo evitarlo y empezar a ahorrar de forma sencilla",
+    "title": "tu dinero se esfuma sin que lo notes – aprende a controlarlo",
+    "description": "el dinero desaparece si no lo controlas; descubre cómo evitarlo y empezar a ahorrar de forma sencilla",
     "canonical": "https://alex.github.io/finanzas-adolescentes/tu-dinero-se-esfuma-y-ni-te-das-cuenta.html"
   },
   "hero": {
@@ -39,7 +39,7 @@
   "sections": [
     {
       "id": "gastos",
-      "title": "Cómo controlar tus gastos sin dejar de disfrutar",
+      "title": "cómo controlar tus gastos sin dejar de disfrutar",
       "lead": "antes de pensar en cómo ahorrar, tienes que saber en qué lo gastas y cómo repartirlo mejor; puede ser que tu dinero se vaya en videojuegos, chuches o ropa; si no lo controlas, ni notas cómo desaparece",
       "cards": [
         {
@@ -203,12 +203,12 @@
     "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
     "hint": "👉 completa el reto para desbloquear la siguiente misión",
     "hintClass": "mt-4 text-sm text-gray-600 italic",
-    "closing": "Si apuntas tus gastos, verás en qué se esfuma tu dinero; y cuando lo veas claro, tendrás la libertad de elegir qué hacer con él",
+    "closing": "si apuntas tus gastos, verás en qué se esfuma tu dinero; y cuando lo veas claro, tendrás la libertad de elegir qué hacer con él",
     "closingClass": "mt-6 text-base text-purple-800 font-semibold"
   },
   "takeaway": {
     "title": "tu dinero puede esfumarse... o ayudarte a conseguir lo que sueñas",
-    "subtitle": "Si apuntas tus gastos, verás en qué se esfuma tu dinero; y cuando lo veas claro, tendrás la libertad de elegir qué hacer con él",
+    "subtitle": "si apuntas tus gastos, verás en qué se esfuma tu dinero; y cuando lo veas claro, tendrás la libertad de elegir qué hacer con él",
     "cta": {
       "href": "haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html",
       "label": "quiero poner en orden mis gastos ➡"

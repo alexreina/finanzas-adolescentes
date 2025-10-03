@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Aprende a comprar sin que te vendan la moto – guía práctica de finanzas personales",
-    "description": "Evita compras impulsivas y deuda; toma decisiones con información y protege tu dinero",
+    "title": "aprende a comprar sin que te vendan la moto – guía práctica de finanzas personales",
+    "description": "evita compras impulsivas y deuda; toma decisiones con información y protege tu dinero",
     "canonical": "https://alex.github.io/finanzas-adolescentes/aprende-a-comprar-sin-que-te-vendan-la-moto.html"
   },
   "hero": {
@@ -44,7 +44,7 @@
   "sections": [
     {
       "id": "mapa-deseos",
-      "title": "Cómo decidir antes de comprar para no arrepentirte",
+      "title": "cómo decidir antes de comprar para no arrepentirte",
       "lead": "antes de comprar, diferencia capricho de necesidad y descubre qué estás dejando pasar",
       "cards": [
         {
@@ -262,7 +262,7 @@
     "hint": "👉 completa el reto para desbloquear la siguiente misión",
     "hintId": "reto-hint",
     "hintClass": "mt-4 text-sm text-gray-600 italic",
-    "closing": "Así nadie podrá venderte humo ni colarte gato por liebre",
+    "closing": "así nadie podrá venderte humo ni colarte gato por liebre",
     "closingClass": "mt-6 text-base text-purple-800 font-semibold"
   },
   "takeaway": {
