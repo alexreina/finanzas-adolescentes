@@ -21,8 +21,6 @@ const PRECACHE_URLS = [
   "./js/sw-register.js",
   "./manifest.json",
   "./favicon.svg",
-  "./favicon-arrow.svg",
-  "./favicon-sparkline.svg",
   "./robots.txt",
   "./img/preview.png",
   "./data/missions.json"

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "¿cómo consigo que crezca? - misión 4",
-    "description": "Aprende a usar el interés compuesto, diferenciar entre ahorrar e invertir y da tus primeros pasos para multiplicar tu dinero",
+    "title": "Haz que tu dinero crezca mientras haces otra cosa – interés compuesto explicado fácil",
+    "description": "El tiempo es tu aliado; aprende cómo el interés compuesto hace que tu dinero crezca aunque no lo mires",
     "canonical": "https://alex.github.io/finanzas-adolescentes/haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html"
   },
   "hero": {
@@ -43,42 +43,8 @@
   ],
   "sections": [
     {
-      "id": "mindset",
-      "title": "por qué empezar a invertir cuando aún estás estudiando",
-      "lead": "el interés compuesto es un superpoder que funciona mejor cuando le das años para multiplicar tu dinero",
-      "cards": [
-        {
-          "type": "grid",
-          "wrapperClass": "grid md:grid-cols-3 gap-6 mb-12",
-          "items": [
-            {
-              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center",
-              "emoji": "⏳",
-              "title": "tu mayor ventaja es el tiempo",
-              "body": "cada euro que inviertes hoy tiene más ciclos para duplicarse: empezar pronto vale más que invertir grandes cantidades tarde",
-              "highlight": "10€ al mes desde los 15 → ~8 300€ a los 30 con un 7% anual"
-            },
-            {
-              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center",
-              "emoji": "🌱",
-              "title": "el interés compuesto trabaja solo",
-              "body": "tus ganancias generan nuevas ganancias, incluso mientras duermes: no necesitas estar pendiente todos los días",
-              "highlight": "tu dinero trabaja 24/7 sin que tengas que cambiar tiempo por euros"
-            },
-            {
-              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center",
-              "emoji": "📉",
-              "title": "la inflación no espera",
-              "body": "si dejas tu dinero parado en efectivo pierde poder de compra año tras año",
-              "highlight": "invertir te ayuda a mantenerte por encima de la subida de precios"
-            }
-          ]
-        },
-        {
-          "type": "html",
-          "html": "    <div class=\"bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg max-w-3xl mx-auto text-left space-y-4\">\n      <h4 class=\"text-xl font-bold text-purple-700\">ejemplo rápido</h4>\n      <p>si guardas 30€ al mes en una hucha tendrías 360€ al año - si los inviertes con un rendimiento del 7% anual:</p>\n      <ul class=\"list-disc pl-6 text-gray-700 space-y-1\">\n        <li><strong>5 años</strong> → unos 2 100€</li>\n        <li><strong>10 años</strong> → unos 4 300€</li>\n        <li><strong>15 años</strong> → más de 7 500€</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">* cálculos aproximados con capitalización mensual - cuanto antes empieces, menos esfuerzo mensual necesitas</p>\n    </div>"
-        }
-      ]
+      "type": "raw",
+      "html": "<section id=\"mindset\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">Cómo funciona el interés compuesto en tu favor</h2>\n  <p class=\"text-center text-gray-600 mb-10\">El interés compuesto es como magia matemática; hace que tu dinero crezca mientras haces otra cosa</p>\n  <div class=\"max-w-3xl mx-auto space-y-4 text-gray-700 text-lg leading-relaxed\">\n    <p>Si ahorras 10 euros cada semana y lo inviertes con un 5% de interés, al cabo de 10 años tendrás mucho más de lo que aportaste</p>\n    <p>Es como cuando en un juego guardas monedas poco a poco; al final tienes lo suficiente para desbloquear algo grande sin haberlo notado</p>\n    <p>Piensa en una bola de nieve que rueda cuesta abajo; al principio es pequeña, pero cada vuelta la hace más grande</p>\n    <p>El tiempo está de tu lado; cuanto antes empieces, más trabajará tu dinero por ti</p>\n  </div>\n</section>\n"
     },
     {
       "id": "vehiculos",
@@ -261,7 +227,9 @@
     "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
     "hint": "👉 completa el reto para desbloquear la siguiente misión",
     "hintId": "reto-hint",
-    "hintClass": "mt-4 text-sm text-gray-600 italic"
+    "hintClass": "mt-4 text-sm text-gray-600 italic",
+    "closing": "El tiempo está de tu lado: cuanto antes empieces, más trabajará tu dinero por ti",
+    "closingClass": "mt-6 text-base text-purple-800 font-semibold"
   },
   "takeaway": {
     "title": "hacer que tu dinero crezca mientras haces otra cosa es la clave del futuro",

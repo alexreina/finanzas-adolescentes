@@ -20,8 +20,6 @@ const SHARED_ASSETS = [
   'js/sw-register.js',
   'manifest.json',
   'favicon.svg',
-  'favicon-arrow.svg',
-  'favicon-sparkline.svg',
   'robots.txt',
   'img/preview.png'
 ];
@@ -481,6 +479,9 @@ function renderReto(reto) {
   const buttonClass = reto.buttonClass || 'bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition';
   const hintId = reto.hintId || 'reto-hint';
   const hintClass = reto.hintClass || 'mt-4 text-sm text-gray-600 italic';
+  const closingClass = reto.closingClass || 'mt-6 text-base text-purple-800 font-semibold';
+  const hintHtml = reto.hint ? `      <p id="${hintId}" class="${hintClass}">${reto.hint}</p>\n` : '';
+  const closingHtml = reto.closing ? `      <p class="${closingClass}">${reto.closing}</p>\n` : '';
 
   return `  <section id="reto" class="${reto.wrapperClass || 'max-w-4xl mx-auto px-6 py-12 text-center'}">
     <div class="${containerClass}">
@@ -493,8 +494,7 @@ ${steps}
       <button id="${buttonId}" class="${buttonClass}">
         ${reto.cta}
       </button>
-      <p id="${hintId}" class="${hintClass}">${reto.hint}</p>
-    </div>
+${hintHtml}${closingHtml}    </div>
   </section>`;
 }
 

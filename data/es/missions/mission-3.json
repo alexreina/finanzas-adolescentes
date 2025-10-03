@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "controlar tu dinero antes de que desaparezca - misión 3",
-    "description": "Aprende a seguirle la pista a tus gastos, distinguir tipos de tarjetas y atrapar a las hormigas financieras antes de que se lleven tu dinero.",
+    "title": "Tu dinero se esfuma sin que lo notes – aprende a controlarlo",
+    "description": "El dinero desaparece si no lo controlas; descubre cómo evitarlo y empezar a ahorrar de forma sencilla",
     "canonical": "https://alex.github.io/finanzas-adolescentes/tu-dinero-se-esfuma-y-ni-te-das-cuenta.html"
   },
   "hero": {
@@ -10,17 +10,37 @@
     "subtitle": "aprende a seguirle la pista antes de que desaparezca"
   },
   "toc": [
-    { "id": "gastos", "label": "¿a dónde se va tu dinero?", "icon": "🧐" },
-    { "id": "gestion", "label": "tu dinero en acción: cuentas y tarjetas", "icon": "💳" },
-    { "id": "ejemplo", "label": "vidas reales, decisiones reales", "icon": "👥" },
-    { "id": "quiz", "label": "quiz rápido", "icon": "🎯" },
-    { "id": "reto", "label": "reto práctico", "icon": "🐜" }
+    {
+      "id": "gastos",
+      "label": "¿a dónde se va tu dinero?",
+      "icon": "🧐"
+    },
+    {
+      "id": "gestion",
+      "label": "tu dinero en acción: cuentas y tarjetas",
+      "icon": "💳"
+    },
+    {
+      "id": "ejemplo",
+      "label": "vidas reales, decisiones reales",
+      "icon": "👥"
+    },
+    {
+      "id": "quiz",
+      "label": "quiz rápido",
+      "icon": "🎯"
+    },
+    {
+      "id": "reto",
+      "label": "reto práctico",
+      "icon": "🐜"
+    }
   ],
   "sections": [
     {
       "id": "gastos",
-      "title": "¿a dónde se va tu dinero?",
-      "lead": "antes de pensar en cómo ahorrar, tienes que saber en qué lo gastas y cómo repartirlo mejor",
+      "title": "Cómo controlar tus gastos sin dejar de disfrutar",
+      "lead": "antes de pensar en cómo ahorrar, tienes que saber en qué lo gastas y cómo repartirlo mejor; puede ser que tu dinero se vaya en videojuegos, chuches o ropa; si no lo controlas, ni notas cómo desaparece",
       "cards": [
         {
           "type": "grid",
@@ -129,17 +149,32 @@
         "prompt": "¿qué tipo de gasto es <span class=\"font-semibold\">ir al cine</span>?",
         "answersWrapperClass": "flex justify-center gap-4",
         "answers": [
-            { "label": "hormiga", "correct": false },
-          { "label": "fijo", "correct": false },
-          { "label": "variable", "correct": true }
+          {
+            "label": "hormiga",
+            "correct": false
+          },
+          {
+            "label": "fijo",
+            "correct": false
+          },
+          {
+            "label": "variable",
+            "correct": true
+          }
         ]
       },
       {
         "prompt": "quieres comprar un videojuego de 40€ → ¿qué usarías?",
         "answersWrapperClass": "flex justify-center gap-4",
         "answers": [
-          { "label": "tarjeta de débito", "correct": true },
-          { "label": "tarjeta de crédito", "correct": false }
+          {
+            "label": "tarjeta de débito",
+            "correct": true
+          },
+          {
+            "label": "tarjeta de crédito",
+            "correct": false
+          }
         ]
       }
     ]
@@ -151,18 +186,29 @@
     "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
     "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
     "steps": [
-      { "icon": "1️⃣", "text": "anota todo lo que gastes durante 7 días" },
-      { "icon": "2️⃣", "text": "marca cada gasto como fijo, variable o hormiga" },
-      { "icon": "3️⃣", "text": "suma cuánto se fue en hormigas y decide qué vas a cambiar" }
+      {
+        "icon": "1️⃣",
+        "text": "anota todo lo que gastes durante 7 días"
+      },
+      {
+        "icon": "2️⃣",
+        "text": "marca cada gasto como fijo, variable o hormiga"
+      },
+      {
+        "icon": "3️⃣",
+        "text": "suma cuánto se fue en hormigas y decide qué vas a cambiar"
+      }
     ],
     "cta": "acepto el reto 💪",
     "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
     "hint": "👉 completa el reto para desbloquear la siguiente misión",
-    "hintClass": "mt-4 text-sm text-gray-600 italic"
+    "hintClass": "mt-4 text-sm text-gray-600 italic",
+    "closing": "Si apuntas tus gastos, verás en qué se esfuma tu dinero; y cuando lo veas claro, tendrás la libertad de elegir qué hacer con él",
+    "closingClass": "mt-6 text-base text-purple-800 font-semibold"
   },
   "takeaway": {
     "title": "tu dinero puede esfumarse... o ayudarte a conseguir lo que sueñas",
-    "subtitle": "para conseguir lo que quieres —desde un viaje con amigos hasta tu primer ordenador— necesitas aprender a decidir qué cosas valen la pena y cuáles solo te alejan de tus metas.",
+    "subtitle": "Si apuntas tus gastos, verás en qué se esfuma tu dinero; y cuando lo veas claro, tendrás la libertad de elegir qué hacer con él",
     "cta": {
       "href": "haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html",
       "label": "quiero poner en orden mis gastos ➡"
