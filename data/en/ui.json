@@ -1,0 +1,10 @@
+{
+  "brandName": "teen finance",
+  "missionCounter": "mission {{index}} of {{total}} · {{duration}}",
+  "tocToggleLabel": "what you'll cover here",
+  "navDebugButtonLabel": "🗑️ clear",
+  "navDebugButtonTitle": "clear localStorage for debugging",
+  "navDebugConfirm": "Are you sure you want to wipe the saved data? This resets your progress.",
+  "navDebugSuccess": "✅ localStorage cleared. The page will reload.",
+  "certificateBadgeLabel": "certificate unlocked"
+}

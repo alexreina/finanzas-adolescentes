@@ -1,0 +1,274 @@
+{
+  "meta": {
+    "title": "¿cómo consigo que crezca? - misión 4",
+    "description": "Aprende a usar el interés compuesto, diferenciar entre ahorrar e invertir y da tus primeros pasos para multiplicar tu dinero",
+    "canonical": "https://alex.github.io/finanzas-adolescentes/haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html"
+  },
+  "hero": {
+    "emoji": "🌱",
+    "title": "haz que tu dinero crezca mientras haces otra cosa",
+    "subtitle": "ahorrar está bien - invertir sin miedo está mejor"
+  },
+  "toc": [
+    {
+      "id": "mindset",
+      "label": "por qué invertir",
+      "icon": "⏳"
+    },
+    {
+      "id": "vehiculos",
+      "label": "dónde invertir",
+      "icon": "📦"
+    },
+    {
+      "id": "plan",
+      "label": "tu plan en 3 pasos",
+      "icon": "🧭"
+    },
+    {
+      "id": "errores",
+      "label": "miedos y mitos",
+      "icon": "⚠️"
+    },
+    {
+      "id": "quiz",
+      "label": "quiz rápido",
+      "icon": "🎯"
+    },
+    {
+      "id": "reto",
+      "label": "reto práctico",
+      "icon": "🐜"
+    }
+  ],
+  "sections": [
+    {
+      "id": "mindset",
+      "title": "por qué empezar a invertir cuando aún estás estudiando",
+      "lead": "el interés compuesto es un superpoder que funciona mejor cuando le das años para multiplicar tu dinero",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-3 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center",
+              "emoji": "⏳",
+              "title": "tu mayor ventaja es el tiempo",
+              "body": "cada euro que inviertes hoy tiene más ciclos para duplicarse: empezar pronto vale más que invertir grandes cantidades tarde",
+              "highlight": "10€ al mes desde los 15 → ~8 300€ a los 30 con un 7% anual"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center",
+              "emoji": "🌱",
+              "title": "el interés compuesto trabaja solo",
+              "body": "tus ganancias generan nuevas ganancias, incluso mientras duermes: no necesitas estar pendiente todos los días",
+              "highlight": "tu dinero trabaja 24/7 sin que tengas que cambiar tiempo por euros"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center",
+              "emoji": "📉",
+              "title": "la inflación no espera",
+              "body": "si dejas tu dinero parado en efectivo pierde poder de compra año tras año",
+              "highlight": "invertir te ayuda a mantenerte por encima de la subida de precios"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg max-w-3xl mx-auto text-left space-y-4\">\n      <h4 class=\"text-xl font-bold text-purple-700\">ejemplo rápido</h4>\n      <p>si guardas 30€ al mes en una hucha tendrías 360€ al año - si los inviertes con un rendimiento del 7% anual:</p>\n      <ul class=\"list-disc pl-6 text-gray-700 space-y-1\">\n        <li><strong>5 años</strong> → unos 2 100€</li>\n        <li><strong>10 años</strong> → unos 4 300€</li>\n        <li><strong>15 años</strong> → más de 7 500€</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">* cálculos aproximados con capitalización mensual - cuanto antes empieces, menos esfuerzo mensual necesitas</p>\n    </div>"
+        }
+      ]
+    },
+    {
+      "id": "vehiculos",
+      "title": "dónde invertir sin volverte loco",
+      "lead": "elige vehículos sencillos, regulados y que entiendas - no hace falta saber de bolsa para dar tus primeros pasos",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-2 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left",
+              "emoji": "🏦",
+              "title": "cuenta de ahorro remunerada",
+              "body": "tu banco o neobanco te paga un pequeño interés por guardar tu dinero: es fácil e ideal para poco tiempo",
+              "highlight": "perfecta para tu colchón o metas de menos de 2 años"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left",
+              "emoji": "🌍",
+              "title": "fondos indexados / ETF",
+              "body": "compras un pequeño trozo de cientos de empresas a la vez - replican índices como el MSCI World o el S&P 500",
+              "highlight": "costes bajos + diversificación automática = menos estrés"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition text-left",
+              "emoji": "🏛️",
+              "title": "bonos del estado",
+              "body": "prestas dinero a tu gobierno y te pagan intereses a cambio - son menos rentables que la bolsa pero más estables",
+              "highlight": "equilibran tu riesgo cuando tu objetivo está cerca"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left",
+              "emoji": "📱",
+              "title": "apps de microinversión",
+              "body": "redondean tus compras y la diferencia se invierte automáticamente - revisa que estén reguladas y que las comisiones sean claras",
+              "highlight": "útiles si te cuesta ser constante por tu cuenta"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-4\">\n      <h4 class=\"text-xl font-bold text-gray-800\">checklist para elegir dónde invertir</h4>\n      <ol class=\"list-decimal pl-6 space-y-2 text-gray-700\">\n        <li>¿entiendo cómo gana dinero este producto?</li>\n        <li>¿está regulado por un organismo oficial (CNMV, SEP, SEC, etc)?</li>\n        <li>¿cuánto me cobran en comisiones cada año?</li>\n        <li>¿qué pasa si necesito el dinero antes de tiempo?</li>\n      </ol>\n      <p class=\"text-sm text-gray-500\">si alguna respuesta no te convence, busca otra opción o pide ayuda a un adulto de confianza</p>\n    </div>"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "title": "tu primer plan de inversión en 3 pasos",
+      "lead": "invierte con intención: define tu meta, protege tu colchón y automatiza el proceso",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-3 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left",
+              "emoji": "1️⃣",
+              "title": "ponle nombre a tu objetivo",
+              "body": "¿para qué inviertes? estudios, viaje, primer coche - el objetivo define cuánto tiempo tendrás el dinero invertido",
+              "highlight": "plazo largo (5+ años) = puedes asumir más riesgo"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left",
+              "emoji": "2️⃣",
+              "title": "crea un mini-colchón",
+              "body": "ahorra primero un fondo de emergencia (3-6 meses de gastos) en una cuenta segura para cubrir imprevistos",
+              "highlight": "sin colchón terminas vendiendo inversiones en mal momento"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left",
+              "emoji": "3️⃣",
+              "title": "automatiza tu aportación",
+              "body": "configura un traspaso mensual el mismo día que recibes tu paga o ingreso - así inviertes antes de gastar",
+              "highlight": "empieza con el 10% de lo que ganas y ajusta con el tiempo"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-purple-50 border-l-4 border-teal-400 p-6 rounded-lg max-w-3xl mx-auto space-y-4\">\n      <h4 class=\"text-xl font-bold text-teal-700\">mini fórmula automática (compatible con el 50/30/20)</h4>\n      <p>mantén la regla <strong>50/30/20</strong> de la misión 3 y dale un papel nuevo al 20%:</p>\n      <div class=\"grid grid-cols-3 gap-4 text-center\">\n        <div class=\"bg-white rounded-lg p-4 shadow\">\n          <p class=\"text-2xl font-bold text-purple-600\">50%</p>\n          <p class=\"text-sm text-gray-600\">necesidades y responsabilidades</p>\n        </div>\n        <div class=\"bg-white rounded-lg p-4 shadow\">\n          <p class=\"text-2xl font-bold text-teal-600\">30%</p>\n          <p class=\"text-sm text-gray-600\">ocio y gustos del presente</p>\n        </div>\n        <div class=\"bg-white rounded-lg p-4 shadow\">\n          <p class=\"text-2xl font-bold text-pink-600\">20%</p>\n          <p class=\"text-sm text-gray-600\">futuro: primero ahorro seguro, luego inversión</p>\n        </div>\n      </div>\n      <p class=\"text-sm text-gray-500\">ejemplo: si apartas 20€ al mes en el 20%, guarda 10€ en tu colchón y pon a trabajar los otros 10€ en una inversión sencilla</p>\n    </div>"
+        }
+      ]
+    },
+    {
+      "id": "errores",
+      "title": "miedos y mitos que frenan a quien empieza",
+      "lead": "muchos no invierten por ideas equivocadas - identifícalas y aprende la versión real",
+      "cards": [
+        {
+          "type": "grid",
+          "wrapperClass": "grid md:grid-cols-2 gap-6 mb-12",
+          "items": [
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-left",
+              "emoji": "💰",
+              "title": "mito: necesito mucho dinero",
+              "body": "realidad: la mayoría de plataformas permite empezar con 10-50€ - lo que importa es la constancia, no la cantidad inicial",
+              "highlight": "invierte poco pero cada mes"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-teal-500 hover:shadow-xl transition text-left",
+              "emoji": "📉",
+              "title": "mito: invertir es apostar",
+              "body": "realidad: si diversificas y piensas a largo plazo, las probabilidades están a tu favor - apostar es decidir rápido; invertir es seguir un plan",
+              "highlight": "la historia de la bolsa muestra subidas a largo plazo pese a las caídas puntuales"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-pink-500 hover:shadow-xl transition text-left",
+              "emoji": "🧨",
+              "title": "mito: pierdo todo si baja el mercado",
+              "body": "realidad: solo cristalizas pérdidas si vendes cuando baja - con un fondo diversificado y tiempo, las caídas se recuperan",
+              "highlight": "define tu horizonte temporal antes de invertir"
+            },
+            {
+              "class": "bg-white p-8 rounded-xl shadow-md border-l-4 border-yellow-500 hover:shadow-xl transition text-left",
+              "emoji": "🧠",
+              "title": "mito: es demasiado complicado",
+              "body": "realidad: puedes aprender lo básico con guías sencillas y apoyarte en fondos automatizados - lo importante es entender lo que haces, no memorizar tecnicismos",
+              "highlight": "elige productos que puedas explicar en una frase"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "html": "    <div class=\"bg-white p-6 rounded-xl shadow-md max-w-3xl mx-auto space-y-3 text-left\">\n      <h4 class=\"text-xl font-bold text-gray-800\">preguntas para tu yo futuro</h4>\n      <ul class=\"list-disc pl-6 space-y-2 text-gray-700\">\n        <li>¿qué haría con el dinero si mis inversiones suben mucho?</li>\n        <li>¿qué haría si bajan durante un año?</li>\n        <li>¿qué adulto de confianza puede ayudarme a revisar mis decisiones?</li>\n      </ul>\n      <p class=\"text-sm text-gray-500\">tener respuestas ahora evita decisiones impulsivas después</p>\n    </div>"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "demuestra que sabes hacer crecer tu dinero",
+    "lead": "comprueba si entiendes la magia del interés compuesto y la inversión",
+    "questions": [
+      {
+        "prompt": "¿qué es el interés compuesto?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          {
+            "label": "el dinero que ganas por trabajar",
+            "correct": false
+          },
+          {
+            "label": "el dinero que te prestan",
+            "correct": false
+          },
+          {
+            "label": "cuando tus ganancias generan más ganancias",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "prompt": "¿cuál es la diferencia entre ahorrar e invertir?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          {
+            "label": "ahorrar guarda, invertir hace crecer",
+            "correct": true
+          },
+          {
+            "label": "no hay diferencia, es lo mismo",
+            "correct": false
+          },
+          {
+            "label": "invertir es más arriesgado",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  "reto": {
+    "emoji": "📈",
+    "title": "el reto: calcula tu futuro financiero",
+    "lead": "usa la regla del 72 para ver cuánto tardará tu dinero en duplicarse: calcula cuánto tendrías en 5, 10 y 20 años",
+    "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
+    "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
+    "cta": "acepto el reto 💪",
+    "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
+    "hint": "👉 completa el reto para desbloquear la siguiente misión",
+    "hintId": "reto-hint",
+    "hintClass": "mt-4 text-sm text-gray-600 italic"
+  },
+  "takeaway": {
+    "title": "hacer que tu dinero crezca mientras haces otra cosa es la clave del futuro",
+    "subtitle": "ahora sabes que ahorrar está bien pero invertir sin miedo es lo que realmente hace la diferencia - tu dinero puede trabajar para ti las 24 horas del día",
+    "cta": {
+      "href": "aprende-a-comprar-sin-que-te-vendan-la-moto.html",
+      "label": "quiero aprender a comprar inteligente ➡"
+    }
+  }
+}

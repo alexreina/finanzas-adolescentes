@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "title": "el que entra - misión 2",
+    "description": "Descubre habilidades, mini-trabajos y estrategias reales para que entre más dinero sin depender de la suerte.",
+    "canonical": "https://alex.github.io/finanzas-adolescentes/haz-que-entre-mas-dinero-sin-magia-ni-suerte.html"
+  },
+  "hero": {
+    "emoji": "👛",
+    "title": "haz que entre más dinero sin magia ni suerte",
+    "subtitle": "de la paga a los mini-trabajos: formas reales de tener más"
+  },
+  "introBlocks": [
+    "<section class=\"max-w-6xl mx-auto px-6 py-8\">\n  <div class=\"bg-gradient-to-r from-purple-100 to-teal-100 rounded-xl p-8 text-center\">\n    <h3 class=\"text-2xl font-bold text-purple-800 mb-6\">💸 historias reales</h3>\n    <div id=\"story-container\" class=\"mb-6\">\n      <div class=\"story-slide active\">\n        <h4 class=\"text-xl font-semibold text-gray-800 mb-3\">José José - \"el príncipe de la canción\"</h4>\n        <p class=\"text-sm text-purple-800 font-semibold uppercase mb-2\">error: gastar sin plan</p>\n        <p class=\"text-gray-700 mb-4\">\n          a pesar de su enorme éxito, terminó sus días con limitaciones económicas debido a <strong>malas inversiones</strong> y problemas de salud. \n          <strong class=\"text-purple-700\">aprende a evitar sus errores.</strong>\n        </p>\n      </div>\n      <div class=\"story-slide hidden\">\n        <h4 class=\"text-xl font-semibold text-gray-800 mb-3\">Mike Tyson - exboxeador</h4>\n        <p class=\"text-sm text-purple-800 font-semibold uppercase mb-2\">error: gastar en lujos innecesarios</p>\n        <p class=\"text-gray-700 mb-4\">\n          ganó <strong>400 millones de dólares</strong> pero se declaró en bancarrota con deudas de 23 millones. \n          gastó en tigres, mansiones y una flota de coches de lujo.\n          <strong class=\"text-purple-700\">aprende a controlar tus gastos.</strong>\n        </p>\n      </div>\n      <div class=\"story-slide hidden\">\n        <h4 class=\"text-xl font-semibold text-gray-800 mb-3\">50 Cent - rapero y empresario</h4>\n        <p class=\"text-sm text-purple-800 font-semibold uppercase mb-2\">error: confiar en la gente equivocada</p>\n        <p class=\"text-gray-700 mb-4\">\n          se declaró en bancarrota con deudas de <strong>36 millones de dólares</strong> debido a malos asesores \n          y demandas legales costosas. después se recuperó con inversiones inteligentes.\n          <strong class=\"text-purple-700\">elige bien a quién confías tu dinero.</strong>\n        </p>\n      </div>\n    </div>\n    <div class=\"flex justify-center space-x-2 mb-4\">\n      <button class=\"story-dot w-3 h-3 rounded-full bg-purple-400 active\" data-slide=\"0\"></button>\n      <button class=\"story-dot w-3 h-3 rounded-full bg-purple-300\" data-slide=\"1\"></button>\n      <button class=\"story-dot w-3 h-3 rounded-full bg-purple-300\" data-slide=\"2\"></button>\n    </div>\n    <p class=\"text-sm text-gray-600\">cada historia enseña una lección importante sobre el dinero · <a href=\"fuentes.html\" class=\"text-purple-600 hover:text-purple-800 underline\">fuentes y referencias</a></p>\n  </div>\n</section>\n"
+  ],
+  "toc": [
+    { "id": "mapa-ingresos", "label": "mapa de tus ingresos", "icon": "🗺️" },
+    { "id": "habilidades", "label": "multiplica tus habilidades", "icon": "💡" },
+    { "id": "plan", "label": "plan de ingresos en 3 pasos", "icon": "🧭" },
+    { "id": "recursos", "label": "recursos y plantillas", "icon": "🧰" },
+    { "id": "quiz", "label": "quiz rápido", "icon": "🎯" },
+    { "id": "reto", "label": "reto práctico", "icon": "🐜" }
+  ],
+  "sections": [
+    {
+      "type": "raw",
+      "html": "<section id=\"mapa-ingresos\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">haz el mapa de tus ingresos</h2>\n  <p class=\"text-center text-gray-600 mb-12\">antes de buscar más dinero, entiende lo que ya entra y descubre cuánto generas ya</p>\n  <div class=\"grid md:grid-cols-3 gap-6 mb-12\">\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">💳</div>\n      <h4 class=\"text-xl font-bold mb-2\">ingreso fijo</h4>\n      <p class=\"text-gray-600 mb-2\">lo que recibes cada semana o mes: paga, propina familiar, becas</p>\n      <p class=\"text-purple-600 font-semibold\">es predecible y te permite planificar</p>\n    </div>\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">🎮</div>\n      <h4 class=\"text-xl font-bold mb-2\">ingreso variable</h4>\n      <p class=\"text-gray-600 mb-2\">depende de lo que hagas: vender ropa, editar vídeos, ayudar a vecinos</p>\n      <p class=\"text-purple-600 font-semibold\">no llega siempre, pero suma rápido si lo repites</p>\n    </div>\n    <div class=\"bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center\">\n      <div class=\"text-4xl mb-3\">🚀</div>\n      <h4 class=\"text-xl font-bold mb-2\">ingreso por proyecto</h4>\n      <p class=\"text-gray-600 mb-2\">encargos puntuales: ilustrar, grabar, cuidar mascotas</p>\n      <p class=\"text-purple-600 font-semibold\">perfecto para algo concreto</p>\n    </div>\n  </div>\n  <div class=\"bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-400 max-w-3xl mx-auto\">\n    <h3 class=\"text-lg font-semibold text-purple-700 mb-4\">haz tu mezcla</h3>\n    <table class=\"w-full text-left text-sm\">\n      <thead class=\"text-gray-500 uppercase tracking-wide\">\n        <tr>\n          <th class=\"py-2\">fuente</th>\n          <th class=\"py-2\">frecuencia</th>\n          <th class=\"py-2\">promedio</th>\n        </tr>\n      </thead>\n      <tbody class=\"text-gray-700\">\n        <tr class=\"border-t\">\n          <td class=\"py-2\">paga semanal</td>\n          <td class=\"py-2\">cada viernes</td>\n          <td class=\"py-2\">10€</td>\n        </tr>\n        <tr class=\"border-t\">\n          <td class=\"py-2\">editar clips para streamers</td>\n          <td class=\"py-2\">2 al mes</td>\n          <td class=\"py-2\">15€</td>\n        </tr>\n        <tr class=\"border-t\">\n          <td class=\"py-2\">vender ropa en apps</td>\n          <td class=\"py-2\">1 lote/mes</td>\n          <td class=\"py-2\">8€</td>\n        </tr>\n      </tbody>\n    </table>\n    <p class=\"mt-4 text-sm text-gray-600\">la clave es combinar: no dependas de una sola fuente y ten claro cuánto entra por cada sitio</p>\n  </div>\n</section>\n"
+    },
+    {
+      "type": "raw",
+      "html": "<section id=\"habilidades\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">multiplica tus habilidades</h2>\n  <p class=\"text-center text-gray-600 mb-12\">cuanto más valor aportas, más puedes cobrar: analiza lo que ya sabes hacer y sube de nivel</p>\n  <div class=\"grid sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-10\">\n    <div class=\"bg-white p-6 rounded-2xl shadow-lg text-center border-2 border-purple-200 hover:border-purple-400 transition h-full\">\n      <div class=\"text-3xl mb-3\">🧠</div>\n      <h3 class=\"text-lg font-semibold mb-2\">soft skills</h3>\n      <p class=\"text-gray-600 text-sm\">organizar tareas, ser puntual, comunicar ideas</p>\n      <p class=\"text-purple-600 font-semibold mt-2 text-sm\">úsalas en tutorías o apoyo a personas mayores</p>\n    </div>\n    <div class=\"bg-white p-6 rounded-2xl shadow-lg text-center border-2 border-teal-200 hover:border-teal-400 transition h-full\">\n      <div class=\"text-3xl mb-3\">💻</div>\n      <h3 class=\"text-lg font-semibold mb-2\">digital</h3>\n      <p class=\"text-gray-600 text-sm\">edición de vídeo, diseño en Canva, redes sociales</p>\n      <p class=\"text-purple-600 font-semibold mt-2 text-sm\">negocios locales necesitan este tipo de ayuda</p>\n    </div>\n    <div class=\"bg-white p-6 rounded-2xl shadow-lg text-center border-2 border-pink-200 hover:border-pink-400 transition h-full\">\n      <div class=\"text-3xl mb-3\">🎨</div>\n      <h3 class=\"text-lg font-semibold mb-2\">creativo</h3>\n      <p class=\"text-gray-600 text-sm\">ilustración, lettering, custom de sneakers</p>\n      <p class=\"text-purple-600 font-semibold mt-2 text-sm\">convierte ideas en productos físicos o digitales</p>\n    </div>\n    <div class=\"bg-white p-6 rounded-2xl shadow-lg text-center border-2 border-yellow-200 hover:border-yellow-400 transition h-full\">\n      <div class=\"text-3xl mb-3\">🤝</div>\n      <h3 class=\"text-lg font-semibold mb-2\">servicios locales</h3>\n      <p class=\"text-gray-600 text-sm\">cuidar mascotas, paseos, apoyo escolar, recados</p>\n      <p class=\"text-purple-600 font-semibold mt-2 text-sm\">rápido para conseguir reseñas y repetir</p>\n    </div>\n  </div>\n  <div class=\"bg-white rounded-xl shadow-md p-6 border-l-4 border-teal-400 max-w-3xl mx-auto\">\n    <h3 class=\"text-lg font-semibold text-teal-700 mb-4\">checklist para subir de nivel</h3>\n    <ul class=\"space-y-2 text-sm text-gray-600\">\n      <li>1️⃣ identifica qué te piden seguido</li>\n      <li>2️⃣ busca tutoriales gratuitos y practica 30 min al día</li>\n      <li>3️⃣ fija un precio inicial, entrega 3 trabajos y súbelo</li>\n      <li>4️⃣ pide reseñas y arma un mini portfolio (video, carrusel)</li>\n    </ul>\n  </div>\n</section>\n"
+    },
+    {
+      "type": "raw",
+      "html": "<section id=\"plan\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">tu plan de ingresos en 3 pasos</h2>\n  <p class=\"text-center text-gray-600 mb-12\">un objetivo + un plan = ingresos que se mantienen (no solo un golpe de suerte)</p>\n  <div class=\"grid md:grid-cols-3 gap-6\">\n    <div class=\"bg-white p-6 rounded-xl shadow-md border-t-4 border-purple-500 text-center\">\n      <div class=\"text-3xl mb-3\">🎯</div>\n      <h3 class=\"font-semibold mb-2\">paso 1: define tu meta</h3>\n      <p class=\"text-sm text-gray-600\">¿qué quieres comprar? ejemplo: auriculares 120€ en 3 meses - divide y obtén tu meta semanal (10€)</p>\n    </div>\n    <div class=\"bg-white p-6 rounded-xl shadow-md border-t-4 border-teal-500 text-center\">\n      <div class=\"text-3xl mb-3\">🧩</div>\n      <h3 class=\"font-semibold mb-2\">paso 2: combina fuentes</h3>\n      <p class=\"text-sm text-gray-600\">elige varias: fijo + variable + proyecto - así repartes esfuerzo y riesgo</p>\n    </div>\n    <div class=\"bg-white p-6 rounded-xl shadow-md border-t-4 border-pink-500 text-center\">\n      <div class=\"text-3xl mb-3\">📆</div>\n      <h3 class=\"font-semibold mb-2\">paso 3: revisa y ajusta</h3>\n      <p class=\"text-sm text-gray-600\">cada domingo suma lo ganado: ¿no llegaste? sube precio, agrega horas o busca otra micro tarea</p>\n    </div>\n  </div>\n  <div class=\"bg-white rounded-xl shadow-md p-6 mt-10 border-l-4 border-red-400 max-w-3xl mx-auto\">\n    <h3 class=\"text-lg font-semibold text-red-600 mb-4\">errores frecuentes</h3>\n    <ul class=\"space-y-2 text-sm text-gray-600\">\n      <li>⚠️ subestimar el tiempo real y terminar gratis</li>\n      <li>⚠️ no hablar de precio antes de empezar</li>\n      <li>⚠️ olvidar el coste de materiales o apps</li>\n      <li>⚠️ gastar el primer ingreso en impulsos</li>\n    </ul>\n  </div>\n</section>\n"
+    },
+    {
+      "type": "raw",
+      "html": "<section id=\"recursos\" class=\"max-w-6xl mx-auto px-6 py-12\">\n  <h2 class=\"text-3xl font-bold mb-6 text-center\">recursos y plantillas</h2>\n  <p class=\"text-center text-gray-600 mb-10\">usa herramientas sencillas para mantener el ritmo y no olvidar oportunidades</p>\n  <div class=\"grid md:grid-cols-3 gap-6\">\n    <div class=\"bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-400\">\n      <h3 class=\"text-lg font-semibold text-purple-700 mb-2\">plantilla de ingresos</h3>\n      <p class=\"text-sm text-gray-600\">duplica la hoja en Google Sheets para registrar fecha, fuente, pago y estado.</p>\n    </div>\n    <div class=\"bg-white p-6 rounded-xl shadow-md border-l-4 border-teal-400\">\n      <h3 class=\"text-lg font-semibold text-teal-700 mb-2\">apps de segunda mano</h3>\n      <p class=\"text-sm text-gray-600\">Wallapop, Vinted, Facebook Marketplace: fotografía tus productos con luz natural.</p>\n    </div>\n    <div class=\"bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-400\">\n      <h3 class=\"text-lg font-semibold text-yellow-700 mb-2\">idea express</h3>\n      <p class=\"text-sm text-gray-600\">aprovecha eventos del cole: fotos, playlists, carteles o streaming. combina lo que sabes con lo que otros necesitan.</p>\n    </div>\n  </div>\n</section>\n"
+    }
+  ],
+  "quiz": {
+    "title": "demuestra que sabes hacer que entre más dinero",
+    "lead": "comprueba si entiendes las mejores estrategias para aumentar tus ingresos",
+    "questions": [
+      {
+        "prompt": "¿cuál es la forma más efectiva de aumentar tus ingresos?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "esperar a que te suban el sueldo", "correct": false },
+          { "label": "pedir dinero prestado", "correct": false },
+          { "label": "desarrollar nuevas habilidades", "correct": true }
+        ]
+      },
+      {
+        "prompt": "antes de aceptar un encargo, ¿qué es lo más importante confirmar?",
+        "answersWrapperClass": "flex justify-center gap-4",
+        "answers": [
+          { "label": "que el pago y el entregable queden claros", "correct": true },
+          { "label": "que sea para alguien famoso", "correct": false },
+          { "label": "que te dejen improvisar el resultado", "correct": false }
+        ]
+      }
+    ]
+  },
+  "reto": {
+    "emoji": "💪",
+    "title": "el reto: identifica una habilidad que puedas vender",
+    "lead": "piensa en algo que sepas hacer bien y que otras personas necesiten. ¿qué habilidad podrías ofrecer y quién pagaría por ella?",
+    "wrapperClass": "max-w-4xl mx-auto px-6 py-12 text-center",
+    "containerClass": "bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition",
+    "cta": "acepto el reto 💪",
+    "buttonClass": "bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition",
+    "hint": "👉 completa el reto para desbloquear la siguiente misión",
+    "hintId": "reto-hint",
+    "hintClass": "mt-4 text-sm text-gray-600 italic"
+  },
+  "takeaway": {
+    "title": "hacer que entre más dinero sin magia ni suerte es la clave del crecimiento",
+    "subtitle": "ahora sabes que hay formas reales de aumentar tus ingresos. no necesitas suerte, solo estrategia y constancia.",
+    "cta": {
+      "href": "tu-dinero-se-esfuma-y-ni-te-das-cuenta.html",
+      "label": "quiero poner en orden mis gastos ➡"
+    }
+  },
+  "inlineScripts": [
+    "document.addEventListener('DOMContentLoaded', () => {\n  const slides = document.querySelectorAll('.story-slide');\n  const dots = document.querySelectorAll('.story-dot');\n  let currentSlide = 0;\n\n  const showSlide = (index) => {\n    slides.forEach((slide, i) => {\n      slide.classList.toggle('active', i === index);\n      slide.classList.toggle('hidden', i !== index);\n    });\n    dots.forEach((dot, i) => {\n      dot.classList.toggle('active', i === index);\n      dot.classList.toggle('bg-purple-400', i === index);\n      dot.classList.toggle('bg-purple-300', i !== index);\n    });\n  };\n\n  dots.forEach((dot, index) => {\n    dot.addEventListener('click', () => {\n      currentSlide = index;\n      showSlide(currentSlide);\n    });\n  });\n\n  setInterval(() => {\n    currentSlide = (currentSlide + 1) % slides.length;\n    showSlide(currentSlide);\n  }, 5000);\n});\n"
+  ]
+}

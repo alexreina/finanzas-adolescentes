@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿cómo consigo que crezca? - misión 4</title>
+  <meta name="description" content="Aprende a usar el interés compuesto, diferenciar entre ahorrar e invertir y da tus primeros pasos para multiplicar tu dinero" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="canonical" href="https://TODO-en.example/haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" />
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/sw-register.js" defer></script>
+</head>
+<body class="bg-purple-50 text-gray-800" data-mission-id="mision-4">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-bold text-purple-700">teen finance</a>
+      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <a href="domina-tu-dinero-desde-el-primer-euro.html" class="hover:text-purple-600">1 · domina tu dinero</a>
+        <a href="haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" class="hover:text-purple-600">2 · hacer que entre más dinero</a>
+        <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="hover:text-purple-600">3 · gestiona tu dinero</a>
+        <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600 text-purple-700 font-bold underline">4 · hacer crecer tu dinero</a>
+        <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600">5 · compras inteligentes</a>
+        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · evita las deudas</a>
+        <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
+          🗑️ clear
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-6xl mb-4">🌱</div>
+      <h1 class="text-4xl font-bold mb-2">haz que tu dinero crezca mientras haces otra cosa</h1>
+      <p class="text-lg">ahorrar está bien - invertir sin miedo está mejor</p>
+      <div class="mt-12 text-sm flex flex-col items-center space-y-2">
+        <div class="mt-4">
+          <p class="font-medium mb-4">mission 4 of 6 · 15 min</p>
+          <div id="mission-pins" class="flex flex-wrap justify-center gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOC -->
+  <div class="max-w-2xl mx-auto my-8 px-4">
+    <button data-toc-button 
+            class="w-full bg-purple-100 text-purple-700 font-semibold px-4 py-3 rounded-lg shadow hover:bg-purple-200 transition flex justify-between items-center">
+      what you'll cover here
+      <span id="toc-icon">▼</span>
+    </button>
+
+    <div id="toc-content" class="hidden bg-white border border-purple-200 rounded-lg mt-2 p-4">
+      <ul class="space-y-2 text-purple-700">
+        <li>⏳ <a href="#mindset" class="hover:underline">por qué invertir</a></li>
+        <li>📦 <a href="#vehiculos" class="hover:underline">dónde invertir</a></li>
+        <li>🧭 <a href="#plan" class="hover:underline">tu plan en 3 pasos</a></li>
+        <li>⚠️ <a href="#errores" class="hover:underline">miedos y mitos</a></li>
+        <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
+        <li>🐜 <a href="#reto" class="hover:underline">reto práctico</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="mindset" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">por qué empezar a invertir cuando aún estás estudiando</h2>
+    <p class="text-center text-gray-600 mb-12">
+      el interés compuesto es un superpoder que funciona mejor cuando le das años para multiplicar tu dinero
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">⏳</div>
+        <h4 class="text-xl font-bold mb-2">tu mayor ventaja es el tiempo</h4>
+        <p class="text-gray-600 mb-2">cada euro que inviertes hoy tiene más ciclos para duplicarse: empezar pronto vale más que invertir grandes cantidades tarde</p>
+        <p class="text-purple-600 font-semibold">10€ al mes desde los 15 → ~8 300€ a los 30 con un 7% anual</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">🌱</div>
+        <h4 class="text-xl font-bold mb-2">el interés compuesto trabaja solo</h4>
+        <p class="text-gray-600 mb-2">tus ganancias generan nuevas ganancias, incluso mientras duermes: no necesitas estar pendiente todos los días</p>
+        <p class="text-purple-600 font-semibold">tu dinero trabaja 24/7 sin que tengas que cambiar tiempo por euros</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">📉</div>
+        <h4 class="text-xl font-bold mb-2">la inflación no espera</h4>
+        <p class="text-gray-600 mb-2">si dejas tu dinero parado en efectivo pierde poder de compra año tras año</p>
+        <p class="text-purple-600 font-semibold">invertir te ayuda a mantenerte por encima de la subida de precios</p>
+      </div>
+    </div>
+    <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg max-w-3xl mx-auto text-left space-y-4">
+      <h4 class="text-xl font-bold text-purple-700">ejemplo rápido</h4>
+      <p>si guardas 30€ al mes en una hucha tendrías 360€ al año - si los inviertes con un rendimiento del 7% anual:</p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li><strong>5 años</strong> → unos 2 100€</li>
+        <li><strong>10 años</strong> → unos 4 300€</li>
+        <li><strong>15 años</strong> → más de 7 500€</li>
+      </ul>
+      <p class="text-sm text-gray-500">* cálculos aproximados con capitalización mensual - cuanto antes empieces, menos esfuerzo mensual necesitas</p>
+    </div>
+  </section>
+
+  <section id="vehiculos" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">dónde invertir sin volverte loco</h2>
+    <p class="text-center text-gray-600 mb-12">
+      elige vehículos sencillos, regulados y que entiendas - no hace falta saber de bolsa para dar tus primeros pasos
+    </p>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🏦</div>
+        <h4 class="text-xl font-bold mb-2">cuenta de ahorro remunerada</h4>
+        <p class="text-gray-600 mb-2">tu banco o neobanco te paga un pequeño interés por guardar tu dinero: es fácil e ideal para poco tiempo</p>
+        <p class="text-purple-600 font-semibold">perfecta para tu colchón o metas de menos de 2 años</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🌍</div>
+        <h4 class="text-xl font-bold mb-2">fondos indexados / ETF</h4>
+        <p class="text-gray-600 mb-2">compras un pequeño trozo de cientos de empresas a la vez - replican índices como el MSCI World o el S&P 500</p>
+        <p class="text-purple-600 font-semibold">costes bajos + diversificación automática = menos estrés</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🏛️</div>
+        <h4 class="text-xl font-bold mb-2">bonos del estado</h4>
+        <p class="text-gray-600 mb-2">prestas dinero a tu gobierno y te pagan intereses a cambio - son menos rentables que la bolsa pero más estables</p>
+        <p class="text-purple-600 font-semibold">equilibran tu riesgo cuando tu objetivo está cerca</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">📱</div>
+        <h4 class="text-xl font-bold mb-2">apps de microinversión</h4>
+        <p class="text-gray-600 mb-2">redondean tus compras y la diferencia se invierte automáticamente - revisa que estén reguladas y que las comisiones sean claras</p>
+        <p class="text-purple-600 font-semibold">útiles si te cuesta ser constante por tu cuenta</p>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md max-w-4xl mx-auto space-y-4">
+      <h4 class="text-xl font-bold text-gray-800">checklist para elegir dónde invertir</h4>
+      <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+        <li>¿entiendo cómo gana dinero este producto?</li>
+        <li>¿está regulado por un organismo oficial (CNMV, SEP, SEC, etc)?</li>
+        <li>¿cuánto me cobran en comisiones cada año?</li>
+        <li>¿qué pasa si necesito el dinero antes de tiempo?</li>
+      </ol>
+      <p class="text-sm text-gray-500">si alguna respuesta no te convence, busca otra opción o pide ayuda a un adulto de confianza</p>
+    </div>
+  </section>
+
+  <section id="plan" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">tu primer plan de inversión en 3 pasos</h2>
+    <p class="text-center text-gray-600 mb-12">
+      invierte con intención: define tu meta, protege tu colchón y automatiza el proceso
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">1️⃣</div>
+        <h4 class="text-xl font-bold mb-2">ponle nombre a tu objetivo</h4>
+        <p class="text-gray-600 mb-2">¿para qué inviertes? estudios, viaje, primer coche - el objetivo define cuánto tiempo tendrás el dinero invertido</p>
+        <p class="text-purple-600 font-semibold">plazo largo (5+ años) = puedes asumir más riesgo</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">2️⃣</div>
+        <h4 class="text-xl font-bold mb-2">crea un mini-colchón</h4>
+        <p class="text-gray-600 mb-2">ahorra primero un fondo de emergencia (3-6 meses de gastos) en una cuenta segura para cubrir imprevistos</p>
+        <p class="text-purple-600 font-semibold">sin colchón terminas vendiendo inversiones en mal momento</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">3️⃣</div>
+        <h4 class="text-xl font-bold mb-2">automatiza tu aportación</h4>
+        <p class="text-gray-600 mb-2">configura un traspaso mensual el mismo día que recibes tu paga o ingreso - así inviertes antes de gastar</p>
+        <p class="text-purple-600 font-semibold">empieza con el 10% de lo que ganas y ajusta con el tiempo</p>
+      </div>
+    </div>
+    <div class="bg-purple-50 border-l-4 border-teal-400 p-6 rounded-lg max-w-3xl mx-auto space-y-4">
+      <h4 class="text-xl font-bold text-teal-700">mini fórmula automática (compatible con el 50/30/20)</h4>
+      <p>mantén la regla <strong>50/30/20</strong> de la misión 3 y dale un papel nuevo al 20%:</p>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div class="bg-white rounded-lg p-4 shadow">
+          <p class="text-2xl font-bold text-purple-600">50%</p>
+          <p class="text-sm text-gray-600">necesidades y responsabilidades</p>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow">
+          <p class="text-2xl font-bold text-teal-600">30%</p>
+          <p class="text-sm text-gray-600">ocio y gustos del presente</p>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow">
+          <p class="text-2xl font-bold text-pink-600">20%</p>
+          <p class="text-sm text-gray-600">futuro: primero ahorro seguro, luego inversión</p>
+        </div>
+      </div>
+      <p class="text-sm text-gray-500">ejemplo: si apartas 20€ al mes en el 20%, guarda 10€ en tu colchón y pon a trabajar los otros 10€ en una inversión sencilla</p>
+    </div>
+  </section>
+
+  <section id="errores" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">miedos y mitos que frenan a quien empieza</h2>
+    <p class="text-center text-gray-600 mb-12">
+      muchos no invierten por ideas equivocadas - identifícalas y aprende la versión real
+    </p>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">💰</div>
+        <h4 class="text-xl font-bold mb-2">mito: necesito mucho dinero</h4>
+        <p class="text-gray-600 mb-2">realidad: la mayoría de plataformas permite empezar con 10-50€ - lo que importa es la constancia, no la cantidad inicial</p>
+        <p class="text-purple-600 font-semibold">invierte poco pero cada mes</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-teal-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">📉</div>
+        <h4 class="text-xl font-bold mb-2">mito: invertir es apostar</h4>
+        <p class="text-gray-600 mb-2">realidad: si diversificas y piensas a largo plazo, las probabilidades están a tu favor - apostar es decidir rápido; invertir es seguir un plan</p>
+        <p class="text-purple-600 font-semibold">la historia de la bolsa muestra subidas a largo plazo pese a las caídas puntuales</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-pink-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🧨</div>
+        <h4 class="text-xl font-bold mb-2">mito: pierdo todo si baja el mercado</h4>
+        <p class="text-gray-600 mb-2">realidad: solo cristalizas pérdidas si vendes cuando baja - con un fondo diversificado y tiempo, las caídas se recuperan</p>
+        <p class="text-purple-600 font-semibold">define tu horizonte temporal antes de invertir</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-yellow-500 hover:shadow-xl transition text-left">
+        <div class="text-4xl mb-3">🧠</div>
+        <h4 class="text-xl font-bold mb-2">mito: es demasiado complicado</h4>
+        <p class="text-gray-600 mb-2">realidad: puedes aprender lo básico con guías sencillas y apoyarte en fondos automatizados - lo importante es entender lo que haces, no memorizar tecnicismos</p>
+        <p class="text-purple-600 font-semibold">elige productos que puedas explicar en una frase</p>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md max-w-3xl mx-auto space-y-3 text-left">
+      <h4 class="text-xl font-bold text-gray-800">preguntas para tu yo futuro</h4>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>¿qué haría con el dinero si mis inversiones suben mucho?</li>
+        <li>¿qué haría si bajan durante un año?</li>
+        <li>¿qué adulto de confianza puede ayudarme a revisar mis decisiones?</li>
+      </ul>
+      <p class="text-sm text-gray-500">tener respuestas ahora evita decisiones impulsivas después</p>
+    </div>
+  </section>
+
+  <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-2xl font-bold mb-2">demuestra que sabes hacer crecer tu dinero</h2>
+    <p class="text-gray-600 mb-10">comprueba si entiendes la magia del interés compuesto y la inversión</p>
+    <div class="space-y-10">
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h4 class="text-xl font-bold mb-4">¿qué es el interés compuesto?</h4>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">el dinero que ganas por trabajar</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">el dinero que te prestan</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">cuando tus ganancias generan más ganancias</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h4 class="text-xl font-bold mb-4">¿cuál es la diferencia entre ahorrar e invertir?</h4>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="true">ahorrar guarda, invertir hace crecer</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">no hay diferencia, es lo mismo</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" data-correct="false">invertir es más arriesgado</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
+      <div class="text-5xl mb-6">📈</div>
+      <h2 class="text-3xl font-bold mb-4">el reto: calcula tu futuro financiero</h2>
+      <p class="text-gray-600 mb-8">usa la regla del 72 para ver cuánto tardará tu dinero en duplicarse: calcula cuánto tendrías en 5, 10 y 20 años</p>
+      <div class="text-left space-y-4 mb-8">
+
+      </div>
+      <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
+        acepto el reto 💪
+      </button>
+      <p id="reto-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
+    </div>
+  </section>
+
+  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">hacer que tu dinero crezca mientras haces otra cosa es la clave del futuro</h2>
+      <p class="text-xl mb-8">ahora sabes que ahorrar está bien pero invertir sin miedo es lo que realmente hace la diferencia - tu dinero puede trabajar para ti las 24 horas del día</p>
+      <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
+        quiero aprender a comprar inteligente ➡
+      </a>
+    </div>
+  </section>
+
+    <footer class="bg-purple-900 text-white py-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <div class="text-center">
+        <h4 class="font-bold mb-3">sobre este curso</h4>
+        <p class="text-sm text-gray-300">lo hemos hecho personas como tú para que entiendas todo sobre tu dinero sin aburrirte</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">enlaces</h4>
+        <div class="space-y-2">
+          <div><a href="por-que-esta-web.html" class="text-gray-300 hover:text-white transition text-sm">por qué hacemos esto</a></div>
+          <div><a href="fuentes.html" class="text-gray-300 hover:text-white transition text-sm">fuentes y referencias</a></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">síguenos</h4>
+        <div class="flex gap-4 justify-center">
+          <a href="#" aria-label="Síguenos en Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="Instagram" loading="lazy"></a>
+          <a href="#" aria-label="Síguenos en TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="TikTok" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-sm text-gray-400">
+      <p>&copy; 2025 finanzas personales para adolescentes · “el dinero no se aprende solo, se entrena 💪”</p>
+    </div>
+  </footer>
+
+
+  <script>
+    function clearLocalStorage() {
+      if (confirm('Are you sure you want to wipe the saved data? This resets your progress.')) {
+        localStorage.clear();
+        alert('✅ localStorage cleared. The page will reload.');
+        location.reload();
+      }
+    }
+  </script>
+  <script src="js/vendor/canvas-confetti.min.js" defer></script>
+  <script src="js/page-helpers.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/reto.js" defer></script>
+</body>
+</html>

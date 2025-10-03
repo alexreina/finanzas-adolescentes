@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lo barato sale caro cuando pagas con deuda - Misión 6</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/sw-register.js" defer></script>
+  <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/lo-barato-sale-caro-cuando-pagas-con-deuda.html" />
+</head>
+<body class="bg-purple-50 text-gray-800" data-mission-id="mision-6">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-bold text-purple-700">finanzas adolescentes</a>
+      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <a href="domina-tu-dinero-desde-el-primer-euro.html" class="hover:text-purple-600">1 · domina tu dinero</a>
+        <a href="haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" class="hover:text-purple-600">2 · hacer que entre más dinero</a>
+        <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="hover:text-purple-600">3 · gestiona tu dinero</a>
+        <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600">4 · hacer crecer tu dinero</a>
+        <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600">5 · compras inteligentes</a>
+        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="text-purple-700 font-bold underline">6 · evita las deudas</a>
+        <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
+          🗑️ clear
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-6xl mb-4">📉</div>
+      <h1 class="text-4xl font-bold mb-2">lo barato sale caro cuando pagas con deuda</h1>
+      <p class="text-lg">créditos, compras a plazos y por qué decir "no, gracias" es clave</p>
+      <div class="mt-12 text-sm flex flex-col items-center space-y-2">
+        <div class="mt-4">
+          <p class="font-medium mb-4">misión 6 de 6 · 15 min</p>
+          <div id="mission-pins" class="flex flex-wrap justify-center gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-2xl font-bold mb-2">demuestra que sabes evitar las deudas</h2>
+    <p class="text-gray-600 mb-10">comprueba si entiendes por qué las deudas son peligrosas y cómo evitarlas</p>
+
+    <div class="space-y-10">
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-4">¿por qué las deudas son peligrosas?</h3>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">porque tienes que devolver más dinero</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">porque limitan tu libertad</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">todas las anteriores</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-4">¿cuál es la mejor estrategia con las deudas?</h3>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">pedir más dinero</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">evitar las deudas</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">pagar solo el mínimo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reto -->
+  <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
+      <h2 class="text-3xl font-bold mb-4 text-purple-700">el reto: crea tu plan anti-deudas 💰</h2>
+      <p class="mb-6 text-gray-700">
+        desarrolla una estrategia personal para evitar las deudas y mantener tu libertad financiera. 
+        <em>¿qué compras sueles hacer a crédito? 
+        ¿cuánto ahorrarías si compraras al contado? 
+        ¿puedes establecer la regla: "si no tengo el dinero, no lo compro"?</em>
+      </p>
+      <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
+        acepto el reto 💪
+      </button>
+      <p id="unlock-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
+    </div>
+  </section>
+
+  <!-- Frase final bloqueada -->
+  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-20 transition-all duration-500 opacity-50 pointer-events-none">
+    <div class="max-w-4xl mx-auto px-6">
+      <div id="certificate-card" class="relative overflow-hidden rounded-[42px] p-12 sm:p-16 text-white shadow-[0_30px_80px_rgba(59,7,100,0.35)]">
+        <div class="absolute inset-0 bg-gradient-to-br from-yellow-300 via-pink-500 to-purple-700 opacity-90"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.35),transparent_55%)]"></div>
+        <div class="relative flex flex-col gap-7">
+          <div class="uppercase text-xs tracking-[0.5em] text-white/80">certificado desbloqueado</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight drop-shadow-[0_15px_30px_rgba(124,58,237,0.45)]">lo barato sale caro cuando pagas con deuda</h2>
+          <p class="text-lg sm:text-xl text-white/95 max-w-2xl">Cuando eliges pagar con dinero propio escribes tu historia sin cuotas persiguiéndote. Cerraste la misión final y ya dominas tu dinero.</p>
+          <p class="text-base sm:text-lg text-white/85 max-w-2xl">Tu certificado oficial está listo para presumirlo en redes o guardarlo como recuerdo. Súbelo a tus stories hoy mismo.</p>
+          <div class="flex flex-wrap items-center gap-6">
+            <a id="certificate-primary" href="certificado.html" class="group inline-flex items-center gap-4 rounded-full bg-white text-purple-800 px-9 py-4 text-lg font-extrabold uppercase tracking-[0.2em] shadow-[0_18px_45px_rgba(124,58,237,0.35)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/60">
+              <span class="text-2xl">🎓</span>
+              <span class="group-hover:tracking-[0.28em] transition-all duration-200">ver certificado</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function clearLocalStorage() {
+      if (confirm('¿Estás seguro de que quieres limpiar todos los datos guardados? Esto reseteará tu progreso.')) {
+        localStorage.clear();
+        alert('✅ localStorage limpiado. La página se recargará.');
+        location.reload();
+      }
+    }
+  </script>
+  <script src="js/vendor/canvas-confetti.min.js" defer></script>
+  <script src="js/page-helpers.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/reto.js" defer></script>
+  <footer class="bg-purple-900 text-white py-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <div class="text-center">
+        <h4 class="font-bold mb-3">sobre este curso</h4>
+        <p class="text-sm text-gray-300">lo hemos hecho personas como tú para que entiendas todo sobre tu dinero sin aburrirte</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">enlaces</h4>
+        <div class="space-y-2">
+          <div><a href="por-que-esta-web.html" class="text-gray-300 hover:text-white transition text-sm">por qué hacemos esto</a></div>
+          <div><a href="fuentes.html" class="text-gray-300 hover:text-white transition text-sm">fuentes y referencias</a></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">síguenos</h4>
+        <div class="flex gap-4 justify-center">
+          <a href="#" aria-label="Síguenos en Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="Instagram" loading="lazy"></a>
+          <a href="#" aria-label="Síguenos en TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="TikTok" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-sm text-gray-400">
+      <p>&copy; 2025 finanzas personales para adolescentes · “el dinero no se aprende solo, se entrena 💪”</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "defaultLocale": "es",
+  "locales": [
+    {
+      "code": "es",
+      "label": "Español",
+      "outputDir": "es",
+      "baseUrl": "https://TODO-es.example"
+    },
+    {
+      "code": "en",
+      "label": "English",
+      "outputDir": "en",
+      "baseUrl": "https://TODO-en.example"
+    }
+  ]
+}

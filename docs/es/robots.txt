@@ -1,0 +1,25 @@
+
+# robots.txt for Finanzas Adolescentes site
+
+# Allow normal search engine bots full access
+User-agent: *
+Allow: /
+
+# Allow major AI crawlers explicitly
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap location for GitHub Pages deployment
+Sitemap: https://alex.github.io/finanzas-adolescentes/sitemap.xml

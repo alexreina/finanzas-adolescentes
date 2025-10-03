@@ -19,10 +19,13 @@ const PRECACHE_URLS = [
   "./js/reto.js",
   "./js/vendor/canvas-confetti.min.js",
   "./js/sw-register.js",
-  "./data/missions.json",
   "./manifest.json",
   "./favicon.svg",
-  "./img/preview.png"
+  "./favicon-arrow.svg",
+  "./favicon-sparkline.svg",
+  "./robots.txt",
+  "./img/preview.png",
+  "./data/missions.json"
 ];
 
 self.addEventListener('install', (event) => {

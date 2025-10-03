@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>controlar tu dinero antes de que desaparezca - misión 3</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/sw-register.js" defer></script>
+  <link rel="canonical" href="https://alex.github.io/finanzas-adolescentes/tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" />
+</head>
+<body class="bg-purple-50 text-gray-800" data-mission-id="mision-3">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-bold text-purple-700">finanzas adolescentes</a>
+      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <a href="domina-tu-dinero-desde-el-primer-euro.html" class="hover:text-purple-600">1 · domina tu dinero</a>
+        <a href="haz-que-entre-mas-dinero-sin-magia-ni-suerte.html" class="hover:text-purple-600">2 · hacer que entre más dinero</a>
+        <a href="tu-dinero-se-esfuma-y-ni-te-das-cuenta.html" class="text-purple-700 font-bold underline">3 · gestiona tu dinero</a>
+        <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="hover:text-purple-600">4 · hacer crecer tu dinero</a>
+        <a href="aprende-a-comprar-sin-que-te-vendan-la-moto.html" class="hover:text-purple-600">5 · compras inteligentes</a>
+        <a href="lo-barato-sale-caro-cuando-pagas-con-deuda.html" class="hover:text-purple-600">6 · evita las deudas</a>
+        <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
+          🗑️ clear
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-6xl mb-4">💳</div>
+      <h1 class="text-4xl font-bold mb-2">tu dinero se esfuma… y ni te das cuenta</h1>
+      <p class="text-lg">aprende a seguirle la pista antes de que desaparezca</p>
+          <div class="mt-12 text-sm flex flex-col items-center space-y-2">
+            <!-- Colección de Logros -->
+            <div class="mt-4">
+              <p class="font-medium mb-4">misión 3 de 6 · 15 min</p>
+              <div id="mission-pins" class="flex flex-wrap justify-center gap-2"></div>
+            </div>
+          </div>
+    </div>
+  </section>
+
+  <!-- TOC DESPLEGABLE -->
+  <div class="max-w-2xl mx-auto my-8 px-4">
+    <button data-toc-button 
+            class="w-full bg-purple-100 text-purple-700 font-semibold px-4 py-3 rounded-lg shadow hover:bg-purple-200 transition flex justify-between items-center">
+      en esta misión verás
+      <span id="toc-icon">▼</span>
+    </button>
+
+    <div id="toc-content" class="hidden bg-white border border-purple-200 rounded-lg mt-2 p-4">
+      <ul class="space-y-2 text-purple-700">
+        <li>🧐 <a href="#gastos" class="hover:underline">¿a dónde se va tu dinero?</a></li>
+        <li>💳 <a href="#gestion" class="hover:underline">tu dinero en acción: cuentas y tarjetas</a></li>
+        <li>👥 <a href="#ejemplo" class="hover:underline">vidas reales, decisiones reales</a></li>
+        <li>🎯 <a href="#quiz" class="hover:underline">quiz rápido</a></li>
+        <li>🐜 <a href="#reto" class="hover:underline">reto práctico</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Gastos -->
+  <section id="gastos" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">¿a dónde se va tu dinero?</h2>
+    <p class="text-center text-gray-600 mb-12">
+      antes de pensar en cómo ahorrar, tienes que saber en qué lo gastas y cómo repartirlo mejor
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">📆</div>
+        <h4 class="text-xl font-bold mb-2">gastos fijos</h4>
+        <p class="text-gray-600 mb-2">los que se repiten cada mes y casi nunca cambian</p>
+        <p class="text-purple-600 font-semibold">netflix, abono transporte, gimnasio, Spotify</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">🛍️</div>
+        <h4 class="text-xl font-bold mb-2">gastos variables</h4>
+        <p class="text-gray-600 mb-2">los que cambian según lo que hagas</p>
+        <p class="text-purple-600 font-semibold">ropa, comida, salir al cine</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">🐜</div>
+        <h4 class="text-xl font-bold mb-2">gastos hormiga</h4>
+        <p class="text-gray-600 mb-2">parecen pequeños, pero pueden sumar mucho</p>
+        <p class="text-purple-600 font-semibold">2€ al día = 720€ al año = un iPhone</p>
+      </div>
+    </div>
+	<div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-xl transition text-center max-w-4xl mx-auto">
+		<h4 class="text-2xl font-bold mb-4">👉 céntrate con un presupuesto básico 50/30/20</h4>
+
+		<!-- Single clean 3-color bar -->
+		<div class="w-full h-4 flex rounded-full overflow-hidden mb-6">
+			<div class="h-full" style="width: 50%; background-color: #c4a5f9;"></div> <!-- necesidades -->
+			<div class="h-full" style="width: 30%; background-color: #9ae6b4;"></div> <!-- ocio -->
+			<div class="h-full" style="width: 20%; background-color: #fbb6ce;"></div> <!-- ahorro -->
+		</div>
+
+		<!-- Legend below the bar -->
+		<div class="space-y-2 text-left max-w-md mx-auto mb-6">
+			<div class="flex items-center gap-2">
+				<span class="px-2 py-1 rounded bg-purple-100 text-purple-700 font-bold">50%</span>
+				<span>necesidades → transporte, material escolar</span>
+			</div>
+			<div class="flex items-center gap-2">
+				<span class="px-2 py-1 rounded bg-teal-100 text-teal-700 font-bold">30%</span>
+				<span>ocio → salidas, hobbies, videojuegos</span>
+			</div>
+			<div class="flex items-center gap-2">
+				<span class="px-2 py-1 rounded bg-pink-100 text-pink-700 font-bold">20%</span>
+				<span>ahorro → viaje, móvil, consola</span>
+			</div>
+		</div>
+		<!-- Example text -->
+		<p class="mt-6 text-sm text-gray-600 italic">
+			ejemplo: si tu paga semanal es de 20€ → 10€ necesidades, 6€ ocio, 4€ ahorro
+		</p>
+	</div>
+  </section>
+
+  <!-- Gestión -->
+  <section id="gestion" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">tu dinero en acción: cuentas y tarjetas</h2>
+    <p class="text-center text-gray-600 mb-12">
+      ya sabes en qué gastas y cómo repartir mejor los gastos, ahora vamos a ver las herramientas que tienes para usar tu dinero
+    </p>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">🏦</div>
+        <h4 class="text-xl font-bold mb-2">cuenta corriente</h4>
+        <p class="text-gray-600 mb-2">la cuenta básica donde entra tu dinero y desde la que pagas el día a día</p>
+        <p class="text-purple-600 font-semibold">sirve para bizum, transferencias, recibos</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-teal-500 hover:shadow-xl transition text-center">
+        <div class="text-4xl mb-3">🐷</div>
+        <h4 class="text-xl font-bold mb-2">cuenta de ahorro</h4>
+        <p class="text-gray-600 mb-2">pensada para guardar dinero que no gastas inmediatamente; a veces puede ser parte de la cuenta corriente</p>
+        <p class="text-purple-600 font-semibold">en muchas de ellas ganas un (pequeño) interés</p>
+      </div>
+    </div>
+    <h3 class="text-2xl font-bold mb-4 text-center">tarjetas: débito o crédito</h3>
+    <p class="text-center text-gray-600 mb-8">no son lo mismo: una te protege de gastar de más y la otra puede meterte en deudas</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500 hover:shadow-xl transition text-center transform hover:scale-105">
+        <div class="text-4xl mb-3">💳</div>
+        <h4 class="text-xl font-bold mb-2">tarjeta de débito</h4>
+        <p class="text-gray-600 mb-2">gastas solo el dinero que ya tienes en tu cuenta</p>
+        <p class="text-purple-600 font-semibold">si tienes 50€, solo podrás gastar hasta ahí</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-red-500 hover:shadow-xl transition text-center transform hover:scale-105">
+        <div class="text-4xl mb-3">💳</div>
+        <h4 class="text-xl font-bold mb-2">tarjeta de crédito</h4>
+        <p class="text-gray-600 mb-2">parece cómodo, pero si no pagas a tiempo te cobran intereses</p>
+        <p class="text-purple-600 font-semibold">compras 100€ → si no pagas cuando toca, terminas pagando 120€</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejemplo real -->
+  <section id="ejemplo" class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold mb-2 text-center">vidas reales, decisiones reales</h2>
+    <p class="text-center text-gray-600 mb-10">
+      entender la teoría está bien, pero ver qué hacen otros con su dinero te hace verlo más claro
+    </p>
+    <div class="bg-pink-50 border-l-4 border-pink-400 p-6 rounded-lg hover:shadow-lg transition space-y-4">
+      <div>
+        <h3 class="font-semibold">❌ ejemplo negativo</h3>
+        <p>un chico de 17 años gastaba casi toda su paga en ropa de marca y salidas para aparentar en su Insta → en unos meses tuvo que pedir dinero prestado a sus padres y se perdió el viaje que había planeado con sus amigos</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">✅ ejemplo positivo</h3>
+        <p>una chica de 16 años empezó a apuntar cada gasto que tenía en una app → descubrió que gastaba al menos 3€ diarios en chuches y refrescos → al reducirlo a la mitad, en 6 meses ahorró más de 250€ y se los gastó en un festival de música (y le sobró para unos cascos 🎧)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section id="quiz" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-2xl font-bold mb-2">demuestra que mandas sobre tu dinero</h2>
+    <p class="text-gray-600 mb-10">comprueba si sabes distinguir gastos y elegir la tarjeta correcta</p>
+
+    <div class="space-y-10">
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-4">¿qué tipo de gasto es <span class="font-semibold">ir al cine</span>?</h3>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">fijo</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">variable</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">hormiga</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-4">quieres comprar un videojuego de 40€ → ¿qué usarías?</h3>
+        <div class="flex justify-center gap-4">
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="true">tarjeta de débito</button>
+          <button class="quiz-btn bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-correct="false">tarjeta de crédito</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reto -->
+  <section id="reto" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <div class="bg-purple-100 rounded-xl shadow-md p-8 hover:shadow-lg transition">
+      <h2 class="text-3xl font-bold mb-4 text-purple-700">el reto: atrapa a las hormigas 🐜</h2>
+      <p class="mb-6 text-gray-700">
+        durante una semana apunta todos tus gastos. clasifícalos en 
+        <span class="font-semibold">fijos</span>, <span class="font-semibold">variables</span> y <span class="font-semibold">hormiga</span>.  
+        cuando lo tengas, calcula: <em>¿cuánto se fue en hormigas? y pregúntate: ¿qué podrías haber hecho con ese dinero si lo hubieras ahorrado?</em>
+      </p>
+      <button id="reto-button" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
+        acepto el reto 🐜💪
+      </button>
+      <p id="unlock-hint" class="mt-4 text-sm text-gray-600 italic">👉 completa el reto para desbloquear la siguiente misión</p>
+    </div>
+  </section>
+
+  <!-- Frase final bloqueada -->
+  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">tu dinero puede esfumarse... o ayudarte a conseguir lo que sueñas</h2>
+      <p class="text-xl mb-8">para conseguir lo que quieres —desde un viaje con amigos hasta tu primer ordenador— necesitas aprender a decidir qué cosas valen la pena y cuáles solo te alejan de tus metas.</p>
+      <a href="haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
+        quiero poner en orden mis gastos ➡
+      </a>
+    </div>
+  </section>
+
+  <!-- Confetti + Scripts -->
+  <script>
+    function clearLocalStorage() {
+      if (confirm('¿Estás seguro de que quieres limpiar todos los datos guardados? Esto reseteará tu progreso.')) {
+        localStorage.clear();
+        alert('✅ localStorage limpiado. La página se recargará.');
+        location.reload();
+      }
+    }
+  </script>
+  <script src="js/vendor/canvas-confetti.min.js" defer></script>
+  <script src="js/page-helpers.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/reto.js" defer></script>
+  <footer class="bg-purple-900 text-white py-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <div class="text-center">
+        <h4 class="font-bold mb-3">sobre este curso</h4>
+        <p class="text-sm text-gray-300">lo hemos hecho personas como tú para que entiendas todo sobre tu dinero sin aburrirte</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">enlaces</h4>
+        <div class="space-y-2">
+          <div><a href="por-que-esta-web.html" class="text-gray-300 hover:text-white transition text-sm">por qué hacemos esto</a></div>
+          <div><a href="fuentes.html" class="text-gray-300 hover:text-white transition text-sm">fuentes y referencias</a></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold mb-3">síguenos</h4>
+        <div class="flex gap-4 justify-center">
+          <a href="#" aria-label="Síguenos en Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="Instagram" loading="lazy"></a>
+          <a href="#" aria-label="Síguenos en TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="TikTok" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-sm text-gray-400">
+      <p>&copy; 2025 finanzas personales para adolescentes · “el dinero no se aprende solo, se entrena 💪”</p>
+    </div>
+  </footer>
+
+</body>
+</html>

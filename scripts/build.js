@@ -1,49 +1,70 @@
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const ROOT_DIR = process.cwd();
-const DIST_DIR = path.join(ROOT_DIR, 'docs');
+const DIST_ROOT = path.join(ROOT_DIR, 'docs');
 const DATA_DIR = path.join(ROOT_DIR, 'data');
+const CONTENT_ROOT = path.join(ROOT_DIR, 'content');
+const ARTIFACTS_DIR = path.join(ROOT_DIR, 'dist');
 
-const missions = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'missions.json'), 'utf-8'));
 const STATIC_PAGES = ['fuentes.html', 'por-que-esta-web.html', 'certificado.html'];
-const FOOTER_HTML = `  <footer class="bg-purple-900 text-white py-10">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-      <div class="text-center">
-        <h4 class="font-bold mb-3">sobre este curso</h4>
-        <p class="text-sm text-gray-300">lo hemos hecho personas como tú para que entiendas todo sobre tu dinero sin aburrirte</p>
-      </div>
-      <div class="text-center">
-        <h4 class="font-bold mb-3">enlaces</h4>
-        <div class="space-y-2">
-          <div><a href="por-que-esta-web.html" class="text-gray-300 hover:text-white transition text-sm">por qué hacemos esto</a></div>
-          <div><a href="fuentes.html" class="text-gray-300 hover:text-white transition text-sm">fuentes y referencias</a></div>
-        </div>
-      </div>
-      <div class="text-center">
-        <h4 class="font-bold mb-3">síguenos</h4>
-        <div class="flex gap-4 justify-center">
-          <a href="#" aria-label="Síguenos en Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-6 h-6 invert" alt="Instagram" loading="lazy"></a>
-          <a href="#" aria-label="Síguenos en TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-6 h-6 invert" alt="TikTok" loading="lazy"></a>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-8 text-sm text-gray-400">
-      <p>&copy; 2025 finanzas personales para adolescentes · “el dinero no se aprende solo, se entrena 💪”</p>
-    </div>
-  </footer>`;
+const SHARED_ASSETS = [
+  'css/styles.css',
+  'css/tailwind.css',
+  'js/page-helpers.js',
+  'js/progress.js',
+  'js/quiz.js',
+  'js/reto.js',
+  'js/vendor/canvas-confetti.min.js',
+  'js/sw-register.js',
+  'manifest.json',
+  'favicon.svg',
+  'favicon-arrow.svg',
+  'favicon-sparkline.svg',
+  'robots.txt',
+  'img/preview.png'
+];
 
-function renderFooter() {
-  return FOOTER_HTML;
-}
+const DEFAULT_STRINGS = {
+  brandName: 'finanzas adolescentes',
+  missionCounter: 'misión {{index}} de {{total}} · {{duration}}',
+  tocToggleLabel: 'en esta misión verás',
+  navDebugButtonLabel: '🗑️ clear',
+  navDebugButtonTitle: 'clear localStorage for debugging',
+  navDebugConfirm: '¿Estás seguro de que quieres limpiar todos los datos guardados? Esto reseteará tu progreso.',
+  navDebugSuccess: '✅ localStorage limpiado. La página se recargará.',
+  certificateBadgeLabel: 'certificado desbloqueado'
+};
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
-function writeFileSync(targetPath, contents) {
-  ensureDir(path.dirname(targetPath));
-  fs.writeFileSync(targetPath, contents, 'utf-8');
+function emptyDir(dirPath) {
+  fs.rmSync(dirPath, { recursive: true, force: true });
+  ensureDir(dirPath);
+}
+
+function loadJson(filePath, fallback = {}) {
+  if (!fs.existsSync(filePath)) {
+    return fallback;
+  }
+  const contents = fs.readFileSync(filePath, 'utf-8');
+  return JSON.parse(contents);
+}
+
+function loadLocaleStrings(localeCode) {
+  const localeStringsPath = path.join(DATA_DIR, localeCode, 'ui.json');
+  return Object.assign({}, DEFAULT_STRINGS, loadJson(localeStringsPath, {}));
+}
+
+function loadFooterHtml(contentDir) {
+  const footerPath = path.join(contentDir, 'partials', 'footer.html');
+  if (!fs.existsSync(footerPath)) {
+    return '';
+  }
+  return fs.readFileSync(footerPath, 'utf-8');
 }
 
 function copyFileSync(source, target) {
@@ -51,97 +72,215 @@ function copyFileSync(source, target) {
   fs.copyFileSync(source, target);
 }
 
-function generateNav(currentMissionId = null) {
-  const links = missions.map((mission) => {
+function copyDirSync(sourceDir, targetDir) {
+  if (!fs.existsSync(sourceDir)) {
+    return;
+  }
+  const entries = fs.readdirSync(sourceDir, { withFileTypes: true });
+  entries.forEach((entry) => {
+    const sourcePath = path.join(sourceDir, entry.name);
+    const targetPath = path.join(targetDir, entry.name);
+    if (entry.isDirectory()) {
+      copyDirSync(sourcePath, targetPath);
+    } else {
+      copyFileSync(sourcePath, targetPath);
+    }
+  });
+}
+
+function writeFileSync(targetPath, contents) {
+  ensureDir(path.dirname(targetPath));
+  fs.writeFileSync(targetPath, contents, 'utf-8');
+}
+
+function getString(strings, key, fallback) {
+  return strings[key] || fallback;
+}
+
+function formatMissionCounter(strings, mission, missionCount) {
+  const template = getString(strings, 'missionCounter', DEFAULT_STRINGS.missionCounter);
+  return template
+    .replace('{{index}}', mission.id)
+    .replace('{{total}}', missionCount)
+    .replace('{{duration}}', mission.duration || '');
+}
+
+function resolveCanonical(baseUrl, fallback, relativePath) {
+  if (baseUrl) {
+    const sanitized = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+    return `${sanitized}/${relativePath}`;
+  }
+  return fallback || relativePath;
+}
+
+function applyLangAttribute(html, lang) {
+  if (!lang) {
+    return html;
+  }
+  if (/<html[^>]*lang=/i.test(html)) {
+    return html.replace(/(<html[^>]*lang=")([^"]*)(")/i, `$1${lang}$3`);
+  }
+  return html.replace(/<html/i, `<html lang="${lang}"`);
+}
+
+function applyCanonical(html, canonicalUrl) {
+  if (!canonicalUrl) {
+    return html;
+  }
+  if (/<link\s+rel="canonical"/i.test(html)) {
+    return html.replace(/<link\s+rel="canonical"[^>]*href="[^"]*"[^>]*>/i, `<link rel="canonical" href="${canonicalUrl}" />`);
+  }
+  return html;
+}
+
+function processStaticHtml(html, lang, canonicalUrl) {
+  let output = applyLangAttribute(html, lang);
+  output = applyCanonical(output, canonicalUrl);
+  return output;
+}
+
+function buildLocale(localeConfig, defaultLocaleCode) {
+  const code = localeConfig.code;
+  const outputDir = localeConfig.outputDir || code;
+  const contentDir = path.join(CONTENT_ROOT, code);
+  const dataDir = path.join(DATA_DIR, code);
+  const distDir = path.join(DIST_ROOT, outputDir);
+
+  if (!fs.existsSync(contentDir)) {
+    console.warn(`Skipping locale ${code}: missing content directory at ${contentDir}`);
+    return;
+  }
+
+  const missions = loadJson(path.join(dataDir, 'missions.json'), []);
+  if (!missions.length) {
+    console.warn(`Locale ${code} has no missions defined. Skipping.`);
+    return;
+  }
+
+  const strings = loadLocaleStrings(code);
+  const footerHtml = loadFooterHtml(contentDir);
+  emptyDir(distDir);
+
+  const context = {
+    locale: localeConfig,
+    defaultLocaleCode,
+    missions,
+    missionCount: missions.length,
+    strings,
+    footerHtml,
+    contentDir,
+    dataDir,
+    distDir
+  };
+
+  buildIndexPage(context);
+  buildStaticPages(context);
+  missions.forEach((mission) => buildMissionPage(context, mission));
+  copySharedAssets(context);
+  copyLocaleData(context);
+  buildServiceWorker(context);
+  generateSitemap(context);
+  createLocaleZip(context);
+}
+
+function buildIndexPage(context) {
+  const sourcePath = path.join(context.contentDir, 'index.html');
+  if (!fs.existsSync(sourcePath)) {
+    console.warn(`Missing index.html for locale ${context.locale.code} at ${sourcePath}`);
+    return;
+  }
+  const contents = fs.readFileSync(sourcePath, 'utf-8');
+  const canonical = resolveCanonical(context.locale.baseUrl, null, 'index.html');
+  const processed = processStaticHtml(contents, context.locale.code, canonical);
+  writeFileSync(path.join(context.distDir, 'index.html'), processed);
+}
+
+function buildStaticPages(context) {
+  STATIC_PAGES.forEach((page) => {
+    const sourcePath = path.join(context.contentDir, page);
+    if (!fs.existsSync(sourcePath)) {
+      console.warn(`Skipping static page ${page} for locale ${context.locale.code}`);
+      return;
+    }
+    const contents = fs.readFileSync(sourcePath, 'utf-8');
+    const canonical = resolveCanonical(context.locale.baseUrl, null, page);
+    const processed = processStaticHtml(contents, context.locale.code, canonical);
+    writeFileSync(path.join(context.distDir, page), processed);
+  });
+}
+
+function generateNav(context, currentMissionId = null) {
+  const links = context.missions.map((mission) => {
     const href = mission.file;
     const classes = ['hover:text-purple-600'];
-
     if (currentMissionId && mission.id === currentMissionId) {
       classes.push('text-purple-700', 'font-bold', 'underline');
     }
-
     return `        <a href="${href}" class="${classes.join(' ')}">${mission.navLabel}</a>`;
   });
 
+  const buttonLabel = getString(context.strings, 'navDebugButtonLabel', DEFAULT_STRINGS.navDebugButtonLabel);
+  const buttonTitle = getString(context.strings, 'navDebugButtonTitle', DEFAULT_STRINGS.navDebugButtonTitle);
+
   return `      <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
 ${links.join('\n')}
-        <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="clear localStorage for debugging">
-          🗑️ clear
+        <button onclick="clearLocalStorage()" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600 transition" title="${buttonTitle}">
+          ${buttonLabel}
         </button>
       </div>`;
 }
 
-function cleanDist() {
-  fs.rmSync(DIST_DIR, { recursive: true, force: true });
-  ensureDir(DIST_DIR);
-}
-
-function copyStaticAssets() {
-  const assets = [
-    'css/styles.css',
-    'css/tailwind.css',
-    'js/page-helpers.js',
-    'js/progress.js',
-    'js/quiz.js',
-    'js/reto.js',
-    'js/vendor/canvas-confetti.min.js',
-    'js/sw-register.js',
-    'data/missions.json',
-    'manifest.json',
-    'favicon.svg',
-    'robots.txt',
-    'img/preview.png'
-  ];
-
-  assets.forEach((asset) => {
-    const sourcePath = path.join(ROOT_DIR, asset);
-    if (!fs.existsSync(sourcePath)) {
-      console.warn(`Skipping missing asset: ${asset}`);
-      return;
-    }
-    const targetPath = path.join(DIST_DIR, asset);
-    copyFileSync(sourcePath, targetPath);
-  });
-}
-
-function buildMissionPage(mission) {
-  const missionDataPath = path.join(DATA_DIR, 'missions', `mission-${mission.id}.json`);
-
+function buildMissionPage(context, mission) {
+  const missionDataPath = path.join(context.dataDir, 'missions', `mission-${mission.id}.json`);
   if (fs.existsSync(missionDataPath)) {
-    const missionData = JSON.parse(fs.readFileSync(missionDataPath, 'utf-8'));
-    const html = generateMissionPage(mission, missionData);
-    writeFileSync(path.join(DIST_DIR, mission.file), html);
+    const missionData = loadJson(missionDataPath, {});
+    const html = generateMissionPage(context, mission, missionData);
+    writeFileSync(path.join(context.distDir, mission.file), html);
     return;
   }
 
-  const sourcePath = path.join(ROOT_DIR, mission.file);
-  let contents = fs.readFileSync(sourcePath, 'utf-8');
-  contents = contents.replace(/<div class="hidden md:flex[\s\S]*?<\/div>\s*<\/nav>/, `${generateNav(mission.id)}\n    </nav>`);
-  writeFileSync(path.join(DIST_DIR, mission.file), contents);
+  const fallbackPath = path.join(context.contentDir, mission.file);
+  if (!fs.existsSync(fallbackPath)) {
+    console.warn(`Missing mission file for ${mission.file} in locale ${context.locale.code}`);
+    return;
+  }
+
+  let contents = fs.readFileSync(fallbackPath, 'utf-8');
+  contents = contents.replace(/<div class="hidden md:flex[\s\S]*?<\/div>\s*<\/nav>/, `${generateNav(context, mission.id)}\n    </nav>`);
+  writeFileSync(path.join(context.distDir, mission.file), contents);
 }
 
-function generateMissionPage(mission, missionData) {
-  const nav = generateNav(mission.id);
-  const toc = missionData.toc.map(item => `        <li>${item.icon} <a href="#${item.id}" class="hover:underline">${item.label}</a></li>`).join('\n');
-  const sections = missionData.sections.map(renderSection).join('\n\n');
+function generateMissionPage(context, mission, missionData) {
+  const nav = generateNav(context, mission.id);
+  const toc = (missionData.toc || [])
+    .map(item => `        <li>${item.icon} <a href="#${item.id}" class="hover:underline">${item.label}</a></li>`)
+    .join('\n');
+  const sections = (missionData.sections || []).map(renderSection).join('\n\n');
   const quiz = renderQuiz(missionData.quiz);
   const reto = renderReto(missionData.reto);
   const introBlocks = (missionData.introBlocks || []).join('\n\n');
-  const footer = renderFooter();
+  const footer = context.footerHtml;
   const inlineScripts = (missionData.inlineScripts || [])
     .map((script) => `  <script>\n${script}\n  </script>`)
     .join('\n');
+  const missionCounter = formatMissionCounter(context.strings, mission, context.missionCount);
+  const tocToggleLabel = getString(context.strings, 'tocToggleLabel', DEFAULT_STRINGS.tocToggleLabel);
+  const badgeLabel = getString(context.strings, 'certificateBadgeLabel', DEFAULT_STRINGS.certificateBadgeLabel);
+  const confirmMessage = getString(context.strings, 'navDebugConfirm', DEFAULT_STRINGS.navDebugConfirm);
+  const successMessage = getString(context.strings, 'navDebugSuccess', DEFAULT_STRINGS.navDebugSuccess);
+  const lang = context.locale.code || 'es';
+  const canonical = resolveCanonical(context.locale.baseUrl, missionData.meta?.canonical, mission.file);
 
   return `<!DOCTYPE html>
-<html lang="es">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${missionData.meta.title}</title>
-  <meta name="description" content="${missionData.meta.description}" />
+  <title>${missionData.meta?.title || mission.title}</title>
+  <meta name="description" content="${missionData.meta?.description || ''}" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="canonical" href="${missionData.meta.canonical}" />
+  <link rel="canonical" href="${canonical}" />
   <link rel="stylesheet" href="css/tailwind.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/sw-register.js" defer></script>
@@ -151,7 +290,7 @@ function generateMissionPage(mission, missionData) {
   <!-- HEADER -->
   <header class="bg-white shadow sticky top-0 z-50">
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-      <a href="index.html" class="font-bold text-purple-700">finanzas adolescentes</a>
+      <a href="index.html" class="font-bold text-purple-700">${getString(context.strings, 'brandName', DEFAULT_STRINGS.brandName)}</a>
 ${nav}
     </nav>
   </header>
@@ -159,23 +298,23 @@ ${nav}
   <!-- HERO -->
   <section class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center">
     <div class="max-w-3xl mx-auto">
-      <div class="text-6xl mb-4">${missionData.hero.emoji}</div>
-      <h1 class="text-4xl font-bold mb-2">${missionData.hero.title}</h1>
-      <p class="text-lg">${missionData.hero.subtitle}</p>
+      <div class="text-6xl mb-4">${missionData.hero?.emoji || ''}</div>
+      <h1 class="text-4xl font-bold mb-2">${missionData.hero?.title || mission.title}</h1>
+      <p class="text-lg">${missionData.hero?.subtitle || ''}</p>
       <div class="mt-12 text-sm flex flex-col items-center space-y-2">
         <div class="mt-4">
-          <p class="font-medium mb-4">misión ${mission.id} de 6 · ${mission.duration}</p>
+          <p class="font-medium mb-4">${missionCounter}</p>
           <div id="mission-pins" class="flex flex-wrap justify-center gap-2"></div>
         </div>
       </div>
     </div>
   </section>
 
-${introBlocks ? `${introBlocks}\n\n` : ''}  <!-- TOC DESPLEGABLE -->
+${introBlocks ? `${introBlocks}\n\n` : ''}  <!-- TOC -->
   <div class="max-w-2xl mx-auto my-8 px-4">
     <button data-toc-button 
             class="w-full bg-purple-100 text-purple-700 font-semibold px-4 py-3 rounded-lg shadow hover:bg-purple-200 transition flex justify-between items-center">
-      en esta misión verás
+      ${tocToggleLabel}
       <span id="toc-icon">▼</span>
     </button>
 
@@ -192,15 +331,15 @@ ${quiz}
 
   ${reto}
 
-${renderTakeaway(mission, missionData)}
+${renderTakeaway(context, mission, missionData, badgeLabel)}
 
   ${footer}
 
   <script>
     function clearLocalStorage() {
-      if (confirm('¿Estás seguro de que quieres limpiar todos los datos guardados? Esto reseteará tu progreso.')) {
+      if (confirm('${confirmMessage}')) {
         localStorage.clear();
-        alert('✅ localStorage limpiado. La página se recargará.');
+        alert('${successMessage}');
         location.reload();
       }
     }
@@ -214,23 +353,23 @@ ${inlineScripts ? `${inlineScripts}\n` : ''}  <script src="js/vendor/canvas-conf
 </html>`;
 }
 
-function renderTakeaway(mission, missionData) {
+function renderTakeaway(context, mission, missionData, badgeLabel) {
   if (mission.id === 6) {
-    const note = missionData.takeaway.note || '';
+    const note = missionData.takeaway?.note || '';
     return `  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-20 transition-all duration-500 opacity-50 pointer-events-none">
     <div class="max-w-4xl mx-auto px-6">
       <div id="certificate-card" class="relative overflow-hidden rounded-[42px] p-12 sm:p-16 text-white shadow-[0_30px_80px_rgba(59,7,100,0.35)]">
         <div class="absolute inset-0 bg-gradient-to-br from-yellow-300 via-pink-500 to-purple-700 opacity-90"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.35),transparent_55%)]"></div>
         <div class="relative flex flex-col gap-7">
-          <div class="uppercase text-xs tracking-[0.5em] text-white/80">certificado desbloqueado</div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight drop-shadow-[0_15px_30px_rgba(124,58,237,0.45)]">${missionData.takeaway.title}</h2>
-          <p class="text-lg sm:text-xl text-white/95 max-w-2xl">${missionData.takeaway.subtitle}</p>
+          <div class="uppercase text-xs tracking-[0.5em] text-white/80">${badgeLabel}</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight drop-shadow-[0_15px_30px_rgba(124,58,237,0.45)]">${missionData.takeaway?.title || ''}</h2>
+          <p class="text-lg sm:text-xl text-white/95 max-w-2xl">${missionData.takeaway?.subtitle || ''}</p>
           ${note ? `<p class="text-base sm:text-lg text-white/85 max-w-2xl">${note}</p>` : ''}
           <div class="flex flex-wrap items-center gap-6">
-            <a id="certificate-primary" href="${missionData.takeaway.cta.href}" class="group inline-flex items-center gap-4 rounded-full bg-white text-purple-800 px-9 py-4 text-lg font-extrabold uppercase tracking-[0.2em] shadow-[0_18px_45px_rgba(124,58,237,0.35)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/60">
+            <a id="certificate-primary" href="${missionData.takeaway?.cta?.href || '#'}" class="group inline-flex items-center gap-4 rounded-full bg-white text-purple-800 px-9 py-4 text-lg font-extrabold uppercase tracking-[0.2em] shadow-[0_18px_45px_rgba(124,58,237,0.35)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/60">
               <span class="text-2xl">🎓</span>
-              <span class="group-hover:tracking-[0.28em] transition-all duration-200">${missionData.takeaway.cta.label}</span>
+              <span class="group-hover:tracking-[0.28em] transition-all duration-200">${missionData.takeaway?.cta?.label || ''}</span>
             </a>
           </div>
         </div>
@@ -241,10 +380,10 @@ function renderTakeaway(mission, missionData) {
 
   return `  <section id="takeaway" class="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-16 text-center opacity-50 pointer-events-none transition-all duration-500">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">${missionData.takeaway.title}</h2>
-      <p class="text-xl mb-8">${missionData.takeaway.subtitle}</p>
-      <a href="${missionData.takeaway.cta.href}" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
-        ${missionData.takeaway.cta.label}
+      <h2 class="text-3xl font-bold mb-6">${missionData.takeaway?.title || ''}</h2>
+      <p class="text-xl mb-8">${missionData.takeaway?.subtitle || ''}</p>
+      <a href="${missionData.takeaway?.cta?.href || '#'}" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-flex items-center gap-2">
+        ${missionData.takeaway?.cta?.label || ''}
       </a>
     </div>
   </section>`;
@@ -265,8 +404,7 @@ function renderSection(section) {
   const cardsHtml = (section.cards || [])
     .map(renderCard)
     .join('\n');
-  const cardsBlock = cardsHtml ? `${cardsHtml}
-` : '';
+  const cardsBlock = cardsHtml ? `${cardsHtml}\n` : '';
   const extraHtml = section.extraHtml ? `\n${section.extraHtml}\n` : '';
 
   return `  <section id="${section.id}" class="${wrapperClass}">
@@ -360,68 +498,87 @@ ${steps}
   </section>`;
 }
 
-function buildIndexPage() {
-  const sourcePath = path.join(ROOT_DIR, 'index.html');
-  let contents = fs.readFileSync(sourcePath, 'utf-8');
-  writeFileSync(path.join(DIST_DIR, 'index.html'), contents);
-}
-
-function buildStaticPages() {
-  STATIC_PAGES.forEach((page) => {
-    const sourcePath = path.join(ROOT_DIR, page);
+function copySharedAssets(context) {
+  SHARED_ASSETS.forEach((asset) => {
+    const sourcePath = path.join(ROOT_DIR, asset);
     if (!fs.existsSync(sourcePath)) {
+      console.warn(`Skipping missing asset: ${asset}`);
       return;
     }
-    const contents = fs.readFileSync(sourcePath, 'utf-8');
-    writeFileSync(path.join(DIST_DIR, page), contents);
+    const targetPath = path.join(context.distDir, asset);
+    copyFileSync(sourcePath, targetPath);
   });
 }
 
-function generateSitemap() {
-  const baseUrl = 'https://alex.github.io/finanzas-adolescentes';
-  const pages = ['index.html', ...missions.map(mission => mission.file), ...STATIC_PAGES];
-  const urls = pages.map(page => `  <url>\n    <loc>${baseUrl}/${page}</loc>\n  </url>`).join('\n');
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
-  writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
+function copyLocaleData(context) {
+  const targetDataDir = path.join(context.distDir, 'data');
+  ensureDir(targetDataDir);
+
+  const missionsJsonSource = path.join(context.dataDir, 'missions.json');
+  if (fs.existsSync(missionsJsonSource)) {
+    copyFileSync(missionsJsonSource, path.join(targetDataDir, 'missions.json'));
+  }
+
+  const missionsDirSource = path.join(context.dataDir, 'missions');
+  copyDirSync(missionsDirSource, path.join(targetDataDir, 'missions'));
 }
 
-function build() {
-  cleanDist();
-  buildIndexPage();
-  buildStaticPages();
-  missions.forEach(buildMissionPage);
-  copyStaticAssets();
-  buildServiceWorker();
-  generateSitemap();
-}
-
-function buildServiceWorker() {
+function buildServiceWorker(context) {
   const swTemplatePath = path.join(ROOT_DIR, 'sw.js');
   if (!fs.existsSync(swTemplatePath)) {
     console.warn('No service worker template found at sw.js');
     return;
   }
 
-  const htmlFiles = ['index.html', ...missions.map(mission => mission.file), ...STATIC_PAGES];
-  const assetFiles = [
-    'css/styles.css',
-    'css/tailwind.css',
-    'js/page-helpers.js',
-    'js/progress.js',
-    'js/quiz.js',
-    'js/reto.js',
-    'js/vendor/canvas-confetti.min.js',
-    'js/sw-register.js',
-    'data/missions.json',
-    'manifest.json',
-    'favicon.svg',
-    'img/preview.png'
-  ];
-
-  const precacheList = JSON.stringify(['./', ...htmlFiles.map(f => `./${f}`), ...assetFiles.map(f => `./${f}`)], null, 2);
+  const htmlFiles = ['index.html', ...context.missions.map((mission) => mission.file), ...STATIC_PAGES];
+  const assetFiles = [...SHARED_ASSETS, 'data/missions.json'];
+  const precacheList = JSON.stringify(['./', ...htmlFiles.map((f) => `./${f}`), ...assetFiles.map((f) => `./${f}`)], null, 2);
   const template = fs.readFileSync(swTemplatePath, 'utf-8');
   const output = template.replace('__PRECACHE_MANIFEST__', precacheList);
-  writeFileSync(path.join(DIST_DIR, 'sw.js'), output);
+  writeFileSync(path.join(context.distDir, 'sw.js'), output);
+}
+
+function generateSitemap(context) {
+  const baseUrl = context.locale.baseUrl || '';
+  const pages = ['index.html', ...context.missions.map((mission) => mission.file), ...STATIC_PAGES];
+  const urls = pages.map((page) => {
+    const loc = resolveCanonical(baseUrl, null, page);
+    return `  <url>\n    <loc>${loc}</loc>\n  </url>`;
+  }).join('\n');
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  writeFileSync(path.join(context.distDir, 'sitemap.xml'), sitemap);
+}
+
+function createLocaleZip(context) {
+  ensureDir(ARTIFACTS_DIR);
+  const zipName = `site-${context.locale.code}.zip`;
+  const zipPath = path.join(ARTIFACTS_DIR, zipName);
+
+  const result = spawnSync('zip', ['-r', zipPath, '.'], { cwd: context.distDir, stdio: 'inherit' });
+  if (result.error) {
+    console.warn(`Failed to create zip for ${context.locale.code}:`, result.error.message);
+  }
+}
+
+function build() {
+  const localesConfig = loadJson(path.join(DATA_DIR, 'locales.json'), { locales: [] });
+  const locales = localesConfig.locales || [];
+  if (!locales.length) {
+    console.error('No locales configured. Aborting build.');
+    process.exit(1);
+  }
+
+  const defaultLocaleCode = localesConfig.defaultLocale || locales[0].code;
+
+  emptyDir(DIST_ROOT);
+  emptyDir(ARTIFACTS_DIR);
+
+  locales.forEach((locale) => {
+    console.log(`Building locale ${locale.code}...`);
+    buildLocale(locale, defaultLocaleCode);
+  });
+
+  console.log('Build completed.');
 }
 
 build();

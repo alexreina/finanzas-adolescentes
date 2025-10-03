@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "slug": "domina-tu-dinero-desde-el-primer-euro",
+    "file": "domina-tu-dinero-desde-el-primer-euro.html",
+    "navLabel": "1 · domina tu dinero",
+    "title": "domina tu dinero desde el primer euro",
+    "emoji": "💸",
+    "duration": "10 min"
+  },
+  {
+    "id": 2,
+    "slug": "haz-que-entre-mas-dinero-sin-magia-ni-suerte",
+    "file": "haz-que-entre-mas-dinero-sin-magia-ni-suerte.html",
+    "navLabel": "2 · hacer que entre más dinero",
+    "title": "haz que entre más dinero sin magia ni suerte",
+    "emoji": "👛",
+    "duration": "15 min"
+  },
+  {
+    "id": 3,
+    "slug": "tu-dinero-se-esfuma-y-ni-te-das-cuenta",
+    "file": "tu-dinero-se-esfuma-y-ni-te-das-cuenta.html",
+    "navLabel": "3 · gestiona tu dinero",
+    "title": "tu dinero se esfuma… y ni te das cuenta",
+    "emoji": "💳",
+    "duration": "15 min"
+  },
+  {
+    "id": 4,
+    "slug": "haz-que-tu-dinero-crezca-mientras-haces-otra-cosa",
+    "file": "haz-que-tu-dinero-crezca-mientras-haces-otra-cosa.html",
+    "navLabel": "4 · hacer crecer tu dinero",
+    "title": "haz que tu dinero crezca mientras haces otra cosa",
+    "emoji": "🌱",
+    "duration": "15 min"
+  },
+  {
+    "id": 5,
+    "slug": "aprende-a-comprar-sin-que-te-vendan-la-moto",
+    "file": "aprende-a-comprar-sin-que-te-vendan-la-moto.html",
+    "navLabel": "5 · compras inteligentes",
+    "title": "aprende a comprar sin que te vendan la moto",
+    "emoji": "🛡️",
+    "duration": "15 min"
+  },
+  {
+    "id": 6,
+    "slug": "lo-barato-sale-caro-cuando-pagas-con-deuda",
+    "file": "lo-barato-sale-caro-cuando-pagas-con-deuda.html",
+    "navLabel": "6 · evita las deudas",
+    "title": "lo barato sale caro cuando pagas con deuda",
+    "emoji": "📉",
+    "duration": "15 min"
+  }
+]

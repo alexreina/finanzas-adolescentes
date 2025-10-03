@@ -1,0 +1,10 @@
+{
+  "brandName": "finanzas adolescentes",
+  "missionCounter": "misión {{index}} de {{total}} · {{duration}}",
+  "tocToggleLabel": "en esta misión verás",
+  "navDebugButtonLabel": "🗑️ clear",
+  "navDebugButtonTitle": "clear localStorage for debugging",
+  "navDebugConfirm": "¿Estás seguro de que quieres limpiar todos los datos guardados? Esto reseteará tu progreso.",
+  "navDebugSuccess": "✅ localStorage limpiado. La página se recargará.",
+  "certificateBadgeLabel": "certificado desbloqueado"
+}

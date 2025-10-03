@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domino mi dinero · certificado oficial</title>
+  <meta name="description" content="Certificado oficial de Dominas tu dinero con formato listo para compartir en Instagram o TikTok." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, rgba(253, 186, 116, 0.4), rgba(99, 102, 241, 0.35) 38%, rgba(15, 118, 110, 0.45));
+      display: flex;
+      flex-direction: column;
+      color: #0f172a;
+    }
+
+    a.back-link {
+      color: #7c3aed;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 56px) 20px 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .certificate-poster {
+      position: relative;
+      width: min(92vw, 640px);
+      min-height: 750px;
+      border-radius: 44px;
+      padding: clamp(28px, 5vw, 48px);
+      background: linear-gradient(148deg, rgba(14, 165, 233, 0.92), rgba(236, 72, 153, 0.92)),
+                  linear-gradient(180deg, rgba(30, 64, 175, 0.9), rgba(20, 184, 166, 0.85));
+      box-shadow: 0 40px 120px rgba(15, 23, 42, 0.38);
+      color: white;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 5vw, 36px);
+    }
+
+    .certificate-poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 16% 14%, rgba(250, 204, 21, 0.85), transparent 46%),
+        radial-gradient(circle at 80% 18%, rgba(191, 219, 254, 0.75), transparent 48%),
+        radial-gradient(circle at 24% 84%, rgba(244, 114, 182, 0.7), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.9;
+      z-index: -2;
+    }
+
+    .certificate-poster::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd' opacity='.08'%3E%3Cpath d='M0 50h400v4H0zm0 100h400v4H0zm0 100h400v4H0zm0 100h400v4H0z' fill='%23ffffff'/%3E%3Cpath d='M50 0v400h4V0zm100 0v400h4V0zm100 0v400h4V0zm100 0v400h4V0z' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .top-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .headline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 420px;
+    }
+
+    .headline p.label {
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: rgba(226, 232, 240, 0.8);
+    }
+
+    .headline h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 8vw, 3.8rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .headline h1 span {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 18px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, rgba(250, 204, 21, 0.92), rgba(244, 63, 94, 0.84));
+      color: #0f172a;
+      transform: rotate(-1.5deg);
+      margin-left: 4px;
+    }
+
+    .headline .summary {
+      font-size: clamp(0.95rem, 2.6vw, 1.1rem);
+      color: rgba(241, 245, 249, 0.92);
+    }
+
+    .name-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 26px 28px;
+      border-radius: 30px;
+      background: rgba(15, 23, 42, 0.18);
+      border: 1px solid rgba(226, 232, 240, 0.18);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+    }
+
+    .name-block .label {
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+      color: rgba(226, 232, 240, 0.75);
+      font-weight: 600;
+    }
+
+    .name-block .name {
+      font-size: clamp(2.4rem, 7vw, 3.4rem);
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.97);
+      line-height: 1.05;
+    }
+
+    .achievement-list {
+      margin-top: 26px;
+      padding: 26px 28px;
+      border-radius: 28px;
+      background: rgba(15, 23, 42, 0.2);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .achievement-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: rgba(241, 245, 249, 0.94);
+    }
+
+    .achievement-list .emoji {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .achievement-list .text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .achievement-list .title {
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+
+    .achievement-list .detail {
+      font-size: 0.94rem;
+      color: rgba(226, 232, 240, 0.82);
+    }
+
+    .share-footer {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.22);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+
+    .share-footer .cta-links {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .share-footer .cta-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 16px;
+      background: white;
+      color: #0f172a;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.76rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .share-footer .cta-links a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
+    }
+
+    @media (max-width: 520px) {
+      .share-footer {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold back-link hover:underline">
+      <span aria-hidden="true">←</span> Volver a la página principal
+    </a>
+
+    <div class="certificate-poster">
+      <div class="top-row">
+        <div class="headline">
+          <p class="label">Certificado oficial</p>
+          <h1>Domino mi dinero <span>100%</span></h1>
+          <p class="summary">Voy a full entendiendo, ganando y multiplicando mi dinero sin humo. Este certificado oficial celebra mi esfuerzo diario para decidir con cabeza y propósito.</p>
+        </div>
+      </div>
+
+      <div class="name-block">
+        <span class="label">soy</span>
+        <span class="name" data-participant-name>Nombre del participante</span>
+      </div>
+
+      <ul class="achievement-list" data-achievement-list>
+        <li>
+          <span class="emoji" aria-hidden="true">💥</span>
+          <div class="text">
+            <span class="title">Decisiones con impacto real</span>
+            <span class="detail">Tomo decisiones con impacto real y propósito.</span>
+          </div>
+        </li>
+        <li>
+          <span class="emoji" aria-hidden="true">💸</span>
+          <div class="text">
+            <span class="title">Presupuesto ninja</span>
+            <span class="detail">Mantengo mi presupuesto vivo sin dramas.</span>
+          </div>
+        </li>
+        <li>
+          <span class="emoji" aria-hidden="true">🚀</span>
+          <div class="text">
+            <span class="title">Plan de ahorro & inversión</span>
+            <span class="detail">Multiplico mi dinero con hábitos que sí puedo sostener.</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="share-footer" data-share-footer>
+        <p><strong>Hazlo oficial:</strong> comparte tu certificado y etiqueta a @dominas.tu.dinero</p>
+        <div class="cta-links">
+          <a href="https://www.tiktok.com/@dominas.tu.dinero" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.instagram.com/dominastudinero" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@dominas.tu.dinero" target="_blank" rel="noopener noreferrer">Shorts</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs text-slate-200/70 text-center" data-footnote>Vista previa dinámica del certificado. Personalizamos los datos al generarlo automáticamente.</p>
+  </div>
+
+  <script>
+    (function() {
+      try {
+        const progress = JSON.parse(localStorage.getItem('progress') || '{}');
+        const nameTarget = document.querySelector('[data-participant-name]');
+        const footnote = document.querySelector('[data-footnote]');
+
+        if (progress.userName && nameTarget) {
+          nameTarget.textContent = progress.userName;
+          if (footnote) {
+            footnote.textContent = `Generado para ${progress.userName}. Personaliza este texto si hay algún error.`;
+          }
+        }
+      } catch (error) {
+        console.warn('No se pudo personalizar el certificado:', error);
+      }
+    })();
+  </script>
+</body>
+</html>
