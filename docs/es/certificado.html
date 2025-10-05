@@ -248,7 +248,7 @@
         <div class="headline">
           <p class="label">certificado oficial</p>
           <h1>domino mi dinero <span>100%</span></h1>
-          <p class="summary">completa todas las misiones empezando por la <a href='domina-tu-dinero-desde-el-primer-euro.html'>misión 1</a> y obtén tu certificado; este certificado también es la prueba de tu constancia; ya tienes las herramientas básicas; ahora depende de ti usarlas cada día y hacer que tu dinero trabaje para ti</p>
+          <p class="summary">Misiones completadas y constancia probada. Quédate con este certificado como recordatorio de que sabes manejar tu dinero y seguirás mejorando paso a paso.</p>
         </div>
       </div>
 
@@ -262,36 +262,35 @@
           <span class="emoji" aria-hidden="true">💥</span>
           <div class="text">
             <span class="title">decisiones con impacto real</span>
-            <span class="detail">tomo decisiones con impacto real y propósito.</span>
+            <span class="detail">tomo decisiones con impacto real y propósito</span>
           </div>
         </li>
         <li>
           <span class="emoji" aria-hidden="true">💸</span>
           <div class="text">
             <span class="title">presupuesto ninja</span>
-            <span class="detail">mantengo mi presupuesto vivo sin dramas.</span>
+            <span class="detail">mantengo mi presupuesto vivo sin dramas</span>
           </div>
         </li>
         <li>
           <span class="emoji" aria-hidden="true">🚀</span>
           <div class="text">
             <span class="title">plan de ahorro & inversión</span>
-            <span class="detail">multiplico mi dinero con hábitos que sí puedo sostener.</span>
+            <span class="detail">multiplico mi dinero con hábitos que sí puedo sostener</span>
           </div>
         </li>
       </ul>
 
       <div class="share-footer" data-share-footer>
-        <p><strong>Hazlo oficial:</strong> comparte tu certificado y etiqueta a @dominas.tu.dinero</p>
+        <p><strong>hazlo oficial:</strong> comparte tu certificado y etiqueta a @tudinerolab</p>
         <div class="cta-links">
-          <a href="https://www.tiktok.com/@dominas.tu.dinero" target="_blank" rel="noopener noreferrer">TikTok</a>
-          <a href="https://www.instagram.com/dominastudinero" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.youtube.com/@dominas.tu.dinero" target="_blank" rel="noopener noreferrer">Shorts</a>
+          <a href="https://www.tiktok.com/@tudinerolab" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.instagram.com/tudinerolab" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@tudinerolab" target="_blank" rel="noopener noreferrer">Shorts</a>
         </div>
       </div>
     </div>
 
-      <p class="text-xs text-slate-200/70 text-center" data-footnote>vista previa dinámica del certificado. personalizamos los datos al generarlo automáticamente.</p>
   </div>
 
   <script>
@@ -299,13 +298,9 @@
       try {
         const progress = JSON.parse(localStorage.getItem('progress') || '{}');
         const nameTarget = document.querySelector('[data-participant-name]');
-        const footnote = document.querySelector('[data-footnote]');
 
         if (progress.userName && nameTarget) {
           nameTarget.textContent = progress.userName;
-          if (footnote) {
-            footnote.textContent = `Generado para ${progress.userName}. Personaliza este texto si hay algún error.`;
-          }
         }
       } catch (error) {
         console.warn('No se pudo personalizar el certificado:', error);

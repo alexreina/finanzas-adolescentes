@@ -262,36 +262,35 @@
           <span class="emoji" aria-hidden="true">💥</span>
           <div class="text">
             <span class="title">Decisiones con impacto real</span>
-            <span class="detail">Tomo decisiones con impacto real y propósito.</span>
+            <span class="detail">Tomo decisiones con impacto real y propósito</span>
           </div>
         </li>
         <li>
           <span class="emoji" aria-hidden="true">💸</span>
           <div class="text">
             <span class="title">Presupuesto ninja</span>
-            <span class="detail">Mantengo mi presupuesto vivo sin dramas.</span>
+            <span class="detail">Mantengo mi presupuesto vivo sin dramas</span>
           </div>
         </li>
         <li>
           <span class="emoji" aria-hidden="true">🚀</span>
           <div class="text">
             <span class="title">Plan de ahorro & inversión</span>
-            <span class="detail">Multiplico mi dinero con hábitos que sí puedo sostener.</span>
+            <span class="detail">Multiplico mi dinero con hábitos que sí puedo sostener</span>
           </div>
         </li>
       </ul>
 
       <div class="share-footer" data-share-footer>
-        <p><strong>Hazlo oficial:</strong> comparte tu certificado y etiqueta a @dominas.tu.dinero</p>
+        <p><strong>hazlo oficial:</strong> comparte tu certificado y etiqueta a @tudinerolab</p>
         <div class="cta-links">
-          <a href="https://www.tiktok.com/@dominas.tu.dinero" target="_blank" rel="noopener noreferrer">TikTok</a>
-          <a href="https://www.instagram.com/dominastudinero" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.youtube.com/@dominas.tu.dinero" target="_blank" rel="noopener noreferrer">Shorts</a>
+          <a href="https://www.tiktok.com/@tudinerolab" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.instagram.com/tudinerolab" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@tudinerolab" target="_blank" rel="noopener noreferrer">Shorts</a>
         </div>
       </div>
     </div>
 
-    <p class="text-xs text-slate-200/70 text-center" data-footnote>Vista previa dinámica del certificado. Personalizamos los datos al generarlo automáticamente.</p>
   </div>
 
   <script>
@@ -299,13 +298,9 @@
       try {
         const progress = JSON.parse(localStorage.getItem('progress') || '{}');
         const nameTarget = document.querySelector('[data-participant-name]');
-        const footnote = document.querySelector('[data-footnote]');
 
         if (progress.userName && nameTarget) {
           nameTarget.textContent = progress.userName;
-          if (footnote) {
-            footnote.textContent = `Generado para ${progress.userName}. Personaliza este texto si hay algún error.`;
-          }
         }
       } catch (error) {
         console.warn('No se pudo personalizar el certificado:', error);
